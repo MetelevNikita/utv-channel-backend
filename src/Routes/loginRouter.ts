@@ -4,13 +4,10 @@ import { Router } from "express";
 
 import { postLogin } from "../Controller/loginController";
 
+//
 
 const loginRouter = Router();
 
-
-
-loginRouter.post("/login",postLogin)
-
-
+loginRouter.post('/login', postLogin)
 
 export default loginRouter;

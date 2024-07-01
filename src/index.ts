@@ -9,6 +9,10 @@ import path  from  'path';
 
 import loginRouter from './Routes/loginRouter';
 
+// middleware
+
+import authMiddleware from './middleware/authMiddleware';
+
 
 const publicPath  =  path.join(__dirname, '..',  'public');
 console.log(publicPath)
@@ -44,9 +48,7 @@ app.use('/api/v1', loginRouter)
 
 app.get('/login', (req, res) => {
   try {
-
-    res.status(200).sendFile(publicPath + '/html/login.html')
-
+    res.status(200).sendFile(publicPath   +   '/html/login.html')
   } catch (error) {
     res.status(400).sendFile('404.html')
   }
@@ -59,6 +61,32 @@ app.get('/', (req, res) => {
   } catch (error) {
     res.status(400).sendFile('/404.html')
   }
+})
+
+
+app.get('/main', authMiddleware, (req, res) => {
+  try  {
+
+    res.status(200).sendFile(publicPath  +  '/html/main.html')
+   } catch  (error)  {
+    res.status(400).sendFile('404.html')
+   }
+
+})
+
+
+app.get('/*', (req, res) => {
+  try  {
+    if(req.cookies.token) {
+      res.redirect('/main')
+      return
+    }
+    res.redirect('/login')
+
+  } catch  (error)  {
+   res.status(400).sendFile('404.html')
+  }
+
 })
 
 

@@ -22,7 +22,7 @@ const postLogin = async (req: any, res: any) => {
 
   } catch (error) {
     console.log(error);
-    res.status(500).send(`Что то пошло не так. Код ошибки: ${error}`);
+    res.status(400).send(`Что то пошло не так. Код ошибки: ${error}`);
 
   }
 

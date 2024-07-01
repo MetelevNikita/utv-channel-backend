@@ -1,79 +1,73 @@
+// submit to team page
+
+const selectTeamBtn = document.getElementById('select_team_btn');
+console.log(selectTeamBtn);
+
+selectTeamBtn.addEventListener('click', async  (e)  =>  {
+  e.preventDefault();
+
+  window.location.href = 'main/team'
+
+  try {
+
+  } catch (error) {
+    console.log(`произошла ошибка ${error}`)
+  }
+})
 
 
-const urlLogin = 'http://localhost:9000/api/v1/login'
-
-
-const loginButton = document.getElementById('login_button')
-const loginForm = document.getElementById('login_form')
-
-
-console.log(loginForm)
-
-// loginButton.addEventListener('click', async (e) => {
 
 
 
-//   try {
-
-//     const loginEmail = document.getElementById('login_email').value
-//     const loginPassword  = document.getElementById('login_password').value
 
 
-//     console.log(loginEmail, loginPassword)
-
-//     if(!loginEmail || !loginPassword) {
-//       alert('Заполните все поля')
-//       return
-//     }
+// team Form
 
 
-//     const responce = await fetch(urlLogin, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'User-agent': 'learning app',
-//       },
-
-//       body: JSON.stringify({email: loginEmail, password: loginPassword})
-//     })
+const teamUrl = 'http://localhost:9000/api/v1/team'
 
 
-//     const data = await responce.json()
-//     console.log(data)
-//     return data
-
-//   } catch (error) {
-//     console.log(error)
-//   }
-// })
+const teamForm = document.getElementById('team_form');
+console.log(teamForm);
 
 
-// loginForm.addEventListener('submit', async  (e)  =>  {
-//   e.preventDefault()
+teamForm.addEventListener('submit', async (e) => {
+  e.preventDefault()
 
-//   try {
-
-//     const loginEmail = document.getElementById('login_email').value
-//     const loginPassword  = document.getElementById('login_password').value
-
-//     const newForm = new FormData()
-//     newForm.append('email', loginEmail)
-//     newForm.append('password', loginPassword)
+  try {
 
 
-//     const responce = await fetch(urlLogin, {
-//       method: 'POST',
-//       body: newForm
-//     })
+    const teamName = document.getElementById('team_name').value;
+    const teamProfession= document.getElementById('team_profession').value;
+    const teamFile= document.getElementById('team_file').files[0];
 
 
-//     const data = await responce.json()
-//     console.log(data)
-//     return data
+    console.log(teamName);
+    console.log(teamProfession);
+    console.log(teamFile);
 
 
-//   } catch (error) {
-//     console.log(error)
+    const newTeamForm = new FormData();
 
-//   }
-// })
+    newTeamForm.append('name', teamName);
+    newTeamForm.append('profession', teamProfession);
+    newTeamForm.append('file', teamFile);
+
+
+    const responce = await fetch(teamUrl, {
+      method: 'POST',
+      body: newTeamForm
+    })
+
+    const data = responce
+    console.log(data)
+    return data
+
+
+
+  } catch (error) {
+    console.log('при создании карточки произошла ошибка')
+  }
+})
+
+

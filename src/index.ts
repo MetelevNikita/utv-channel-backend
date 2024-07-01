@@ -7,7 +7,8 @@ import path  from  'path';
 
 // module
 
-import loginRouter from './Routes/loginRouter';
+import loginRouter from './Router/loginRouter';
+import teamRouter from './Router/teamRouter';
 
 // middleware
 
@@ -40,6 +41,7 @@ app.use(cookieParser());
 // use routes
 
 app.use('/api/v1', loginRouter)
+app.use('/api/v1', teamRouter)
 
 
 
@@ -50,6 +52,7 @@ app.get('/login', (req, res) => {
   try {
     res.status(200).sendFile(publicPath   +   '/html/login.html')
   } catch (error) {
+    console.error(error)
     res.status(400).sendFile('404.html')
   }
 })
@@ -59,6 +62,7 @@ app.get('/', (req, res) => {
   try {
     res.redirect('/login')
   } catch (error) {
+    console.error(error)
     res.status(400).sendFile('/404.html')
   }
 })
@@ -69,10 +73,25 @@ app.get('/main', authMiddleware, (req, res) => {
 
     res.status(200).sendFile(publicPath  +  '/html/main.html')
    } catch  (error)  {
+    console.error(error)
     res.status(400).sendFile('404.html')
    }
 
 })
+
+
+
+app.get('/main/team', authMiddleware, (req, res) => {
+  try {
+
+    res.status(200).sendFile(publicPath  +  '/html/teamPage.html')
+
+  } catch (error) {
+    console.error(error)
+    res.status(400).sendFile('404.html')
+  }
+})
+
 
 
 app.get('/*', (req, res) => {

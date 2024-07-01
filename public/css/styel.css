@@ -24,10 +24,11 @@ body {
   height: 60px;
   padding-left: 10px;
   outline: none;
-  border-bottom: 1px solid black;
-  margin-bottom: 2px;
+  border: 1px solid black;
+  margin-bottom: 15px;
 
 }
+
 
 .input_button {
   width: 200px;
@@ -36,4 +37,56 @@ body {
   background-color: #f35d1e;
   color: rgb(255, 255, 255);
 
+}
+
+
+
+/* form */
+
+
+.input_form {
+  width: 50%;
+  height: 60px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+
+.input_file {
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.input_form_button {
+  width: 50%;
+  height: 50px;
+  margin-bottom: 20px;
+  background-color: #f35d1e;
+  color: rgb(255, 255, 255);
+}
+
+
+.form-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+
+.form-decription {
+  margin-top: 20px;
+  width: 50%;
+  height: 60px;
+  font-size: 12px;
+}
+
+.select_btn {
+  width: 20%;
+  height: 60px;
+  color: white;
+  background-color: #f35d1e;
+  margin-left: 20px;
 }

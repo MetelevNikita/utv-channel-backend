@@ -37,9 +37,9 @@ teamForm.addEventListener('submit', async (e) => {
   try {
 
 
-    const teamName = document.getElementById('team_name').value;
-    const teamProfession= document.getElementById('team_profession').value;
-    const teamFile= document.getElementById('team_file').files[0];
+    const teamName = document.getElementById('team_name');
+    const teamProfession= document.getElementById('team_profession');
+    const teamFile= document.getElementById('team_file');
 
 
     console.log(teamName);
@@ -49,9 +49,9 @@ teamForm.addEventListener('submit', async (e) => {
 
     const newTeamForm = new FormData();
 
-    newTeamForm.append('name', teamName);
-    newTeamForm.append('profession', teamProfession);
-    newTeamForm.append('file', teamFile);
+    newTeamForm.append('name', teamName.value);
+    newTeamForm.append('profession', teamProfession.value);
+    newTeamForm.append('file', teamFile.files[0]);
 
 
     const responce = await fetch(teamUrl, {
@@ -61,6 +61,12 @@ teamForm.addEventListener('submit', async (e) => {
 
     const data = responce
     console.log(data)
+
+
+    teamForm.reset();
+    alert('карточка сотрудника успешно создана')
+
+
     return data
 
 

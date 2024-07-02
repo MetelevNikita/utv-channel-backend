@@ -19,7 +19,7 @@ const teamCard = (item) => {
 
 
   const teamBox = document.createElement('div');
-  teamBox.classList.add('team_card_box');
+  teamBox.classList.add('col-3', 'mb-4');
 
   const teamCardName =  document.createElement('div');
   teamCardName.classList.add('team_card_name');
@@ -61,6 +61,7 @@ const teamCard = (item) => {
 
   teamCardBtnDelete.addEventListener('click', ()  =>  {
     deleteCard(item.id);
+    location.reload();
   })
 
 
@@ -108,7 +109,6 @@ const deleteCard  =  async  (id)  =>  {
 
   const data = await responce.json();
   console.log(data);
-  window.location.reload();
   return data;
 
 }

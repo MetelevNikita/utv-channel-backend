@@ -56,11 +56,20 @@ body {
 }
 
 
-.input_file {
+
+
+.input_file[type="file"]::file-selector-button {
+  height: 60px;
   width: 50%;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  background: red;
+  border: none;
+  background-color: #f35d1e;
+  border-radius: 10px;
+  color: white;
 }
+
+
+
 
 
 .input_form_button {
@@ -97,6 +106,14 @@ body {
 }
 
 
+/* input-file */
+
+
+
+
+
+
+
 
 /* team page */
 
@@ -110,7 +127,7 @@ body {
 /* team card style */
 
 .team_card_box {
-  width: 300px;
+  width: 180px;
   height: max-content;
 }
 
@@ -125,7 +142,7 @@ body {
 .team_card_profession {
   margin-top: 10px;
   width: 100%;
-  height: max-content;
+  height: 50px;
   font-size: 14px;
   font-weight: 300;
 }
@@ -140,8 +157,9 @@ body {
 
 .team_card_btn {
   width: 140px;
-  height: 60px;
+  height: 30px;
   color: white;
+  font-size: 12px;
   background-color: #f35d1e;
   border-radius: 10px;
   margin-left: 5px;

@@ -80,6 +80,17 @@ const updateTeam   = async  (req: Request  | any, res: Response  | any)  =>  {
   console.log(req.files)
 
    const  { id, name, profession  }  = req.body;
+
+
+   if(!req.file)   {
+
+    res.status(400).send(`Не прислана картинка`);
+    console.log('карточка не прислана')
+    return
+
+   }
+
+
    const imageFile = req.file.originalname;
    const fullUrl = req.protocol + '://' + req.get('host') + '/image/team/' + imageFile;
 

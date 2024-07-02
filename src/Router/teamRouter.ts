@@ -28,7 +28,7 @@ teamRouter.get("/team/:id", getSingleTeam)
 
 teamRouter.post("/team", upload.single('file'), postTeam)
 
-teamRouter.put("/team", updateTeam)
+teamRouter.put("/team", upload.single('file'), updateTeam)
 
 teamRouter.delete("/team/:id", deleteTeam)
 

@@ -16,7 +16,7 @@ import authMiddleware from './middleware/authMiddleware';
 
 
 const publicPath  =  path.join(__dirname, '..',  'public');
-console.log(publicPath)
+console.log(publicPath + '/js')
 
 
 
@@ -33,6 +33,7 @@ const pid = process.pid
 // use
 
 app.use(express.static("public"));
+app.use(express.static(publicPath + "/js"))
 app.use(bodyParser.json())
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -90,6 +91,19 @@ app.get('/main/team', authMiddleware, (req, res) => {
     console.error(error)
     res.status(400).sendFile('404.html')
   }
+})
+
+
+
+app.get('/team/:id', (req, res) => {
+  try {
+    res.status(200).sendFile(publicPath  +  '/html/teamCard.html')
+
+  } catch (error) {
+    console.error(error)
+    res.status(400).sendFile('404.html')
+  }
+
 })
 
 

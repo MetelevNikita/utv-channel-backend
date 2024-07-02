@@ -8,7 +8,7 @@ const getTeam = async (req: Request | any, res: Response | any) => {
     const getTeam = await pool.query(`SELECT * FROM team`);
 
     if(getTeam.rows.length <= 0)  {
-      res.status(400).send(`Список с командой пуст`);
+      res.status(400).send([]);
       return
     }
 
@@ -27,7 +27,7 @@ const getSingleTeam = async (req: Request | any, res: Response | any) => {
 
     const { id } = req.params;
 
-    const getSingleTeam  = await pool.query('SELCET * FROM team WHERE id = $1', [id])
+    const getSingleTeam  = await pool.query('SELECT * FROM team WHERE id = $1', [id])
 
     if(!getSingleTeam.rows[0])  {
       res.status(400).send(`Сотрудник с таким id не найден`);
@@ -75,15 +75,16 @@ const updateTeam   = async  (req: Request  | any, res: Response  | any)  =>  {
 
   try  {
 
+
+  console.log(req.body);
+  console.log(req.files)
+
    const  { id, name, profession  }  = req.body;
-   const  { image  }  = req.files;
+   const imageFile = req.file.originalname;
+   const fullUrl = req.protocol + '://' + req.get('host') + '/image/team/' + imageFile;
 
-   if(!name   || !profession   || !image)    {
-     res.status(400).send(`Заполните все поля`);
-     return;
-    }
 
-   const updateTeam  = await pool.query(`UPDATE team SET name = $1, profession = $2, image = $3 WHERE id = $4 RETURNING *`,[name, profession, image, id]);
+   const updateTeam  = await pool.query(`UPDATE team SET name = $1, profession = $2, image = $3 WHERE id = $4 RETURNING *`,[name, profession, fullUrl, id]);
 
    if(!updateTeam.rows[0])  {
     res.status(400).send(`Карточка сотрудника не изменена`);
@@ -113,7 +114,7 @@ const deleteTeam  = async  (req: Request  | any, res: Response  | any)  =>  {
 
     }
 
-    res.status(200).send(deleteTeam.rows[0]);
+    res.status(200).json({message: 'Карточка удалена'});
 
   } catch (error) {
     console.log(error);

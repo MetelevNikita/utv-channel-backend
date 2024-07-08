@@ -36,24 +36,49 @@
 
       <form class="col d-flex flex-column d-flex align-items-center justify-content-center" name="team_form" id="team_form" enctype="multipart/form-data">
 
-
         <div class="col-md-6 flex-row d-flex align-items-center justify-content-center mb-5">
-
-
           <h3 class="form-title">Создайте пользователя в команду</h3>
           <button class="select_btn" id="select_team_btn">посмотреть карточки</button>
-
         </div>
 
         <input type="text", id="team_name" class="input_form input_team_name" name="team_name" placeholder="введите ФИО" required>
         <input type="text", id="team_profession" class="input_form input_team_profession" name="team_profession" placeholder="введите профессию" required>
         <input type="file" id="team_file" name="file" class="input_file" title="загрузите изображение" required>
 
-
-
         <span class="form-decription">Изображение должно быть вертикальное, и подписано ФИО сотрудника</span>
-
         <input type="submit" id="login_button" class="input_form_button" value="Создать">
+
+      </form>
+
+
+
+      <form class="col d-flex flex-column d-flex align-items-center justify-content-center mt-5" name="project_form" id="project_form" enctype="multipart/form-data">
+
+
+        <div class="col-md-6 flex-row d-flex align-items-center justify-content-center mb-5">
+          <h3 class="form-title">Создайте карточку проекта</h3>
+          <button class="select_btn" id="select_project_btn">посмотреть карточки</button>
+        </div>
+
+
+
+        <input type="text", id="project_title" class="input_form input_project_title" name="project_title" placeholder="введите название" required>
+        <textarea name="project_description" class="input_area input_project_description" id="project_description" rows="8" placeholder="введите описание передачи" required></textarea>
+
+        <input type="number", id="project_duration" class="input_form input_project_duration" name="project_duration" placeholder="введите хронометраж выпуска" required>
+        <input type="number", id="project_year" class="input_form input_project_year" name="project_year" placeholder="введите года создания" required>
+        <input type="text", id="project_author" class="input_form input_project_author" name="project_author" placeholder="ФИО автора" required>
+
+
+        <input type="text", id="project_channel" class="input_form input_project_link_channel" name="project_link_channel" placeholder="ссылка на канал Youtube" required>
+        <input type="text", id="project_trailer" class="input_form input_project_link_trailer" name="project_link_trailer" placeholder="ссылка на трейлер Youtube" required>
+
+
+        <input type="file" id="project_file" name="file" class="input_file" title="загрузите изображение" required>
+
+        <span class="form-decription">Изображение должно быть горизонтальное, и подписано названием передачи</span>
+        <input type="submit" id="login_project_button" class="input_form_button" value="Создать">
+
 
       </form>
 

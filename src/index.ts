@@ -9,6 +9,7 @@ import path  from  'path';
 
 import loginRouter from './Router/loginRouter';
 import teamRouter from './Router/teamRouter';
+import projectRouter from './Router/projectRouter';
 
 // middleware
 
@@ -43,6 +44,7 @@ app.use(cookieParser());
 
 app.use('/api/v1', loginRouter)
 app.use('/api/v1', teamRouter)
+app.use('/api/v1', projectRouter)
 
 
 
@@ -81,6 +83,7 @@ app.get('/main', authMiddleware, (req, res) => {
 })
 
 
+// team
 
 app.get('/main/team', authMiddleware, (req, res) => {
   try {

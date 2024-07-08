@@ -1,7 +1,6 @@
 // submit to team page
 
 const selectTeamBtn = document.getElementById('select_team_btn');
-console.log(selectTeamBtn);
 
 selectTeamBtn.addEventListener('click', async  (e)  =>  {
   e.preventDefault();
@@ -23,8 +22,6 @@ selectTeamBtn.addEventListener('click', async  (e)  =>  {
 
 
 const teamUrl = 'http://localhost:9000/api/v1/team'
-
-
 const teamForm = document.getElementById('team_form');
 
 
@@ -67,10 +64,8 @@ teamForm.addEventListener('submit', async (e) => {
 
 
 const projectUrl  =  'http://localhost:9000/api/v1/project'
-
-
 const projectForm = document.getElementById('project_form');
-console.log(projectForm);
+
 
 
 
@@ -124,4 +119,25 @@ projectForm.addEventListener('submit', async  (e)  =>  {
     console.log(`произошла ошибка  ${error}`)
   }
 })
+
+
+
+
+// news form
+
+
+const newsForm = document.getElementById('news_form');
+const newsSubmit = document.getElementById('login_news_button');
+
+
+
+const newText = document.createElement('textarea')
+newText.setAttribute('class', 'md-8 input_area')
+newText.setAttribute('id', 'new_text')
+newText.setAttribute('placeholder',  'напишите новость')
+newText.setAttribute('rows',  '8')
+
+
+newsForm.insertBefore(newText, newsSubmit)
+
 

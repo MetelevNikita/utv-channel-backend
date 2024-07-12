@@ -1,3 +1,6 @@
+
+
+
 // submit to team page
 
 const selectTeamBtn = document.getElementById('select_team_btn');
@@ -122,22 +125,250 @@ projectForm.addEventListener('submit', async  (e)  =>  {
 
 
 
+// text toolbar
+
+
+const textStyle = ['overline', 'line-through']
+const fontStyle = ['serif','sans-serif', 'cursive', 'fantasy','monospace']
+const fontBold = ['bold', 'regular', 'thin']
+
+
+const textStyleSelect = document.createElement('select')
+textStyleSelect.setAttribute('id', 'text_style')
+textStyleSelect.setAttribute('class', 'select_style')
+for (let i = 0; i < textStyle.length; i++) {
+  const option = document.createElement('option')
+  option.value = textStyle[i]
+  option.textContent = textStyle[i]
+  textStyleSelect.appendChild(option)
+}
+
+const fontStyleSelect = document.createElement('select')
+fontStyleSelect.setAttribute('id', 'font_style')
+fontStyleSelect.setAttribute('class', 'select_style')
+for (let i = 0; i < fontStyle.length; i++) {
+  const option = document.createElement('option')
+  option.value = fontStyle[i]
+  option.textContent = fontStyle[i]
+  fontStyleSelect.appendChild(option)
+}
+
+const fontBoldSelect = document.createElement('select')
+fontBoldSelect.setAttribute('id', 'text_style')
+fontBoldSelect.setAttribute('class', 'select_style')
+for (let i = 0; i < fontBold.length; i++) {
+  const option = document.createElement('option')
+  option.value = fontBold[i]
+  option.textContent = fontBold[i]
+  fontBoldSelect.appendChild(option)
+
+}
+
+
+
+
+
+
 
 // news form
 
 
+const tagBox = document.getElementById('tag_news_box')
+
+// news categorySelector
+
+
+const categoryArr = ['Все новости', 'Политика', 'Экономика', 'Общество', 'В мире', 'Криминал', 'Cпорт', 'Технологии', 'Здоровье', 'Культура', 'Искуство']
+const selectedTags = []
+
+
+const newsCategory = document.getElementById('news_category');
+const newsCategoryBox = document.getElementById('news_category_box')
+
+for (let i = 0; i < categoryArr.length; i++) {
+  const option = document.createElement('option')
+  option.value = categoryArr[i]
+  option.textContent = categoryArr[i]
+  newsCategory.append(option)
+}
+
+
+newsCategory.addEventListener('change', (e) => {
+  selectedTags.push(e.target.value)
+
+  const tag = document.createElement('div')
+  tag.setAttribute('id', 'news_tag')
+  tag.setAttribute('class', 'news_tag md-2')
+  tag.textContent = e.target.value
+  tagBox.appendChild(tag)
+
+})
+
+
+
+
+const arrArea = []
+
+const newsTextArea = document.createElement('textarea')
+newsTextArea.setAttribute('id', `news_text_${arrArea.length + 1}`);
+newsTextArea.setAttribute('placeholder', 'Введите текст новости');
+newsTextArea.setAttribute('rows', '6')
+newsTextArea.setAttribute('name', 'news_text_area');
+newsTextArea.setAttribute('class', 'input_area input_news_description')
+
+
+
+
 const newsForm = document.getElementById('news_form');
-const newsSubmit = document.getElementById('login_news_button');
+
+let textNum = 1
+let textArr = []
+let fileNum = 1
+let fileArr = []
+let commentNum = 1
+let commentArr = []
+
+
+const btnNewsText = document.getElementById('btn_news_text');
+const btnNewsFile = document.getElementById('btn_news_file');
+const btnNewsComment = document.getElementById('btn_news_comment')
+const btnNewsBox = document.getElementById('btn_news_box');
+const submitNewsBtn = document.getElementById('login_news_button')
+
+
+btnNewsText.addEventListener('click', (e)  =>  {
+
+  e.preventDefault()
+
+  const newText = textNum++
+  const newsTextArea = document.createElement('textarea')
+  newsTextArea.setAttribute('id', `news_text_${newText}`);
+  newsTextArea.setAttribute('placeholder', 'Введите текст новости');
+  newsTextArea.setAttribute('rows', '6')
+  newsTextArea.setAttribute('name', 'news_text_area');
+  newsTextArea.setAttribute('class', 'input_area input_news_description')
+
+  btnNewsBox.insertAdjacentElement('beforebegin', newsTextArea)
+  return textArr.push(newsTextArea)
+
+})
 
 
 
-const newText = document.createElement('textarea')
-newText.setAttribute('class', 'md-8 input_area')
-newText.setAttribute('id', 'new_text')
-newText.setAttribute('placeholder',  'напишите новость')
-newText.setAttribute('rows',  '8')
+btnNewsFile.addEventListener('click',  (e)  =>  {
+  e.preventDefault()
 
 
-newsForm.insertBefore(newText, newsSubmit)
+  const newFileNum = fileNum++
+  const newsFile = document.createElement('input')
+  newsFile.setAttribute('type', 'file')
+  newsFile.setAttribute('id', `news_file_${newFileNum}`)
+  newsFile.setAttribute('name', `file_${newFileNum}`)
+  newsFile.setAttribute('class', 'input_file d-flex mt-2 mb-4')
+  newsFile.setAttribute('text', `загрузите изображение ${newFileNum}`)
+  newsFile.setAttribute('required', 'required')
+  console.log(newsFile)
 
 
+  btnNewsBox.insertAdjacentElement('beforebegin', newsFile)
+  return fileArr.push(newsFile)
+
+
+})
+
+
+btnNewsComment.addEventListener('click', (e) => {
+
+  e.preventDefault()
+
+  const newComment = commentNum++
+
+  const newCommentDiv = document.createElement('div')
+  newCommentDiv.setAttribute('id', 'news_comment_div')
+  newCommentDiv.setAttribute('class', 'news_comment_div')
+  const newsComment = document.createElement('input')
+  newsComment.setAttribute('type', 'text')
+  newsComment.setAttribute('id', `news_comment_${newComment}`)
+  newsComment.setAttribute('class', 'input_form')
+  newsComment.setAttribute('placeholder', 'Введите комментарий')
+  newsComment.setAttribute('name', `comment_${newComment}`)
+
+
+  newCommentDiv.appendChild(fontBoldSelect)
+  newCommentDiv.appendChild(fontStyleSelect)
+  newCommentDiv.appendChild(textStyleSelect)
+  newCommentDiv.appendChild(newsComment)
+
+
+  btnNewsBox.insertAdjacentElement('beforebegin', newCommentDiv)
+  return commentArr.push(newsComment)
+
+})
+
+
+
+
+newsForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+  try {
+
+    const newsTitle = document.getElementById('news_title').value;
+    const newsAuthor = document.getElementById('news_author').value;
+    const newsDate = document.getElementById('news_date').value;
+    const newsVideo = document.getElementById('news_video').value
+    const tags = selectedTags.join(' ')
+
+
+
+    const newFormNews = new FormData();
+    newFormNews.append('title', newsTitle);
+    newFormNews.append('author', newsAuthor);
+    newFormNews.append('date', newsDate);
+    newFormNews.append('video', newsVideo)
+    newFormNews.append('tags', tags);
+
+
+    if(textArr.length >= 1) {
+      console.log('есть тексты')
+      for (let i = 0; i < textArr.length; i++) {
+        newFormNews.append(`text_${i}`, textArr[i].value)
+      }
+    }
+
+
+    if(fileArr.length >= 1) {
+      console.log('есть файлы')
+      for (let i = 0; i < fileArr.length; i++) {
+        newFormNews.append(`file_${i}`, fileArr[i].files[0])
+      }
+
+    }
+
+
+
+
+    if(commentArr.length >= 1) {
+      console.log('есть комментарии')
+      for (let i = 0; i < commentArr.length; i++) {
+
+        const newObj = JSON.stringify({
+          input: commentArr[i].value,
+          fontStyle: fontStyleSelect.value,
+          textStyle: textStyleSelect.value,
+          fontBold: fontBoldSelect.value
+        })
+
+        console.log(newObj)
+        newFormNews.append(`comment_${i}`, newObj)
+      }
+
+    }
+
+
+    console.log(...newFormNews)
+
+  } catch (error) {
+    console.log('произошла ошибка')
+  }
+})

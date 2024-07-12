@@ -4,7 +4,8 @@ import bodyParser from  'body-parser';
 import cookieParser from 'cookie-parser'
 import dotenv from  'dotenv'
 import path  from  'path';
-
+import helmet from 'helmet';
+import morgan from 'morgan'
 // module
 
 import loginRouter from './Router/loginRouter';
@@ -39,6 +40,8 @@ app.use(bodyParser.json())
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(helmet());
+app.use(morgan('dev'));
 
 // use routes
 

@@ -34,7 +34,13 @@
       </div>
 
 
+
+      <!-- team -->
+
+
       <form class="col d-flex flex-column d-flex align-items-center justify-content-center" name="team_form" id="team_form" enctype="multipart/form-data">
+
+        <h1 class="title_theme d-flex justify-content-center mt-5 mb-5">Команда</h1>
 
         <div class="col-md-6 flex-row d-flex align-items-center justify-content-center mb-5">
           <h3 class="form-title">Создайте пользователя в команду</h3>
@@ -51,16 +57,18 @@
       </form>
 
 
+      <!-- project -->
+
+
 
       <form class="col d-flex flex-column d-flex align-items-center justify-content-center mt-5" name="project_form" id="project_form" enctype="multipart/form-data">
 
+        <h1 class="title_theme d-flex justify-content-center mt-5 mb-5">Проекты</h1>
 
         <div class="col-md-6 flex-row d-flex align-items-center justify-content-center mb-5">
           <h3 class="form-title">Создайте карточку проекта</h3>
           <button class="select_btn" id="select_project_btn">посмотреть карточки</button>
         </div>
-
-
 
         <input type="text", id="project_title" class="input_form input_project_title" name="project_title" placeholder="введите название" required>
         <textarea name="project_description" class="input_area input_project_description" id="project_description" rows="8" placeholder="введите описание передачи" required></textarea>
@@ -86,16 +94,43 @@
 
 
 
-
+      <!-- news -->
 
 
 
       <form class="col d-flex flex-column d-flex align-items-center justify-content-center mt-5" name="news_form" id="news_form" enctype="multipart/form-data">
 
+        <h1 class="title_theme d-flex justify-content-center mt-5 mb-5">Новости</h1>
 
         <div class="col-md-6 flex-row d-flex align-items-center justify-content-center mb-5" id="create_block">
           <h3 class="form-title">Создайте карточку проекта</h3>
           <button class="select_btn" id="select_project_btn">посмотреть карточки</button>
+        </div>
+
+
+        <input type="text", id="news_title" class="input_form input_news_title" name="news_title" placeholder="введите название" required>
+
+        <div class="news_info_block d-flex">
+          <input type="text", id="news_author" class="input_form input_news_author" name="news_author" placeholder="введите ФИО автора" required>
+          <input type="date", id="news_date" class="input_form input_news_date" name="news_date" placeholder="введите дату" required>
+        </div>
+
+        <input type="text", id="news_video" class="input_form input_news_video" name="news_title" placeholder="введите ссылку до видео" required>
+
+        <div class="tag_news_box d-flex md-12 justify-content-between align-items-center" id="tag_news_box">
+
+          <select class="news_category d-flex align-items-center md-6" name="news_category" id="news_category"></select>
+          <div class="news_categroy_container md-6 d-flex flex-wrap" id="news_category_container"></div>
+
+        </div>
+
+
+        <div class="btn_news_box d-flex" id="btn_news_box">
+
+          <button class="btn_news btn_news_add_input_text d-flex mb-4 justify-content-center align-items-center" id="btn_news_text">Абзац</button>
+          <button class="btn_news btn_news_add_input_file d-flex mb-4 justify-content-center align-items-center" id="btn_news_file">Картинка</button>
+          <button class="btn_news btn_news_add_input_comment d-flex mb-4 justify-content-center align-items-center" id="btn_news_comment">Комментарий</button>
+
         </div>
 
 
@@ -105,6 +140,10 @@
 
 
       </form>
+
+
+
+
 
 
 

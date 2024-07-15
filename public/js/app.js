@@ -192,7 +192,6 @@ for (let i = 0; i < categoryArr.length; i++) {
   newsCategory.append(option)
 }
 
-
 newsCategory.addEventListener('change', (e) => {
   selectedTags.push(e.target.value)
 
@@ -254,7 +253,6 @@ btnNewsText.addEventListener('click', (e)  =>  {
 })
 
 
-
 btnNewsFile.addEventListener('click',  (e)  =>  {
   e.preventDefault()
 
@@ -308,12 +306,17 @@ btnNewsComment.addEventListener('click', (e) => {
 
 
 
-newsForm.addEventListener('submit', (e) => {
+
+const newsUrl  =  'http://localhost:9000/api/v1/news'
+
+
+newsForm.addEventListener('submit', async (e) => {
   e.preventDefault()
 
   try {
 
     const newsTitle = document.getElementById('news_title').value;
+    const newsLead = document.getElementById('news_lead').value;
     const newsAuthor = document.getElementById('news_author').value;
     const newsDate = document.getElementById('news_date').value;
     const newsVideo = document.getElementById('news_video').value
@@ -321,31 +324,34 @@ newsForm.addEventListener('submit', (e) => {
 
 
 
-    const newFormNews = new FormData();
-    newFormNews.append('title', newsTitle);
-    newFormNews.append('author', newsAuthor);
-    newFormNews.append('date', newsDate);
-    newFormNews.append('video', newsVideo)
-    newFormNews.append('tags', tags);
+    const newNewsForm = new FormData();
+    newNewsForm.append('title', newsTitle);
+    newNewsForm.append('lead', newsLead)
+    newNewsForm.append('author', newsAuthor);
+    newNewsForm.append('date', newsDate);
+    newNewsForm.append('video', newsVideo)
+    newNewsForm.append('tags', tags);
 
 
     if(textArr.length >= 1) {
       console.log('есть тексты')
       for (let i = 0; i < textArr.length; i++) {
-        newFormNews.append(`text_${i}`, textArr[i].value)
+        newNewsForm.append(`text_${i+1}`, textArr[i].value)
       }
+    } else {
+      console.log('нет текстов')
     }
 
 
     if(fileArr.length >= 1) {
       console.log('есть файлы')
       for (let i = 0; i < fileArr.length; i++) {
-        newFormNews.append(`file_${i}`, fileArr[i].files[0])
+        newNewsForm.append(`file_${i+1}`, fileArr[i].files[0])
       }
 
+    } else {
+      console.log('нет файлов')
     }
-
-
 
 
     if(commentArr.length >= 1) {
@@ -360,15 +366,43 @@ newsForm.addEventListener('submit', (e) => {
         })
 
         console.log(newObj)
-        newFormNews.append(`comment_${i}`, newObj)
+        newNewsForm.append(`comment_${i+1}`, newObj)
       }
-
+    } else {
+      console.log('нет комментариев')
     }
 
 
-    console.log(...newFormNews)
+
+      const responce = await fetch(newsUrl, {
+        method: 'POST',
+        body: newNewsForm
+      })
+
+
+      const data = responce
+
+      if (responce.status === 200) {
+        newsForm.reset();
+        console.log(data)
+        alert('карточка проекта успешно создана')
+        return data
+
+      }
+
+
+
+
 
   } catch (error) {
-    console.log('произошла ошибка')
+    console.log('произошла ошибка' + error)
   }
 })
+
+
+
+
+
+
+
+

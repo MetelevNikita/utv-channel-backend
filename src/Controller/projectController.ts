@@ -47,8 +47,11 @@ const getOneProject  = async(req: any, res: any)  =>  {
 
 
 
-const postProject  = async(req: any, res: any)  =>  {
+const postProject  = async (req: any, res: any)  =>  {
   try {
+
+
+    console.log(req.body);
 
     const { title, description, duration, year, author, channel, trailer } = req.body;
     const imageFile = req.file.originalname;

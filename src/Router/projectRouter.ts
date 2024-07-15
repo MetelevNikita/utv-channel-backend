@@ -14,7 +14,7 @@ const upload = multer({ storage: storageUtil('project') });
 const projectRouter = Router();
 
 projectRouter.get("/project", getProjects)
-projectRouter.get("project/:id", getOneProject)
+projectRouter.get("/project/:id", getOneProject)
 projectRouter.post("/project", upload.single('file'), postProject)
 projectRouter.put("/phoject", upload.single('file'), updateProject)
 projectRouter.delete("/project/:id", deleteProject)

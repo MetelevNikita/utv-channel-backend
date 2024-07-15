@@ -34,12 +34,13 @@ create TABLE news (
 
   id SERIAL PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
+  lead VARCHAR(100) NOT NULL,
   author VARCHAR(255) NOT NULL,
   date VARCHAR NOT NULL,
   video VARCHAR(255),
   text_1 VARCHAR,
   image_1 VARCHAR,
-  comment_1 VARCHAR
+  comment_1 VARCHAR,
   text_2 VARCHAR,
   image_2 VARCHAR,
   comment_2 VARCHAR,
@@ -57,7 +58,7 @@ create TABLE news (
   comment_6 VARCHAR,
   text_7 VARCHAR,
   image_7 VARCHAR,
-  comment_7 VARCHAR
+  comment_7 VARCHAR,
   text_8 VARCHAR,
   image_8 VARCHAR,
   comment_8 VARCHAR,
@@ -65,7 +66,6 @@ create TABLE news (
   image_9 VARCHAR,
   comment_9 VARCHAR,
   text_10 VARCHAR,
-  image_10 VARCHAR
-  comment_10 VARCHAR,
-
-)
+  image_10 VARCHAR,
+  comment_10 VARCHAR
+);

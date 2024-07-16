@@ -67,5 +67,7 @@ create TABLE news (
   comment_9 VARCHAR,
   text_10 VARCHAR,
   image_10 VARCHAR,
-  comment_10 VARCHAR
+  comment_10 VARCHAR,
+  tags VARCHAR(255) NOT NULL,
+  views INT NOT NULL
 );

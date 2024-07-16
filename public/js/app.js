@@ -128,8 +128,8 @@ projectForm.addEventListener('submit', async  (e)  =>  {
 // text toolbar
 
 
-const textStyle = ['overline', 'line-through']
-const fontStyle = ['serif','sans-serif', 'cursive', 'fantasy','monospace']
+const textStyle = ['underline', 'underline dotted', 'green wavy underline']
+const fontStyle = ['normal','italic', 'cursive', 'italic']
 const fontBold = ['bold', 'regular', 'thin']
 
 
@@ -321,6 +321,7 @@ newsForm.addEventListener('submit', async (e) => {
     const newsDate = document.getElementById('news_date').value;
     const newsVideo = document.getElementById('news_video').value
     const tags = selectedTags.join(' ')
+    const views = 0
 
 
 
@@ -331,6 +332,7 @@ newsForm.addEventListener('submit', async (e) => {
     newNewsForm.append('date', newsDate);
     newNewsForm.append('video', newsVideo)
     newNewsForm.append('tags', tags);
+    newNewsForm.append('views', views)
 
 
     if(textArr.length >= 1) {

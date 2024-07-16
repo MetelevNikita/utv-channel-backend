@@ -6,6 +6,8 @@ import dotenv from  'dotenv'
 import path  from  'path';
 import helmet from 'helmet';
 import morgan from 'morgan'
+import fs from 'fs';
+
 // module
 
 import loginRouter from './Router/loginRouter';
@@ -16,6 +18,7 @@ import newsRouter from './Router/newsRouter';
 // middleware
 
 import authMiddleware from './middleware/authMiddleware';
+import { newsFolderNews } from './util/newsFolderDay';
 
 
 const publicPath  =  path.join(__dirname, '..',  'public');
@@ -24,12 +27,15 @@ console.log(publicPath + '/js')
 
 
 
-
-
-
 const app = express();
 dotenv.config()
 const pid = process.pid
+const date = new Date();
+const day = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+
+console.log(`PID:${pid}`)
+
+newsFolderNews(day)
 
 
 
@@ -43,7 +49,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(cookieParser());
-// app.use(helmet());
+app.use(helmet());
 app.use(morgan('dev'));
 
 // use routes
@@ -104,7 +110,6 @@ app.get('/main/team', authMiddleware, (req, res) => {
 })
 
 
-
 app.get('/team/:id', (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/teamCard.html')
@@ -117,6 +122,10 @@ app.get('/team/:id', (req, res) => {
 })
 
 
+
+
+
+// other
 
 app.get('/*', (req, res) => {
   try  {

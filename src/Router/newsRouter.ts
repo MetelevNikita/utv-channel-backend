@@ -7,13 +7,21 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { getNews, getSingleNews, postNews, updateNews, deleteNews } from '../Controller/newsController'
 import { storageUtil } from "../util/storageUtil";
+import { storageUtilNews } from "../util/storageUtilNews"
+
+
+
 
 
 //
 
 
-const upload = multer({storage: storageUtil('news')});
+const date = new Date();
+const day = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+const upload = multer({storage: storageUtilNews(day)});
 
+
+// 
 
 const newsRouter = Router();
 

@@ -110,7 +110,7 @@ app.get('/main/team', authMiddleware, (req, res) => {
 })
 
 
-app.get('/team/:id', (req, res) => {
+app.get('/team/:id', authMiddleware, (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/teamCard.html')
 
@@ -121,6 +121,17 @@ app.get('/team/:id', (req, res) => {
 
 })
 
+
+// news
+
+app.get('/main/news', authMiddleware, (req, res) => {
+  try {
+    res.status(200).sendFile(publicPath  +  '/html/newsPage.html')
+  } catch (error) {
+    console.error(error)
+    res.status(400).sendFile('404.html')
+  }
+})
 
 
 

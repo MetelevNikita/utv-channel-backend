@@ -128,8 +128,8 @@ projectForm.addEventListener('submit', async  (e)  =>  {
 // text toolbar
 
 
-const textStyle = ['underline', 'underline dotted', 'green wavy underline']
-const fontStyle = ['normal','italic', 'cursive', 'italic']
+const textStyle = ['none', 'underline', 'underline dotted', 'green wavy underline']
+const fontStyle = ['normal','italic']
 const fontBold = ['bold', 'regular', 'thin']
 
 
@@ -171,6 +171,16 @@ for (let i = 0; i < fontBold.length; i++) {
 
 
 // news form
+
+
+const selectNewsPage = document.getElementById('select_news_btn')
+
+console.log(selectNewsPage)
+
+
+selectNewsPage.addEventListener('click', () => {
+  window.location.href ='main/news'
+})
 
 
 const tagBox = document.getElementById('tag_news_box')
@@ -239,6 +249,18 @@ btnNewsText.addEventListener('click', (e)  =>  {
 
   e.preventDefault()
 
+  const textAreaBox = document.createElement('div')
+  textAreaBox.setAttribute('id', `text_area_box_${textNum}`);
+  textAreaBox.setAttribute('class', 'text_area_box')
+
+
+  const closeButton = document.createElement('div')
+  closeButton.setAttribute('class', 'close-btn')
+  closeButton.setAttribute('id', 'close-button')
+  closeButton.textContent = 'x'
+
+
+
   const newText = textNum++
   const newsTextArea = document.createElement('textarea')
   newsTextArea.setAttribute('id', `news_text_${newText}`);
@@ -247,14 +269,37 @@ btnNewsText.addEventListener('click', (e)  =>  {
   newsTextArea.setAttribute('name', 'news_text_area');
   newsTextArea.setAttribute('class', 'input_area input_news_description')
 
-  btnNewsBox.insertAdjacentElement('beforebegin', newsTextArea)
-  return textArr.push(newsTextArea)
+  textAreaBox.appendChild(newsTextArea)
+  textAreaBox.appendChild(closeButton)
 
+
+  btnNewsBox.insertAdjacentElement('beforebegin', textAreaBox)
+
+  closeButton.addEventListener('click', (e)  =>  {
+    textAreaBox.remove()
+  })
+
+  return textArr.push(newsTextArea)
 })
+
+
+
 
 
 btnNewsFile.addEventListener('click',  (e)  =>  {
   e.preventDefault()
+
+
+
+  const textAreaBox = document.createElement('div')
+  textAreaBox.setAttribute('id', `text_area_box_${textNum}`);
+  textAreaBox.setAttribute('class', 'text_area_box_file')
+
+
+  const closeButton = document.createElement('div')
+  closeButton.setAttribute('class', 'close-btn-file')
+  closeButton.setAttribute('id', 'close-button')
+  closeButton.textContent = 'x'
 
 
   const newFileNum = fileNum++
@@ -268,7 +313,16 @@ btnNewsFile.addEventListener('click',  (e)  =>  {
   console.log(newsFile)
 
 
-  btnNewsBox.insertAdjacentElement('beforebegin', newsFile)
+  textAreaBox.appendChild(newsFile)
+  textAreaBox.appendChild(closeButton)
+
+
+  btnNewsBox.insertAdjacentElement('beforebegin', textAreaBox)
+
+  closeButton.addEventListener('click', (e)  =>  {
+    textAreaBox.remove()
+  })
+
   return fileArr.push(newsFile)
 
 
@@ -279,8 +333,20 @@ btnNewsComment.addEventListener('click', (e) => {
 
   e.preventDefault()
 
-  const newComment = commentNum++
 
+  const textAreaBox = document.createElement('div')
+  textAreaBox.setAttribute('id', `text_area_box_${textNum}`);
+  textAreaBox.setAttribute('class', 'text_area_box')
+
+
+  const closeButton = document.createElement('div')
+  closeButton.setAttribute('class', 'close-btn')
+  closeButton.setAttribute('id', 'close-button')
+  closeButton.textContent = 'x'
+
+
+
+  const newComment = commentNum++
   const newCommentDiv = document.createElement('div')
   newCommentDiv.setAttribute('id', 'news_comment_div')
   newCommentDiv.setAttribute('class', 'news_comment_div')
@@ -298,7 +364,17 @@ btnNewsComment.addEventListener('click', (e) => {
   newCommentDiv.appendChild(newsComment)
 
 
-  btnNewsBox.insertAdjacentElement('beforebegin', newCommentDiv)
+
+  textAreaBox.appendChild(newCommentDiv)
+  textAreaBox.appendChild(closeButton)
+
+
+  btnNewsBox.insertAdjacentElement('beforebegin', textAreaBox)
+
+  closeButton.addEventListener('click', (e)  =>  {
+    textAreaBox.remove()
+  })
+
   return commentArr.push(newsComment)
 
 })
@@ -391,10 +467,6 @@ newsForm.addEventListener('submit', async (e) => {
         return data
 
       }
-
-
-
-
 
   } catch (error) {
     console.log('произошла ошибка' + error)

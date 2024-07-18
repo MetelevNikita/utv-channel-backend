@@ -168,19 +168,7 @@ for (let i = 0; i < fontBold.length; i++) {
 
 
 
-
-
 // news form
-
-
-const selectNewsPage = document.getElementById('select_news_btn')
-
-console.log(selectNewsPage)
-
-
-selectNewsPage.addEventListener('click', () => {
-  window.location.href ='main/news'
-})
 
 
 const tagBox = document.getElementById('tag_news_box')
@@ -282,10 +270,6 @@ btnNewsText.addEventListener('click', (e)  =>  {
   return textArr.push(newsTextArea)
 })
 
-
-
-
-
 btnNewsFile.addEventListener('click',  (e)  =>  {
   e.preventDefault()
 
@@ -327,7 +311,6 @@ btnNewsFile.addEventListener('click',  (e)  =>  {
 
 
 })
-
 
 btnNewsComment.addEventListener('click', (e) => {
 
@@ -378,8 +361,6 @@ btnNewsComment.addEventListener('click', (e) => {
   return commentArr.push(newsComment)
 
 })
-
-
 
 
 
@@ -476,6 +457,86 @@ newsForm.addEventListener('submit', async (e) => {
 
 
 
+// submit to news page
+
+
+const selectNewsBtn = document.getElementById('select_news_btn')
+
+selectNewsBtn.addEventListener('click', () => {
+
+  try {
+    window.location.href ='main/news'
+  } catch (error) {
+    console.error(error)
+  }
+
+})
+
+
+
+
+
+// program form
+
+const programForm = document.getElementById('program_form')
+console.log(programForm)
+
+programForm.addEventListener('submit', async (e) => {
+  e.preventDefault()
+  try {
+
+    const programDate = document.getElementById('program_date').value
+    const programTitle = document.getElementById('program_title').value;
+    const programSubtitle = document.getElementById('program_subtitle').value;
+    const programDescription = document.getElementById('program_description').value
+    const programLink = document.getElementById('program_link').value
+    const programFile = document.getElementById('program_file').files[0]
+
+
+
+    const programData = new FormData()
+    programData.append('date', programDate)
+    programData.append('title', programTitle)
+    programData.append('subtitle', programSubtitle)
+    programData.append('description', programDescription)
+    programData.append('link', programLink)
+    programData.append('file', programFile)
+
+
+    const responce = await fetch('http://localhost:9000/api/v1/program', {
+      method: 'POST',
+      body: programData
+    })
+
+    if (responce.status === 200) {
+      programForm.reset();
+      alert('программа успешно создана')
+      return responce
+    }
+
+  } catch (error) {
+    alert('Что то пошло не так при запросе')
+    console.log(error)
+  }
+})
+
+
+
+// submit to prgram page
+
+const selectProgramBtn = document.getElementById('select_program_btn');
+
+selectProgramBtn.addEventListener('click', async  (e)  =>  {
+  e.preventDefault();
+
+  window.location.href = 'main/program'
+
+  try {
+
+  } catch (error) {
+    console.log(`произошла ошибка ${error}`)
+  }
+})
 
 
 

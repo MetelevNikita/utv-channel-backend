@@ -345,3 +345,61 @@ textarea::placeholder {
 
 
 
+
+/* news page */
+
+
+
+
+
+/* card-news */
+
+
+.card_news {
+  width: 100%;
+  height: max-content;
+  padding: 20px;
+  border: 1px solid #f35d1e;
+}
+
+.title_news {}
+
+.btn_box_news {
+}
+
+.btn_card_news {
+  width: 200px;
+  height: 40px;
+  background-color: #f35d1e;
+  color: white;
+  margin: 10px;
+}
+
+
+
+/* card program */
+
+
+.card_program {
+  width: 50%;
+  height: max-content;
+  padding: 20px;
+  border: 1px solid #f35d1e;
+}
+
+.title_program {}
+
+.img_program {
+  width: 300px;
+}
+
+.btn_box_program {}
+
+.btn_program {
+  width: 200px;
+  height: 40px;
+  background-color: #f35d1e;
+  color: white;
+  margin-right: 15px;
+}
+

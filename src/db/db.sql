@@ -29,6 +29,17 @@ create TABLE project  (
 );
 
 
+create TABLE program (
+  id SERIAL PRIMARY KEY,
+  image VARCHAR(255) NOT NULL,
+  date VARCHAR(255) NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  subtitle VARCHAR(255) NOT NULL,
+  description VARCHAR(255) NOT NULL,
+  link VARCHAR(255) NOT NULL
+);
+
+
 
 create TABLE news (
 

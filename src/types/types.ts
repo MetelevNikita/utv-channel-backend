@@ -6,3 +6,17 @@ export type TeamArr = {
   image: string
 
 }
+
+
+
+export type programType = {
+
+  id: number
+  image: string
+  date: string
+  title: string
+  subtitle: string
+  description: string
+  link: string
+
+}

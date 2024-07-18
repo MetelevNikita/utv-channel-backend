@@ -110,9 +110,6 @@
       </div>
 
 
-
-
-
       <form class="col d-flex flex-column d-flex align-items-center justify-content-center mt-5" name="news_form" id="news_form" enctype="multipart/form-data">
 
 
@@ -148,6 +145,41 @@
 
         <input type="submit" id="login_news_button" class="input_form_button" value="Создать">
 
+
+      </form>
+
+
+      <!-- program -->
+
+      <div class="col d-flex flex-column d-flex align-items-center justify-content-center mt-5">
+
+        <h1 class="title_theme d-flex justify-content-center mt-5 mb-5">Программы</h1>
+
+
+        <div class="col-md-6 flex-row d-flex align-items-center justify-content-center mb-5" id="create_block">
+          <h3 class="form-title">Создайте карточку программы</h3>
+          <button class="select_btn" id="select_program_btn">посмотреть карточки</button>
+        </div>
+
+
+      </div>
+
+
+      <form class="col d-flex flex-column d-flex align-items-center justify-content-center mt-5" name="program_form" id="program_form" enctype="multipart/form-data">
+
+        <input type="date", id="program_date" class="input_form input_program_title" name="program_date" placeholder="введите дату премьеры" required>
+
+        <input type="text", id="program_title" class="input_form input_program_title" name="program_title" placeholder="введите название" required>
+        <input type="text", id="program_subtitle" class="input_form input_program_title" name="program_subtitle" placeholder="введите название выпуска" required>
+
+        <textarea name="news_text_area" id="program_description" rows="6" class="input_area input_program_description" placeholder="введите краткое описание"></textarea>
+
+        <input type="text", id="program_link" class="input_form input_program_link_channel" name="program_link" placeholder="ссылка на выпуск Youtube" required>
+
+        <input type="file" id="program_file" name="file" class="input_file" title="загрузите изображение" required>
+
+        <span class="form-decription">Изображение должно быть горизонтальное, и подписано названием передачи</span>
+        <input type="submit" id="login_program_button" class="input_form_button" value="Создать">
 
       </form>
 

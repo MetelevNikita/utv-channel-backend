@@ -14,6 +14,7 @@ import loginRouter from './Router/loginRouter';
 import teamRouter from './Router/teamRouter';
 import projectRouter from './Router/projectRouter';
 import newsRouter from './Router/newsRouter';
+import programRouter from './Router/programRouter';
 
 // middleware
 
@@ -58,6 +59,7 @@ app.use('/api/v1', loginRouter)
 app.use('/api/v1', teamRouter)
 app.use('/api/v1', projectRouter)
 app.use('/api/v1', newsRouter)
+app.use('/api/v1', programRouter)
 
 
 
@@ -131,6 +133,30 @@ app.get('/main/news', authMiddleware, (req, res) => {
     console.error(error)
     res.status(400).sendFile('404.html')
   }
+})
+
+
+// program
+
+app.get('/main/program', (req, res) => {
+  try {
+    res.status(200).sendFile(publicPath  +  '/html/programPage.html')
+  } catch (error) {
+    console.error(error)
+    res.status(400).sendFile('404.html')
+  }
+})
+
+app.get('/program/:id', (req, res) => {
+  try {
+
+    res.status(200).sendFile(publicPath  +  '/html/programCard.html')
+
+  } catch (error) {
+    console.error(error)
+    res.status(400).sendFile('404.html')
+  }
+
 })
 
 

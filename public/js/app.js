@@ -222,6 +222,8 @@ let textNum = 1
 let textArr = []
 let fileNum = 1
 let fileArr = []
+let commentFile = 1
+let commentFileArr = []
 let commentNum = 1
 let commentArr = []
 
@@ -286,6 +288,20 @@ btnNewsFile.addEventListener('click',  (e)  =>  {
   closeButton.textContent = 'x'
 
 
+
+  const textAreaSubBox = document.createElement('div')
+  textAreaSubBox.setAttribute('id', `text_area_sub_box_file_${textNum}`);
+  textAreaSubBox.setAttribute('class', 'text_area_sub_box_file')
+
+
+  const newFileComment = commentFile++
+  const imgComment = document.createElement('input')
+  imgComment.setAttribute('type', 'text')
+  imgComment.setAttribute('id', `img_comment_${newFileComment}`)
+  imgComment.setAttribute('class', 'input_form input_news_comment_file')
+
+
+
   const newFileNum = fileNum++
   const newsFile = document.createElement('input')
   newsFile.setAttribute('type', 'file')
@@ -294,10 +310,15 @@ btnNewsFile.addEventListener('click',  (e)  =>  {
   newsFile.setAttribute('class', 'input_file d-flex mt-2 mb-4')
   newsFile.setAttribute('text', `загрузите изображение ${newFileNum}`)
   newsFile.setAttribute('required', 'required')
-  console.log(newsFile)
+
+  console.log(imgComment)
 
 
-  textAreaBox.appendChild(newsFile)
+  textAreaSubBox.appendChild(newsFile)
+  textAreaSubBox.appendChild(imgComment)
+
+
+  textAreaBox.appendChild(textAreaSubBox)
   textAreaBox.appendChild(closeButton)
 
 
@@ -307,7 +328,8 @@ btnNewsFile.addEventListener('click',  (e)  =>  {
     textAreaBox.remove()
   })
 
-  return fileArr.push(newsFile)
+  fileArr.push(newsFile)
+  commentFileArr.push(imgComment)
 
 
 })
@@ -413,6 +435,20 @@ newsForm.addEventListener('submit', async (e) => {
     }
 
 
+    if (commentFileArr.length >= 1) {
+      console.log('есть комментарии к фото')
+      for (let i = 0; i < commentFileArr.length; i++) {
+        console.log(commentFileArr[i].value)
+        newNewsForm.append(`comment_image_${i+1}`, commentFileArr[i].value)
+      }
+    } else {
+      console.log('нет комментариев к фото')
+    }
+
+
+    console.log(commentFileArr)
+
+
     if(commentArr.length >= 1) {
       console.log('есть комментарии')
       for (let i = 0; i < commentArr.length; i++) {
@@ -433,21 +469,25 @@ newsForm.addEventListener('submit', async (e) => {
 
 
 
-      const responce = await fetch(newsUrl, {
-        method: 'POST',
-        body: newNewsForm
-      })
+      console.log(...newNewsForm)
 
 
-      const data = responce
 
-      if (responce.status === 200) {
-        newsForm.reset();
-        console.log(data)
-        alert('карточка проекта успешно создана')
-        return data
+      // const responce = await fetch(newsUrl, {
+      //   method: 'POST',
+      //   body: newNewsForm
+      // })
 
-      }
+
+      // const data = responce
+
+      // if (responce.status === 200) {
+      //   newsForm.reset();
+      //   console.log(data)
+      //   alert('карточка проекта успешно создана')
+      //   return data
+
+      // }
 
   } catch (error) {
     console.log('произошла ошибка' + error)
@@ -479,7 +519,6 @@ selectNewsBtn.addEventListener('click', () => {
 // program form
 
 const programForm = document.getElementById('program_form')
-console.log(programForm)
 
 programForm.addEventListener('submit', async (e) => {
   e.preventDefault()
@@ -535,6 +574,44 @@ selectProgramBtn.addEventListener('click', async  (e)  =>  {
 
   } catch (error) {
     console.log(`произошла ошибка ${error}`)
+  }
+})
+
+
+
+// submit epg file
+
+
+const epgForm = document.getElementById('tv_form')
+console.log(epgForm)
+
+
+epgForm.addEventListener('submit', async (e) => {
+  e.preventDefault()
+  try {
+
+
+    const file = document.getElementById('tv_file').files[0]
+
+    const formData = new FormData()
+    formData.append('file', file);
+
+
+    console.log(...formData)
+
+
+    const responce = await fetch('http://localhost:9000/api/v1/epg', {
+      method: 'POST',
+      body: formData
+    })
+
+
+    const data = responce.json()
+    console.log(data)
+    return data
+
+  } catch (error) {
+    console.log(error)
   }
 })
 

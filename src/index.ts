@@ -15,6 +15,7 @@ import teamRouter from './Router/teamRouter';
 import projectRouter from './Router/projectRouter';
 import newsRouter from './Router/newsRouter';
 import programRouter from './Router/programRouter';
+import epgRouter from './Router/epgRouter';
 
 // middleware
 
@@ -22,10 +23,9 @@ import authMiddleware from './middleware/authMiddleware';
 import { newsFolderNews } from './util/newsFolderDay';
 
 
+
 const publicPath  =  path.join(__dirname, '..',  'public');
 console.log(publicPath + '/js')
-
-
 
 
 const app = express();
@@ -37,6 +37,8 @@ const day = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 console.log(`PID:${pid}`)
 
 newsFolderNews(day)
+
+
 
 
 
@@ -60,6 +62,7 @@ app.use('/api/v1', teamRouter)
 app.use('/api/v1', projectRouter)
 app.use('/api/v1', newsRouter)
 app.use('/api/v1', programRouter)
+app.use('/api/v1', epgRouter)
 
 
 

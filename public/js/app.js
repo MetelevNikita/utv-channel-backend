@@ -8,9 +8,9 @@ const selectTeamBtn = document.getElementById('select_team_btn');
 selectTeamBtn.addEventListener('click', async  (e)  =>  {
   e.preventDefault();
 
-  window.location.href = 'main/team'
-
   try {
+
+    window.location.href = 'main/team'
 
   } catch (error) {
     console.log(`произошла ошибка ${error}`)
@@ -72,6 +72,7 @@ const projectForm = document.getElementById('project_form');
 
 
 
+
 projectForm.addEventListener('submit', async  (e)  =>  {
   e.preventDefault()
 
@@ -122,6 +123,27 @@ projectForm.addEventListener('submit', async  (e)  =>  {
     console.log(`произошла ошибка  ${error}`)
   }
 })
+
+
+// submit to project page
+
+const selectProjectBtn = document.getElementById('select_project_btn')
+
+selectProjectBtn.addEventListener('click', async  (e)  =>  {
+  e.preventDefault()
+
+  try {
+
+    window.location.href ='main/project'
+
+  } catch (error) {
+    console.log(`произошла ошибка ${error}`)
+  }
+})
+
+
+
+
 
 
 
@@ -439,7 +461,7 @@ newsForm.addEventListener('submit', async (e) => {
       console.log('есть комментарии к фото')
       for (let i = 0; i < commentFileArr.length; i++) {
         console.log(commentFileArr[i].value)
-        newNewsForm.append(`comment_image_${i+1}`, commentFileArr[i].value)
+        newNewsForm.append(`image_comment_${i+1}`, commentFileArr[i].value)
       }
     } else {
       console.log('нет комментариев к фото')
@@ -473,28 +495,26 @@ newsForm.addEventListener('submit', async (e) => {
 
 
 
-      // const responce = await fetch(newsUrl, {
-      //   method: 'POST',
-      //   body: newNewsForm
-      // })
+      const responce = await fetch(newsUrl, {
+        method: 'POST',
+        body: newNewsForm
+      })
 
 
-      // const data = responce
+      const data = responce
 
-      // if (responce.status === 200) {
-      //   newsForm.reset();
-      //   console.log(data)
-      //   alert('карточка проекта успешно создана')
-      //   return data
+      if (responce.status === 200) {
+        newsForm.reset();
+        console.log(data)
+        alert('карточка проекта успешно создана')
+        return data
 
-      // }
+      }
 
   } catch (error) {
     console.log('произошла ошибка' + error)
   }
 })
-
-
 
 
 // submit to news page

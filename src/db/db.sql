@@ -60,6 +60,7 @@ create TABLE news (
   text_3 VARCHAR,
   image_3 VARCHAR,
   image_comment_3 VARCHAR,
+  comment_3 VARCHAR,
   text_4 VARCHAR,
   image_4 VARCHAR,
   image_comment_4 VARCHAR,

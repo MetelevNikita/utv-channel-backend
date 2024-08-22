@@ -16,7 +16,7 @@ const projectRouter = Router();
 projectRouter.get("/project", getProjects)
 projectRouter.get("/project/:id", getOneProject)
 projectRouter.post("/project", upload.single('file'), postProject)
-projectRouter.put("/phoject", upload.single('file'), updateProject)
+projectRouter.put("/project", upload.single('file'), updateProject)
 projectRouter.delete("/project/:id", deleteProject)
 
 

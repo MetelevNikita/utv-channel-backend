@@ -20,7 +20,6 @@ const getAllProgramCard = async () => {
     })
 
     const data = await responce.json();
-    console.log(data);
     const programCards = (data.message === 'Список программ пуст') ?  containerCard.appendChild(emptyList) : data.map((item) => {
 
 
@@ -61,6 +60,7 @@ const getAllProgramCard = async () => {
         const data = await responce.json();
         console.log(data);
         cardProgram.remove()
+        window.location.reload();
         return data
       })
 
@@ -73,11 +73,12 @@ const getAllProgramCard = async () => {
 
 
       btnProgramUpdate.addEventListener('click', () => {
+        localStorage.setItem('programId', item.id)
         window.location.href = `/program/${item.id}`
       })
 
-      cardProgram.appendChild(titleProgram);
       cardProgram.appendChild(imgProgram);
+      cardProgram.appendChild(titleProgram);
       cardProgram.appendChild(btnBoxProgram);
       btnBoxProgram.appendChild(btnProgramDelete);
       btnBoxProgram.appendChild(btnProgramUpdate);

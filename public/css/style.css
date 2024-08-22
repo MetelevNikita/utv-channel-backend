@@ -132,7 +132,6 @@ textarea::placeholder {
   color: white;
   background-color: #f35d1e;
   border-radius: 10px;
-  margin-left: 20px;
 }
 
 
@@ -381,25 +380,76 @@ textarea::placeholder {
 
 
 .card_program {
-  width: 50%;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
   height: max-content;
   padding: 20px;
-  border: 1px solid #f35d1e;
 }
 
 .title_program {}
 
 .img_program {
   width: 300px;
+  height: 160px;
 }
 
 .btn_box_program {}
 
 .btn_program {
-  width: 200px;
+  width: 100px;
   height: 40px;
-  background-color: #f35d1e;
+  background: #f35d1e;
   color: white;
-  margin-right: 15px;
+  border-radius: 10px;
 }
 
+.btn_program_update {
+  margin-left: 20px;
+}
+
+
+
+/* project page */
+
+.cards_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.project-card-container {
+  width: 300px;
+  height: 300px;
+
+}
+
+.project-card-poster {
+  width: 266px;
+  height: 162px;
+}
+
+.project-card-title {
+  margin-top: 10px;
+}
+
+.project-card-btn-container {
+
+  width: 300px;
+
+
+}
+
+.project-btn {
+  width: 100px;
+  height: 40px;
+  background: #f35d1e;
+  color: white;
+  border-radius: 10px;
+}
+
+.project-card-update {}
+
+.project-card-del {
+  margin-top: 20px;
+  margin-left: 20px;
+}

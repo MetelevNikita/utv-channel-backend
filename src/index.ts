@@ -163,6 +163,29 @@ app.get('/program/:id', (req, res) => {
 })
 
 
+// project
+
+app.get('/main/project', authMiddleware, (req, res) => {
+  try {
+    res.status(200).sendFile(publicPath  +  '/html/projectPage.html')
+  } catch (error) {
+    console.error(error)
+    res.status(400).sendFile('404.html')
+  }
+})
+
+
+app.get('/project/:id', authMiddleware, (req, res) => {
+  try {
+    res.status(200).sendFile(publicPath  +  '/html/projectCard.html')
+  } catch (error) {
+    console.error(error)
+    res.status(400).sendFile('404.html')
+  }
+
+})
+
+
 
 
 // other

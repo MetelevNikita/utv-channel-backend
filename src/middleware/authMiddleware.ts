@@ -20,7 +20,7 @@ const authMiddleware = (req: any, res: any, next: any) => {
 
   } catch (error) {
     res.clearCookie('token');
-    return res.send({message: 'not work'});
+    return res.redirect('/login');
   }
 
 

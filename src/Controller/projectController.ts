@@ -9,7 +9,7 @@ const getProjects = async(req: any, res: any) => {
     const allprojects = await pool.query(`SELECT * FROM project`);
 
     if (allprojects.rows.length < 1) {
-      res.status(404).json({message: "No projects found"});
+      res.status(404).json({message: "Проекты не найдены"});
       return
     }
 
@@ -25,12 +25,14 @@ const getProjects = async(req: any, res: any) => {
 
 
 
-const getOneProject  = async(req: any, res: any)  =>  {
+const getOneProject  = async (req: any, res: any)  =>  {
   try {
 
     const { id } = req.params;
 
-    const sngleProject  = await pool.query('SELECT FROM project WHERE id = $1 RETURNING *', [id])
+    console.log(id);
+
+    const sngleProject  = await pool.query('SELECT * FROM project WHERE id = $1', [id])
 
     if (sngleProject.rows.length  <  1)  {
       res.status(404).json({message:  "No project found"});
@@ -97,24 +99,34 @@ const deleteProject  = async(req: any, res: any)  =>  {
 }
 
 
-const updateProject   = async(req: any, res: any)   =>   {
+const updateProject = async(req: any, res: any)   =>   {
   try {
 
-
     const { id, title, description, duration, year, author, channel, trailer  }  = req.body;
-    const imageFile = req.file.originalname;
-    const fullUrl = req.protocol + '://' + req.get('host') + '/image/project/' + imageFile;
 
-    const updateProject  = await pool.query('UPDATE project SET title = $1, description = $2, duration = $3, year  =  $4, author  =  $5, channel = $6, trailer = $7, image   =   $8 WHERE id = $9 RETURNING *', [title, description, duration, year, author, channel, trailer, fullUrl, id])
-
-    if (updateProject.rows.length  <  1)   {
-      res.status(404).json({message: "Project not update"});
+    if (!req.file) {
+      res.status(404).json({message: "No image file"});
       return
     }
 
+    const imageFile = req.file.originalname;
+    const fullUrl = req.protocol + '://' + req.get('host') + '/image/project/' + imageFile;
+
+    const updateProject  = await pool.query('UPDATE project SET title = $1, description = $2, duration = $3, year  =  $4, author  =  $5, channel = $6, trailer = $7, image = $8 WHERE id = $9', [title, description, duration, year, author, channel, trailer, fullUrl, id])
+
+    console.log(updateProject.rows);
+
+    if (!updateProject)   {
+      res.status(404).json({message: "Карточка проекта не изменена"});
+      return
+    }
+
+
+    console.log(updateProject.rows[0]);
     res.status(200).json(updateProject.rows[0]);
 
   } catch (error) {
+    console.log(error);
 
   }
 }

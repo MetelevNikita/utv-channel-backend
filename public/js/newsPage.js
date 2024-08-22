@@ -1,4 +1,3 @@
-
 const containerNews = document.getElementById('cards_container')
 
 
@@ -111,11 +110,12 @@ const getAllNewsCard = async () => {
   btnUpdateNews.textContent = 'Изменить'
 
   //
+
   cardNews.appendChild(dateNews)
   cardNews.appendChild(titleNews)
   cardNews.appendChild(btnBoxNews)
   btnBoxNews.appendChild(btnDelNews)
-  // btnBoxNews.appendChild(btnUpdateNews)
+  btnBoxNews.appendChild(btnUpdateNews)
 
 
   containerNews.appendChild(cardNews);

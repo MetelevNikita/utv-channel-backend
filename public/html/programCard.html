@@ -34,14 +34,37 @@
       </div>
 
 
-          <h1>карточка программы</h1>
+          <form class="col d-flex flex-column d-flex align-items-center justify-content-center mt-5" name="program_form" id="program_update_form" enctype="multipart/form-data">
 
+            <input type="date", id="program_date" class="input_form input_program_title" name="program_date" placeholder="введите дату премьеры" required>
+
+            <input type="text", id="program_title" class="input_form input_program_title" name="program_title" placeholder="введите название" required>
+            <input type="text", id="program_subtitle" class="input_form input_program_title" name="program_subtitle" placeholder="введите название выпуска" required>
+
+            <textarea name="news_text_area" id="program_description" rows="6" class="input_area input_program_description" placeholder="введите краткое описание"></textarea>
+
+            <input type="text", id="program_link" class="input_form input_program_link_channel" name="program_link" placeholder="ссылка на выпуск Youtube" required>
+
+            <input type="file" id="program_file" name="file" class="input_file" title="загрузите изображение" required>
+
+            <span class="form-decription">Изображение должно быть горизонтальное, и подписано названием передачи</span>
+            <input type="submit" id="login_program_button" class="input_form_button" value="Создать">
+
+          </form>
+
+
+
+          <div class="col-12 d-flex flex-column align-items-center justify-content-center mb-5 mb-4">
+
+            <button class="select_btn" id="select_project_back_btn">Назад</button>
+
+          </div>
     </div>
   </div>
 
 </body>
 
-  <script src="../js/teamCard.js"></script>
+  <script src="../js/programCard.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 

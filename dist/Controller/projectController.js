@@ -15,7 +15,7 @@ const getProjects = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     try {
         const allprojects = yield database_1.pool.query(`SELECT * FROM project`);
         if (allprojects.rows.length < 1) {
-            res.status(404).json({ message: "No projects found" });
+            res.status(404).json({ message: "Проекты не найдены" });
             return;
         }
         res.status(200).json(allprojects.rows);
@@ -29,7 +29,8 @@ exports.getProjects = getProjects;
 const getOneProject = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { id } = req.params;
-        const sngleProject = yield database_1.pool.query('SELECT FROM project WHERE id = $1 RETURNING *', [id]);
+        console.log(id);
+        const sngleProject = yield database_1.pool.query('SELECT * FROM project WHERE id = $1', [id]);
         if (sngleProject.rows.length < 1) {
             res.status(404).json({ message: "No project found" });
             return;
@@ -83,16 +84,23 @@ exports.deleteProject = deleteProject;
 const updateProject = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { id, title, description, duration, year, author, channel, trailer } = req.body;
-        const imageFile = req.file.originalname;
-        const fullUrl = req.protocol + '://' + req.get('host') + '/image/project/' + imageFile;
-        const updateProject = yield database_1.pool.query('UPDATE project SET title = $1, description = $2, duration = $3, year  =  $4, author  =  $5, channel = $6, trailer = $7, image   =   $8 WHERE id = $9 RETURNING *', [title, description, duration, year, author, channel, trailer, fullUrl, id]);
-        if (updateProject.rows.length < 1) {
-            res.status(404).json({ message: "Project not update" });
+        if (!req.file) {
+            res.status(404).json({ message: "No image file" });
             return;
         }
+        const imageFile = req.file.originalname;
+        const fullUrl = req.protocol + '://' + req.get('host') + '/image/project/' + imageFile;
+        const updateProject = yield database_1.pool.query('UPDATE project SET title = $1, description = $2, duration = $3, year  =  $4, author  =  $5, channel = $6, trailer = $7, image = $8 WHERE id = $9', [title, description, duration, year, author, channel, trailer, fullUrl, id]);
+        console.log(updateProject.rows);
+        if (!updateProject) {
+            res.status(404).json({ message: "Карточка проекта не изменена" });
+            return;
+        }
+        console.log(updateProject.rows[0]);
         res.status(200).json(updateProject.rows[0]);
     }
     catch (error) {
+        console.log(error);
     }
 });
 exports.updateProject = updateProject;

@@ -24,6 +24,7 @@ const postLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         if (postLogin.rows.length === 0) {
             return res.status(400).json({ messge: 'Не верный логин или пароль' });
         }
+        console.log(postLogin.rows);
         const token = jsonwebtoken_1.default.sign({ id: postLogin.rows[0].id }, process.env.JWT_SECRET, { expiresIn: '1h' });
         res.cookie('token', token, { httpOnly: true });
         res.redirect('/main');

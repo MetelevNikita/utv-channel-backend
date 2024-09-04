@@ -14,6 +14,6 @@ const projectRouter = (0, express_1.Router)();
 projectRouter.get("/project", projectController_1.getProjects);
 projectRouter.get("/project/:id", projectController_1.getOneProject);
 projectRouter.post("/project", upload.single('file'), projectController_1.postProject);
-projectRouter.put("/phoject", upload.single('file'), projectController_1.updateProject);
+projectRouter.put("/project", upload.single('file'), projectController_1.updateProject);
 projectRouter.delete("/project/:id", projectController_1.deleteProject);
 exports.default = projectRouter;

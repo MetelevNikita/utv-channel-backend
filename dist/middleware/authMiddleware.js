@@ -18,7 +18,7 @@ const authMiddleware = (req, res, next) => {
     }
     catch (error) {
         res.clearCookie('token');
-        return res.send({ message: 'not work' });
+        return res.redirect('/login');
     }
 };
 exports.default = authMiddleware;

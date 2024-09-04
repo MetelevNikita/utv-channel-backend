@@ -16,6 +16,9 @@ const postLogin = async (req: any, res: any) => {
       return res.status(400).json({messge: 'Не верный логин или пароль'});
     }
 
+
+    console.log(postLogin.rows)
+
     const token = jwt.sign({id: postLogin.rows[0].id},  process.env.JWT_SECRET as string,  {expiresIn: '1h'});
     res.cookie('token', token, {httpOnly: true});
     res.redirect('/main')

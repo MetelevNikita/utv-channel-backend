@@ -47,7 +47,9 @@ newsFolderNews(day)
 app.use(express.static("public"));
 app.use(express.static(publicPath + "/js"))
 app.use(bodyParser.json())
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:9000',
+}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
@@ -208,7 +210,7 @@ app.get('/*', (req, res) => {
 
 
 
-const PORT = process.env.PORT || 2000;
+const PORT = process.env.PORT || 9000;
 
 const startServer = () => {
   try {

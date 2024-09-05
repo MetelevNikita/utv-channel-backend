@@ -47,9 +47,7 @@ newsFolderNews(day)
 app.use(express.static("public"));
 app.use(express.static(publicPath + "/js"))
 app.use(bodyParser.json())
-app.use(cors({
-  origin: 'http://localhost:9000',
-}));
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())

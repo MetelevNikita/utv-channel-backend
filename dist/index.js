@@ -156,7 +156,7 @@ app.get('/*', (req, res) => {
         res.status(400).sendFile('404.html');
     }
 });
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 2000;
 const startServer = () => {
     try {
         app.listen(PORT, () => console.log(`Сервер запущен на порту ${PORT}\nPID:${pid}`));

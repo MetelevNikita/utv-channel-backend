@@ -208,7 +208,7 @@ app.get('/*', (req, res) => {
 
 
 
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 2000;
 
 const startServer = () => {
   try {

@@ -15,7 +15,7 @@ const programFile = document.getElementById('program_file').files[0]
 const getSingleProgramCard = async () => {
   try {
 
-    const responce = await fetch(`http://localhost:9000/api/v1/program/${programId}`, {
+    const responce = await fetch(`https://utvchannel.tw1.su/api/v1/program/${programId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -68,7 +68,7 @@ programUpdateForm.addEventListener('submit', async (e) => {
     console.log(...newFormData)
 
 
-    const responce = await fetch('http://localhost:9000/api/v1/program', {
+    const responce = await fetch('https://utvchannel.tw1.su/api/v1/program', {
       method: 'PUT',
       body: newFormData
     })

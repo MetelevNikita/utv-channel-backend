@@ -24,7 +24,7 @@ selectTeamBtn.addEventListener('click', async  (e)  =>  {
 // team Form
 
 
-const teamUrl = 'http://localhost:9000/api/v1/team'
+const teamUrl = 'https://utvchannel.tw1.su/api/v1/team'
 const teamForm = document.getElementById('team_form');
 
 
@@ -66,7 +66,7 @@ teamForm.addEventListener('submit', async (e) => {
 // project form
 
 
-const projectUrl  =  'http://localhost:9000/api/v1/project'
+const projectUrl  =  'https://utvchannel.tw1.su/api/v1/project'
 const projectForm = document.getElementById('project_form');
 
 
@@ -408,7 +408,7 @@ btnNewsComment.addEventListener('click', (e) => {
 
 
 
-const newsUrl  =  'http://localhost:9000/api/v1/news'
+const newsUrl  =  'https://utvchannel.tw1.su/api/v1/news'
 
 
 newsForm.addEventListener('submit', async (e) => {
@@ -562,7 +562,7 @@ programForm.addEventListener('submit', async (e) => {
     programData.append('file', programFile)
 
 
-    const responce = await fetch('http://localhost:9000/api/v1/program', {
+    const responce = await fetch('https://utvchannel.tw1.su/api/v1/program', {
       method: 'POST',
       body: programData
     })
@@ -620,7 +620,7 @@ epgForm.addEventListener('submit', async (e) => {
     console.log(...formData)
 
 
-    const responce = await fetch('http://localhost:9000/api/v1/epg', {
+    const responce = await fetch('https://utvchannel.tw1.su/api/v1/epg', {
       method: 'POST',
       body: formData
     })

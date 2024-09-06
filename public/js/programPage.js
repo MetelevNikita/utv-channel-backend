@@ -11,7 +11,7 @@ const getAllProgramCard = async () => {
   try {
 
 
-    const responce = await fetch('http://localhost:9000/api/v1/program', {
+    const responce = await fetch('https://utvchannel.tw1.su/api/v1/program', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const getAllProgramCard = async () => {
 
 
       btnProgramDelete.addEventListener('click', async () => {
-        const responce = await fetch(`http://localhost:9000/api/v1/program/${item.id}`, {
+        const responce = await fetch(`https://utvchannel.tw1.su/api/v1/program/${item.id}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',

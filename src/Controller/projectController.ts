@@ -57,7 +57,7 @@ const postProject  = async (req: any, res: any)  =>  {
 
     const { title, description, duration, year, author, channel, trailer } = req.body;
     const imageFile = req.file.originalname;
-    const fullUrl = req.protocol + '://' + req.get('host') + '/image/project/' + imageFile;
+    const fullUrl = 'https://utvchannel.tw1.su' + '/image/project/' + imageFile;
 
     const postProject = await pool.query('INSERT INTO project (title, description, duration, year, author, channel, trailer, image) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *', [title, description, duration, year, author, channel, trailer, fullUrl]);
     if (postProject.rows.length  <  1)  {
@@ -110,7 +110,7 @@ const updateProject = async(req: any, res: any)   =>   {
     }
 
     const imageFile = req.file.originalname;
-    const fullUrl = req.protocol + '://' + req.get('host') + '/image/project/' + imageFile;
+    const fullUrl = 'https://utvchannel.tw1.su' + '/image/project/' + imageFile;
 
     const updateProject  = await pool.query('UPDATE project SET title = $1, description = $2, duration = $3, year  =  $4, author  =  $5, channel = $6, trailer = $7, image = $8 WHERE id = $9', [title, description, duration, year, author, channel, trailer, fullUrl, id])
 

@@ -18,7 +18,7 @@ formCahangeTitle.innerHTML = `Создайте пользователя в ко�
 
 const getSingleCard = async (id) => {
   try {
-    const responce = await fetch(`http://localhost:9000/api/v1/team/${id}`, {
+    const responce = await fetch(`https://utvchannel.tw1.su/api/v1/team/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const updateSingleCard = async  (e)  =>  {
 
 
   try {
-    const responce = await fetch(`http://localhost:9000/api/v1/team`, {
+    const responce = await fetch(`https://utvchannel.tw1.su/api/v1/team`, {
       method:  'PUT',
       body: updateFormData
     })

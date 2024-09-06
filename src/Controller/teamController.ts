@@ -49,7 +49,7 @@ const postTeam  = async  (req: any, res: any)  =>  {
 
     const { name, profession } = req.body;
     const imageFile = req.file.originalname;
-    const fullUrl = req.protocol + '://' + req.get('host') + '/image/team/' + imageFile;
+    const fullUrl = 'https://utvchannel.tw1.su' + '/image/team/' + imageFile;
 
 
     const newTeam = await pool.query(`INSERT INTO team (name, profession, image) VALUES ($1, $2, $3) RETURNING *`, [name, profession, fullUrl]);
@@ -92,7 +92,7 @@ const updateTeam   = async  (req: Request  | any, res: Response  | any)  =>  {
 
 
    const imageFile = req.file.originalname;
-   const fullUrl = req.protocol + '://' + req.get('host') + '/image/team/' + imageFile;
+   const fullUrl = 'https://utvchannel.tw1.su' + '/image/team/' + imageFile;
 
 
    const updateTeam  = await pool.query(`UPDATE team SET name = $1, profession = $2, image = $3 WHERE id = $4 RETURNING *`,[name, profession, fullUrl, id]);

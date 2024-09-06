@@ -50,7 +50,7 @@ const postProgram = async (req: any, res: any) => {
 
     const {date, title, subtitle, description, link} = req.body
     const imageFile = req.file.originalname;
-    const fullUrl = req.protocol + '://' + req.get('host') + '/image/program/' + imageFile;
+    const fullUrl = 'https://utvchannel.tw1.su' + '/image/program/' + imageFile;
 
     const newProgram = await pool.query("INSERT INTO program (image, date, title, subtitle, description, link) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *", [fullUrl, date, title, subtitle, description, link])
 
@@ -96,7 +96,7 @@ const updateProgram = async (req: any, res: any) => {
 
     const { id, date, title, subtitle, description, link } = req.body
     const imageFile = req.file.originalname;
-    const fullUrl = req.protocol + '://' + req.get('host') + '/image/program/' + imageFile;
+    const fullUrl = 'https://utvchannel.tw1.su' + '/image/program/' + imageFile;
 
 
     const updateProgram = await pool.query("UPDATE program SET image = $1, date = $2, title = $3, subtitle = $4, description = $5, link = $6 WHERE id = $7 RETURNING *", [fullUrl, date, title, subtitle, description, link, id])

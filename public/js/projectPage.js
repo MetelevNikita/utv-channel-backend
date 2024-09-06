@@ -13,7 +13,7 @@ emptyList.textContent = 'Нет проектов'
 
 const getAllProjectCards = async () => {
   try {
-    const responce = await fetch('http://localhost:9000/api/v1/project', {
+    const responce = await fetch('https://utvchannel.tw1.su/api/v1/project', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const getAllProjectCards = async () => {
       projectDelBtn.addEventListener('click', async () => {
         try {
 
-          const responce = await fetch(`http://localhost:9000/api/v1/project/${project.id}`, {
+          const responce = await fetch(`https://utvchannel.tw1.su/api/v1/project/${project.id}`, {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',

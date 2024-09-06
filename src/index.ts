@@ -187,7 +187,6 @@ app.get('/project/:id', authMiddleware, (req, res) => {
 
 
 
-
 // other
 
 app.get('/*', (req, res) => {

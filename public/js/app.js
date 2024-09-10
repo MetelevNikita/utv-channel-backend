@@ -1,7 +1,4 @@
 
-console.log(process.env)
-
-
 // submit to team page
 
 const selectTeamBtn = document.getElementById('select_team_btn');

@@ -1,4 +1,5 @@
 
+console.log(process.env)
 
 
 // submit to team page
@@ -16,9 +17,6 @@ selectTeamBtn.addEventListener('click', async  (e)  =>  {
     console.log(`произошла ошибка ${error}`)
   }
 })
-
-
-
 
 
 // team Form
@@ -62,14 +60,11 @@ teamForm.addEventListener('submit', async (e) => {
 })
 
 
-
 // project form
 
 
 const projectUrl  =  'https://utvchannel.tw1.su/api/v1/project'
 const projectForm = document.getElementById('project_form');
-
-
 
 
 
@@ -140,11 +135,6 @@ selectProjectBtn.addEventListener('click', async  (e)  =>  {
     console.log(`произошла ошибка ${error}`)
   }
 })
-
-
-
-
-
 
 
 // text toolbar
@@ -257,14 +247,25 @@ const btnNewsBox = document.getElementById('btn_news_box');
 const submitNewsBtn = document.getElementById('login_news_button')
 
 
+
+
+
+
+
 btnNewsText.addEventListener('click', (e)  =>  {
 
   e.preventDefault()
 
-  const textAreaBox = document.createElement('div')
-  textAreaBox.setAttribute('id', `text_area_box_${textNum}`);
-  textAreaBox.setAttribute('class', 'text_area_box')
+  if(textArr.length >= 10) {
+    alert('Максимальное количество новостей 10')
+    return
+  }
 
+  const newText = textNum++
+
+  const textAreaBox = document.createElement('div')
+  textAreaBox.setAttribute('id', `text_area_box_${newText}`);
+  textAreaBox.setAttribute('class', 'text_area_box')
 
   const closeButton = document.createElement('div')
   closeButton.setAttribute('class', 'close-btn')
@@ -272,8 +273,6 @@ btnNewsText.addEventListener('click', (e)  =>  {
   closeButton.textContent = 'x'
 
 
-
-  const newText = textNum++
   const newsTextArea = document.createElement('textarea')
   newsTextArea.setAttribute('id', `news_text_${newText}`);
   newsTextArea.setAttribute('placeholder', 'Введите текст новости');
@@ -287,21 +286,33 @@ btnNewsText.addEventListener('click', (e)  =>  {
 
   btnNewsBox.insertAdjacentElement('beforebegin', textAreaBox)
 
+  textArr.push(newsTextArea)
+
   closeButton.addEventListener('click', (e)  =>  {
-    textAreaBox.remove()
+      textArr = textArr.filter((item) => {
+        textAreaBox.remove()
+        return item.id !== `news_text_${e.target.parentNode.id.slice(14)}`
+      })
+      return textArr
   })
 
-  return textArr.push(newsTextArea)
+
 })
 
 btnNewsFile.addEventListener('click',  (e)  =>  {
   e.preventDefault()
 
+  if(fileArr.length >= 10) {
+    alert('Максимальное количество новостей 10')
+    return
+  }
 
+  const newFileNum = fileNum++
 
   const textAreaBox = document.createElement('div')
-  textAreaBox.setAttribute('id', `text_area_box_${textNum}`);
+  textAreaBox.setAttribute('id', `text_area_box_${newFileNum}`);
   textAreaBox.setAttribute('class', 'text_area_box_file')
+
 
 
   const closeButton = document.createElement('div')
@@ -310,21 +321,16 @@ btnNewsFile.addEventListener('click',  (e)  =>  {
   closeButton.textContent = 'x'
 
 
-
   const textAreaSubBox = document.createElement('div')
-  textAreaSubBox.setAttribute('id', `text_area_sub_box_file_${textNum}`);
+  textAreaSubBox.setAttribute('id', `text_area_sub_box_file_${newFileNum}`);
   textAreaSubBox.setAttribute('class', 'text_area_sub_box_file')
 
-
-  const newFileComment = commentFile++
   const imgComment = document.createElement('input')
   imgComment.setAttribute('type', 'text')
-  imgComment.setAttribute('id', `img_comment_${newFileComment}`)
+  imgComment.setAttribute('id', `img_comment_${newFileNum}`)
   imgComment.setAttribute('class', 'input_form input_news_comment_file')
 
 
-
-  const newFileNum = fileNum++
   const newsFile = document.createElement('input')
   newsFile.setAttribute('type', 'file')
   newsFile.setAttribute('id', `news_file_${newFileNum}`)
@@ -332,9 +338,6 @@ btnNewsFile.addEventListener('click',  (e)  =>  {
   newsFile.setAttribute('class', 'input_file d-flex mt-2 mb-4')
   newsFile.setAttribute('text', `загрузите изображение ${newFileNum}`)
   newsFile.setAttribute('required', 'required')
-
-  console.log(imgComment)
-
 
   textAreaSubBox.appendChild(newsFile)
   textAreaSubBox.appendChild(imgComment)
@@ -344,14 +347,28 @@ btnNewsFile.addEventListener('click',  (e)  =>  {
   textAreaBox.appendChild(closeButton)
 
 
-  btnNewsBox.insertAdjacentElement('beforebegin', textAreaBox)
 
-  closeButton.addEventListener('click', (e)  =>  {
-    textAreaBox.remove()
-  })
+
+  btnNewsBox.insertAdjacentElement('beforebegin', textAreaBox)
 
   fileArr.push(newsFile)
   commentFileArr.push(imgComment)
+
+  closeButton.addEventListener('click', (e)  =>  {
+
+    fileArr = fileArr.filter((item) => {
+      console.log(item.id)
+      return item.id !== `news_file_${e.target.parentNode.id.slice(14)}`
+    })
+
+    commentFileArr = commentFileArr.filter((item) => {
+      return item.id !== `img_comment_${e.target.parentNode.id.slice(14)}`
+    })
+
+    textAreaBox.remove()
+
+    return fileArr
+  })
 
 
 })
@@ -360,9 +377,14 @@ btnNewsComment.addEventListener('click', (e) => {
 
   e.preventDefault()
 
+  if(commentArr.length >= 10) {
+    alert('Максимальное количество новостей 10')
+    return
+  }
 
+  const newComment = textNum++
   const textAreaBox = document.createElement('div')
-  textAreaBox.setAttribute('id', `text_area_box_${textNum}`);
+  textAreaBox.setAttribute('id', `text_area_box_${newComment}`);
   textAreaBox.setAttribute('class', 'text_area_box')
 
 
@@ -372,17 +394,20 @@ btnNewsComment.addEventListener('click', (e) => {
   closeButton.textContent = 'x'
 
 
-
-  const newComment = commentNum++
   const newCommentDiv = document.createElement('div')
   newCommentDiv.setAttribute('id', 'news_comment_div')
   newCommentDiv.setAttribute('class', 'news_comment_div')
-  const newsComment = document.createElement('input')
+  const newsComment = document.createElement('textarea')
   newsComment.setAttribute('type', 'text')
   newsComment.setAttribute('id', `news_comment_${newComment}`)
-  newsComment.setAttribute('class', 'input_form')
+  newsComment.setAttribute('class', 'input_area')
   newsComment.setAttribute('placeholder', 'Введите комментарий')
   newsComment.setAttribute('name', `comment_${newComment}`)
+  newsComment.setAttribute('cols', 4)
+  newsComment.setAttribute('rows', 8)
+
+
+
 
 
   newCommentDiv.appendChild(fontBoldSelect)
@@ -390,21 +415,30 @@ btnNewsComment.addEventListener('click', (e) => {
   newCommentDiv.appendChild(textStyleSelect)
   newCommentDiv.appendChild(newsComment)
 
-
-
   textAreaBox.appendChild(newCommentDiv)
   textAreaBox.appendChild(closeButton)
 
 
   btnNewsBox.insertAdjacentElement('beforebegin', textAreaBox)
 
-  closeButton.addEventListener('click', (e)  =>  {
-    textAreaBox.remove()
-  })
+  commentArr.push(newsComment)
 
-  return commentArr.push(newsComment)
+
+  closeButton.addEventListener('click', (e)  =>  {
+    commentArr = commentArr.filter((item) => {
+      textAreaBox.remove()
+      return item.id !== `news_comment_${e.target.parentNode.id.slice(14)}`
+    })
+    return commentArr
+})
+
+
+  console.log(commentArr)
+  return commentArr
+
 
 })
+
 
 
 

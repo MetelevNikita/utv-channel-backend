@@ -185,7 +185,7 @@ const tagBox = document.getElementById('tag_news_box')
 // news categorySelector
 
 
-const categoryArr = ['Все новости', 'Политика', 'Экономика', 'Общество', 'В мире', 'Криминал', 'Cпорт', 'Технологии', 'Здоровье', 'Культура', 'Искуство']
+const categoryArr = ['Все', 'Политика', 'Экономика', 'Общество', 'Мир', 'Криминал', 'Cпорт', 'Технологии', 'Здоровье', 'Культура', 'Искуство']
 const selectedTags = []
 
 

@@ -44,7 +44,7 @@ const getAllNewsCard = async () => {
   console.log(data)
 
 
-  const filterDateNews = data.sort((a, b) => new Date(a.date) - new Date(b.date))
+  const filterDateNews = data.sort((a, b) => new Date(b.date) - new Date(a.date))
   console.log(filterDateNews)
 
   filterDateNews.map((news) => {

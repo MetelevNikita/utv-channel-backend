@@ -116,9 +116,9 @@ const getAllNewsCard = async () => {
 getAllNewsCard()
 
 
-const backBtn = document.getElementById('select_news_back_btn')
+// const backBtn = document.getElementById('select_news_back_btn')
 
-backBtn.addEventListener('click', () => {
-  window.location.href = '/main'
-})
+// backBtn.addEventListener('click', () => {
+//   window.location.href = '/main'
+// })
 

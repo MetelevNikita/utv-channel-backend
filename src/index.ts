@@ -138,13 +138,12 @@ app.get('/main/news', authMiddleware, (req, res) => {
   }
 })
 
-
-
-app.get('/news/:id', (req, res) => {
+app.get('/news/:id', authMiddleware, (req, res) => {
   try {
-    res.status(200).json({message: 'asdasdasdasd'})
+    res.status(200).sendFile(publicPath  +  '/html/newsCard.html')
   } catch (error) {
-    res.status(400).sendFile(publicPath  +  '/html/404.html')
+    console.error(error)
+    res.status(400).sendFile('404.html')
   }
 })
 

@@ -1,5 +1,6 @@
 
-const url  =  'https://utvchannel.tw1.su'
+// const url  =  'https://utvchannel.tw1.su'
+const url = 'http://localhost:9000'
 
 
 //
@@ -60,6 +61,8 @@ const getAllNewsCard = async () => {
     btnUpdateNews.setAttribute('id', 'btn_update_news')
     btnUpdateNews.textContent = 'Изменить'
 
+    console.log(btnUpdateNews)
+
 
     btnDelNews.addEventListener('click', async () => {
 
@@ -83,12 +86,9 @@ const getAllNewsCard = async () => {
     })
 
 
-    btnUpdateNews.addEventListener('click', () => {
-      console.log('perehod 3.0')
-      localStorage.setItem('newsId', news.id)
-      window.location.href = `/news/${news.id}`
-
-    })
+      btnUpdateNews.addEventListener('click', () => {
+        window.location.href = `/news/${news.id}`
+      })
 
 
 

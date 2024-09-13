@@ -26,7 +26,7 @@ const getAllNewsCard = async () => {
 
 
 
-    const filterDateCard = data.sort((a, b) => {return new Date(a.date) - new Date(b.date)})
+    const filterDateCard = data.sort((a, b) => {return new Date(b.date) - new Date(a.date)})
 
     filterDateCard.map((news) => {
 

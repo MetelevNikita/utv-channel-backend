@@ -116,8 +116,8 @@ const getAllNewsCard = async () => {
 
     console.log('perehod')
 
-      // localStorage.setItem('newsId', news.id)
-      // window.location.href = `/news/${news.id}`
+      localStorage.setItem('newsId', news.id)
+      window.location.href = `/news/${news.id}`
 
   })
 

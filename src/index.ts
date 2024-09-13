@@ -140,7 +140,7 @@ app.get('/main/news', authMiddleware, (req, res) => {
 
 
 
-app.get('/news/:id', authMiddleware, (req, res) => {
+app.get('/news/:id', (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/newsCard.html')
   } catch (error) {

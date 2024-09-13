@@ -1,4 +1,4 @@
-const url  =  'https://utvchannel.tw1.su'\
+const url  =  'https://utvchannel.tw1.su'
 
 
 console.log('TEST')

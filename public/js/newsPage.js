@@ -6,30 +6,30 @@ const url  =  'https://utvchannel.tw1.su'
 
 const containerNews = document.getElementById('cards_container')
 
-const cardNews = document.createElement('div')
-cardNews.classList.add('card_news')
-cardNews.setAttribute('id', 'card_news')
+// const cardNews = document.createElement('div')
+// cardNews.classList.add('card_news')
+// cardNews.setAttribute('id', 'card_news')
 
 
-const titleNews = document.createElement('div')
-titleNews.classList.add('title_news')
-titleNews.setAttribute('id', 'title_news')
+// const titleNews = document.createElement('div')
+// titleNews.classList.add('title_news')
+// titleNews.setAttribute('id', 'title_news')
 
 
-const btnBoxNews = document.createElement('div')
-btnBoxNews.classList.add('btn_box_news')
-btnBoxNews.setAttribute('id', 'btn_box_news')
+// const btnBoxNews = document.createElement('div')
+// btnBoxNews.classList.add('btn_box_news')
+// btnBoxNews.setAttribute('id', 'btn_box_news')
 
 
-const btnDelNews = document.createElement('button')
-btnDelNews.classList.add('btn_del_news')
-btnDelNews.setAttribute('id', 'btn_del_news')
-btnDelNews.textContent = 'Удалить'
+// const btnDelNews = document.createElement('button')
+// btnDelNews.classList.add('btn_del_news')
+// btnDelNews.setAttribute('id', 'btn_del_news')
+// btnDelNews.textContent = 'Удалить'
 
-const btnUpdateNews = document.createElement('button')
-btnUpdateNews.classList.add('btn_update_news')
-btnUpdateNews.setAttribute('id', 'btn_update_news')
-btnUpdateNews.textContent = 'Изменить'
+// const btnUpdateNews = document.createElement('button')
+// btnUpdateNews.classList.add('btn_update_news')
+// btnUpdateNews.setAttribute('id', 'btn_update_news')
+// btnUpdateNews.textContent = 'Изменить'
 
 
 

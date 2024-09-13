@@ -1,3 +1,7 @@
+const url = 'https://utvchannel.tw1.su'
+
+//
+
 const cardsContainer = document.getElementById('cards_container')
 const btnBack = document.getElementById('select_project_back_btn')
 
@@ -13,7 +17,7 @@ emptyList.textContent = 'Нет проектов'
 
 const getAllProjectCards = async () => {
   try {
-    const responce = await fetch('https://utvchannel.tw1.su/api/v1/project', {
+    const responce = await fetch(`${url}/api/v1/project`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

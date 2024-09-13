@@ -139,6 +139,16 @@ app.get('/main/news', authMiddleware, (req, res) => {
 })
 
 
+
+app.get('/news/:id', authMiddleware, (req, res) => {
+  try {
+    res.status(200).sendFile(publicPath  +  '/html/newsCard.html')
+  } catch (error) {
+    res.status(400).sendFile(publicPath  +  '/html/404.html')
+  }
+})
+
+
 // program
 
 app.get('/main/program', (req, res) => {
@@ -146,7 +156,7 @@ app.get('/main/program', (req, res) => {
     res.status(200).sendFile(publicPath  +  '/html/programPage.html')
   } catch (error) {
     console.error(error)
-    res.status(400).sendFile('404.html')
+    res.status(400).sendFile(publicPath  +  '/html/404.html')
   }
 })
 

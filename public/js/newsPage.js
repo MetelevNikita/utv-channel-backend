@@ -1,6 +1,10 @@
+
+const url  =  'https://utvchannel.tw1.su'
+
+
+//
+
 const containerNews = document.getElementById('cards_container')
-
-
 
 const cardNews = document.createElement('div')
 cardNews.classList.add('card_news')
@@ -32,7 +36,7 @@ btnUpdateNews.textContent = 'Изменить'
 
 const getAllNewsCard = async () => {
 
-  const responce = await fetch('https://utvchannel.tw1.su/api/v1/news', {
+  const responce = await fetch(`${url}/api/v1/news`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -52,8 +56,6 @@ const getAllNewsCard = async () => {
   const cardNews = document.createElement('div')
   cardNews.setAttribute('class', 'card_news d-flex flex-column mb-3')
   cardNews.setAttribute('id', 'card_news')
-
-
 
 
   const dateNews = document.createElement('div')
@@ -79,11 +81,18 @@ const getAllNewsCard = async () => {
   btnDelNews.textContent = 'Удалить'
 
 
+
+  const btnUpdateNews = document.createElement('button')
+  btnUpdateNews.setAttribute('class', 'btn_card_news btn_update_news')
+  btnUpdateNews.setAttribute('id', 'btn_update_news')
+  btnUpdateNews.textContent = 'Изменить'
+
+
   btnDelNews.addEventListener('click', async () => {
 
     try {
 
-      const responce = await fetch(`https://utvchannel.tw1.su/api/v1/news/${news.id}`, {
+      const responce = await fetch(`${url}/api/v1/news/${news.id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -102,12 +111,18 @@ const getAllNewsCard = async () => {
   })
 
 
+  btnUpdateNews.addEventListener('click', async () => {
+    try {
+
+      localStorage.setItem('newsId', news.id)
+      window.location.href = `/news/${news.id}`
+
+    } catch (error) {
+      console.error(error)
+    }
+  })
 
 
-  const btnUpdateNews = document.createElement('button')
-  btnUpdateNews.setAttribute('class', 'btn_card_news btn_update_news')
-  btnUpdateNews.setAttribute('id', 'btn_update_news')
-  btnUpdateNews.textContent = 'Изменить'
 
   //
 

@@ -1,3 +1,7 @@
+const url = 'https://utvchannel.tw1.su'
+
+//
+
 const cardsContainer = document.getElementById('cards_container');
 const selectBackBtn = document.getElementById('select_team_back_btn')
 
@@ -79,7 +83,7 @@ const teamCard = (item) => {
 
 
 const getAllCards = async () => {
-  const responce = await fetch('https://utvchannel.tw1.su/api/v1/team', {
+  const responce = await fetch(`${url}/api/v1/team`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -100,7 +104,7 @@ const getAllCards = async () => {
 
 
 const deleteCard  =  async  (id)  =>  {
-  const responce = await fetch(`https://utvchannel.tw1.su/api/v1/team/${id}`, {
+  const responce = await fetch(`${url}/api/v1/team/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

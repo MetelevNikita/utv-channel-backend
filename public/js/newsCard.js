@@ -1,134 +1,9 @@
+// URL
+
+
 const url  =  'https://utvchannel.tw1.su'
 
 
-// submit to team page
-
-const selectTeamBtn = document.getElementById('select_team_btn');
-
-selectTeamBtn.addEventListener('click', async  (e)  =>  {
-  e.preventDefault();
-
-  try {
-
-    window.location.href = 'main/team'
-
-  } catch (error) {
-    console.log(`произошла ошибка ${error}`)
-  }
-})
-
-
-// team Form
-
-
-const teamForm = document.getElementById('team_form');
-
-
-teamForm.addEventListener('submit', async (e) => {
-  e.preventDefault()
-
-  try {
-
-
-    const teamName = document.getElementById('team_name');
-    const teamProfession= document.getElementById('team_profession');
-    const teamFile= document.getElementById('team_file');
-
-    const newTeamForm = new FormData();
-
-    newTeamForm.append('name', teamName.value);
-    newTeamForm.append('profession', teamProfession.value);
-    newTeamForm.append('file', teamFile.files[0]);
-
-
-    const responce = await fetch(`${url}/api/v1/team`, {
-      method: 'POST',
-      body: newTeamForm
-    })
-
-    const data = responce
-    teamForm.reset();
-    alert('карточка сотрудника успешно создана')
-    return data
-
-  } catch (error) {
-    console.log('при создании карточки произошла ошибка')
-  }
-})
-
-
-// project form
-
-
-const projectForm = document.getElementById('project_form');
-
-projectForm.addEventListener('submit', async  (e)  =>  {
-  e.preventDefault()
-
-  try {
-
-
-    const title = document.getElementById('project_title').value;
-    const description  = document.getElementById('project_description').value;
-    const duration = document.getElementById('project_duration').value;
-    const year = document.getElementById('project_year').value;
-    const author  = document.getElementById('project_author').value;
-    const channel = document.getElementById('project_channel').value;
-    const trailer = document.getElementById('project_trailer').value;
-
-    const file = document.getElementById('project_file').files[0];
-
-
-    const newProjectForm  = new FormData();
-
-    newProjectForm.append('title', title);
-    newProjectForm.append('description', description);
-    newProjectForm.append('duration', duration);
-    newProjectForm.append('year', year);
-    newProjectForm.append('author', author);
-    newProjectForm.append('channel', channel);
-    newProjectForm.append('trailer', trailer);
-    newProjectForm.append('file', file);
-
-
-
-    const responce = await fetch(`${url}/api/v1/project`,  {
-      method:  'POST',
-      body: newProjectForm
-    })
-
-    const data = responce
-
-    if (responce.status === 200) {
-      projectForm.reset();
-      console.log(data)
-      alert('карточка проекта успешно создана')
-      return data
-
-    }
-
-
-  } catch (error) {
-    console.log(`произошла ошибка  ${error}`)
-  }
-})
-
-
-// submit to project page
-
-const selectProjectBtn = document.getElementById('select_project_btn')
-
-selectProjectBtn.addEventListener('click', async  (e)  =>  {
-  e.preventDefault()
-
-  try {
-
-    window.location.href ='main/project'
-
-  } catch (error) {
-    console.log(`произошла ошибка ${error}`)
-  }
-})
 
 
 // text toolbar
@@ -173,57 +48,6 @@ for (let i = 0; i < fontBold.length; i++) {
 
 
 
-
-// news form
-
-
-const tagBox = document.getElementById('tag_news_box')
-
-// news categorySelector
-
-
-const categoryArr = ['Все', 'Политика', 'Экономика', 'Общество', 'Мир', 'Криминал', 'Cпорт', 'Технологии', 'Здоровье', 'Культура', 'Искуство']
-const selectedTags = []
-
-
-const newsCategory = document.getElementById('news_category');
-const newsCategoryBox = document.getElementById('news_category_box')
-
-for (let i = 0; i < categoryArr.length; i++) {
-  const option = document.createElement('option')
-  option.value = categoryArr[i]
-  option.textContent = categoryArr[i]
-  newsCategory.append(option)
-}
-
-newsCategory.addEventListener('change', (e) => {
-  selectedTags.push(e.target.value)
-
-  const tag = document.createElement('div')
-  tag.setAttribute('id', 'news_tag')
-  tag.setAttribute('class', 'news_tag md-2')
-  tag.textContent = e.target.value
-  tagBox.appendChild(tag)
-
-})
-
-
-
-
-const arrArea = []
-
-const newsTextArea = document.createElement('textarea')
-newsTextArea.setAttribute('id', `news_text_${arrArea.length + 1}`);
-newsTextArea.setAttribute('placeholder', 'Введите текст новости');
-newsTextArea.setAttribute('rows', '6')
-newsTextArea.setAttribute('name', 'news_text_area');
-newsTextArea.setAttribute('class', 'input_area input_news_description')
-
-
-
-
-const newsForm = document.getElementById('news_form');
-
 let textNum = 1
 let textArr = []
 let fileNum = 1
@@ -234,6 +58,90 @@ let commentNum = 1
 let commentArr = []
 
 
+
+
+// get single news
+
+
+const newsId = localStorage.getItem('newsId')
+
+
+const getSingleNews = async () => {
+  try {
+
+    const responce = await fetch(`${url}/api/v1/news/${newsId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+
+    if (responce.ok) {
+      const data = await responce.json()
+      return data
+    }
+
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+
+
+getSingleNews().then((data) => {
+  const newsTitle = document.getElementById('news_title');
+  const newsLead = document.getElementById('news_lead');
+  const newsAuthor = document.getElementById('news_author');
+  const newsDate = document.getElementById('news_date');
+  const newsVideo = document.getElementById('news_video')
+  const tags = selectedTags.join(' ')
+  const views = 0
+
+
+  newsTitle.value = data.title
+  newsLead.value = data.lead
+  newsAuthor.value = data.author
+  newsDate.value = data.date
+  newsVideo.value = data.video
+
+
+
+  const currentObj = {}
+  Object.keys(data).forEach(key => {
+    if (data[key] !== null && data[key] !== '') {
+      currentObj[key] = data[key]
+
+      const num = 10
+
+      for (let i=1; i<=num; i++){
+        if(key == `text_${i}`) {
+          newsText(data[key])
+        }
+
+        if(key == `image_${i}`) {
+          newsFile('')
+        }
+
+        if(key == `comment_${i}`) {
+          newsComment(JSON.parse(data[key]).input)
+        }
+
+      }
+    }
+  })
+
+})
+
+
+
+// add new element news
+
+
+
+
+
+
+
 const btnNewsText = document.getElementById('btn_news_text');
 const btnNewsFile = document.getElementById('btn_news_file');
 const btnNewsComment = document.getElementById('btn_news_comment')
@@ -241,14 +149,7 @@ const btnNewsBox = document.getElementById('btn_news_box');
 const submitNewsBtn = document.getElementById('login_news_button')
 
 
-
-
-
-
-
-btnNewsText.addEventListener('click', (e)  =>  {
-
-  e.preventDefault()
+const newsText = (text) => {
 
   if(textArr.length >= 10) {
     alert('Максимальное количество новостей 10')
@@ -273,6 +174,7 @@ btnNewsText.addEventListener('click', (e)  =>  {
   newsTextArea.setAttribute('rows', '6')
   newsTextArea.setAttribute('name', 'news_text_area');
   newsTextArea.setAttribute('class', 'input_area input_news_description')
+  newsTextArea.value = text
 
   textAreaBox.appendChild(newsTextArea)
   textAreaBox.appendChild(closeButton)
@@ -290,12 +192,15 @@ btnNewsText.addEventListener('click', (e)  =>  {
       return textArr
   })
 
+}
 
+btnNewsText.addEventListener('click', (e)  =>  {
+  e.preventDefault()
+  newsText('')
 })
 
-btnNewsFile.addEventListener('click',  (e)  =>  {
-  e.preventDefault()
 
+const newsFile = (fileComment) => {
   if(fileArr.length >= 10) {
     alert('Максимальное количество новостей 10')
     return
@@ -323,6 +228,7 @@ btnNewsFile.addEventListener('click',  (e)  =>  {
   imgComment.setAttribute('type', 'text')
   imgComment.setAttribute('id', `img_comment_${newFileNum}`)
   imgComment.setAttribute('class', 'input_form input_news_comment_file')
+  imgComment.value = fileComment
 
 
   const newsFile = document.createElement('input')
@@ -363,13 +269,15 @@ btnNewsFile.addEventListener('click',  (e)  =>  {
 
     return fileArr
   })
+}
 
+btnNewsFile.addEventListener('click',  (e)  =>  {
+  e.preventDefault()
+  newsFile()
 
 })
 
-btnNewsComment.addEventListener('click', (e) => {
-
-  e.preventDefault()
+const newsComment = (comment) => {
 
   if(commentArr.length >= 10) {
     alert('Максимальное количество новостей 10')
@@ -399,10 +307,7 @@ btnNewsComment.addEventListener('click', (e) => {
   newsComment.setAttribute('name', `comment_${newComment}`)
   newsComment.setAttribute('cols', 4)
   newsComment.setAttribute('rows', 8)
-
-
-
-
+  newsComment.value = comment
 
   newCommentDiv.appendChild(fontBoldSelect)
   newCommentDiv.appendChild(fontStyleSelect)
@@ -411,7 +316,6 @@ btnNewsComment.addEventListener('click', (e) => {
 
   textAreaBox.appendChild(newCommentDiv)
   textAreaBox.appendChild(closeButton)
-
 
   btnNewsBox.insertAdjacentElement('beforebegin', textAreaBox)
 
@@ -426,17 +330,62 @@ btnNewsComment.addEventListener('click', (e) => {
     return commentArr
 })
 
-
-  console.log(commentArr)
   return commentArr
 
+}
+
+
+btnNewsComment.addEventListener('click', (e) => {
+  e.preventDefault()
+  newsComment('')
+})
+
+
+
+// news Form
+
+
+
+const tagBox = document.getElementById('tag_news_box')
+
+// news categorySelector
+
+
+const categoryArr = ['Все новости', 'Политика', 'Экономика', 'Общество', 'В мире', 'Криминал', 'Cпорт', 'Технологии', 'Здоровье', 'Культура', 'Искуство']
+const selectedTags = []
+
+
+const newsCategory = document.getElementById('news_category');
+const newsCategoryBox = document.getElementById('news_category_box')
+
+for (let i = 0; i < categoryArr.length; i++) {
+  const option = document.createElement('option')
+  option.value = categoryArr[i]
+  option.textContent = categoryArr[i]
+  newsCategory.append(option)
+}
+
+newsCategory.addEventListener('change', (e) => {
+  selectedTags.push(e.target.value)
+
+  const tag = document.createElement('div')
+  tag.setAttribute('id', 'news_tag')
+  tag.setAttribute('class', 'news_tag md-2')
+  tag.textContent = e.target.value
+  tagBox.appendChild(tag)
 
 })
 
 
 
 
-newsForm.addEventListener('submit', async (e) => {
+// update news
+
+
+const newsUpdateForm = document.getElementById('news_update_form')
+
+
+newsUpdateForm.addEventListener('submit', async (e) => {
   e.preventDefault()
 
   try {
@@ -451,7 +400,9 @@ newsForm.addEventListener('submit', async (e) => {
 
 
 
+
     const newNewsForm = new FormData();
+    newNewsForm.append('id', newsId)
     newNewsForm.append('title', newsTitle);
     newNewsForm.append('lead', newsLead)
     newNewsForm.append('author', newsAuthor);
@@ -494,7 +445,6 @@ newsForm.addEventListener('submit', async (e) => {
 
 
 
-
     if(commentArr.length >= 1) {
       console.log('есть комментарии')
       for (let i = 0; i < commentArr.length; i++) {
@@ -514,7 +464,7 @@ newsForm.addEventListener('submit', async (e) => {
     }
 
       const responce = await fetch(`${url}/api/v1/news`, {
-        method: 'POST',
+        method: 'PUT',
         body: newNewsForm
       })
 
@@ -522,8 +472,7 @@ newsForm.addEventListener('submit', async (e) => {
       const data = responce
 
       if (responce.status === 200) {
-        newsForm.reset();
-        console.log(data)
+        newsUpdateForm.reset();
         alert('карточка проекта успешно создана')
         return data
 
@@ -535,122 +484,25 @@ newsForm.addEventListener('submit', async (e) => {
 })
 
 
-// submit to news page
-
-
-const selectNewsBtn = document.getElementById('select_news_btn')
-
-selectNewsBtn.addEventListener('click', () => {
-
-  try {
-    window.location.href ='main/news'
-  } catch (error) {
-    console.error(error)
-  }
-
-})
 
 
 
+// back to news
 
 
-// program form
+const backNewsBtn = document.getElementById('select_news_back_btn')
 
-const programForm = document.getElementById('program_form')
-
-programForm.addEventListener('submit', async (e) => {
+backNewsBtn.addEventListener('click', async  (e)  =>  {
   e.preventDefault()
   try {
 
-    const programDate = document.getElementById('program_date').value
-    const programTitle = document.getElementById('program_title').value;
-    const programSubtitle = document.getElementById('program_subtitle').value;
-    const programDescription = document.getElementById('program_description').value
-    const programLink = document.getElementById('program_link').value
-    const programFile = document.getElementById('program_file').files[0]
-
-
-
-    const programData = new FormData()
-    programData.append('date', programDate)
-    programData.append('title', programTitle)
-    programData.append('subtitle', programSubtitle)
-    programData.append('description', programDescription)
-    programData.append('link', programLink)
-    programData.append('file', programFile)
-
-
-    const responce = await fetch(`${url}/api/v1/program`, {
-      method: 'POST',
-      body: programData
-    })
-
-    if (responce.status === 200) {
-      programForm.reset();
-      alert('программа успешно создана')
-      return responce
-    }
-
-  } catch (error) {
-    alert('Что то пошло не так при запросе')
-    console.log(error)
-  }
-})
-
-
-
-// submit to prgram page
-
-const selectProgramBtn = document.getElementById('select_program_btn');
-
-selectProgramBtn.addEventListener('click', async  (e)  =>  {
-  e.preventDefault();
-
-  window.location.href = 'main/program'
-
-  try {
+    window.location.href ='/main/news'
 
   } catch (error) {
     console.log(`произошла ошибка ${error}`)
   }
 })
 
-
-
-// submit epg file
-
-
-const epgForm = document.getElementById('tv_form')
-
-
-epgForm.addEventListener('submit', async (e) => {
-  e.preventDefault()
-  try {
-
-
-    const file = document.getElementById('tv_file').files[0]
-
-    const formData = new FormData()
-    formData.append('file', file);
-
-    const responce = await fetch(`${url}/api/v1/epg`, {
-      method: 'POST',
-      body: formData
-    })
-
-
-    if(responce.ok) {
-
-      const data = responce.json()
-      alert('Файл успешно загружен')
-      formData.reset()
-      return data
-    }
-
-  } catch (error) {
-    console.log(error)
-  }
-})
 
 
 

@@ -1,3 +1,7 @@
+const url  =  'https://utvchannel.tw1.su'
+
+//
+
 const projectId = localStorage.getItem('projectId');
 const projectUpdateForm = document.getElementById('project-update_form')
 const changeFomtBtn = document.getElementById('select_project_back_btn')
@@ -5,7 +9,7 @@ const changeFomtBtn = document.getElementById('select_project_back_btn')
 
 const getSingleCard = async () => {
   try {
-    const responce = await fetch(`https://utvchannel.tw1.su/api/v1/project/${projectId}`, {
+    const responce = await fetch(`${url}/api/v1/project/${projectId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -63,7 +67,7 @@ projectUpdateForm.addEventListener('submit', async (e) => {
 
     console.log(...newFormData);
 
-    const responce = await fetch(`https://utvchannel.tw1.su/api/v1/project`, {
+    const responce = await fetch(`${url}/api/v1/project`, {
       method: 'PUT',
       body: newFormData
     })

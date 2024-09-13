@@ -1,3 +1,7 @@
+
+const url  =  'https://utvchannel.tw1.su'
+
+
 const changeFomtBtn = document.getElementById('select_project_back_btn')
 const programUpdateForm = document.getElementById('program_update_form')
 
@@ -15,7 +19,7 @@ const programFile = document.getElementById('program_file').files[0]
 const getSingleProgramCard = async () => {
   try {
 
-    const responce = await fetch(`https://utvchannel.tw1.su/api/v1/program/${programId}`, {
+    const responce = await fetch(`${url}/api/v1/program/${programId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -65,10 +69,9 @@ programUpdateForm.addEventListener('submit', async (e) => {
     newFormData.append('file', programFile)
 
 
-    console.log(...newFormData)
 
 
-    const responce = await fetch('https://utvchannel.tw1.su/api/v1/program', {
+    const responce = await fetch(`${url}/api/v1/program`, {
       method: 'PUT',
       body: newFormData
     })

@@ -1,3 +1,7 @@
+const url = 'https://utvchannel.tw1.su'
+
+//
+
 const formCahangeTitle = document.getElementById("form-title");
 const changeFormButton = document.getElementById("change_card_button");
 const backFormButton = document.getElementById('select_team_btn')
@@ -18,7 +22,7 @@ formCahangeTitle.innerHTML = `Создайте пользователя в ко�
 
 const getSingleCard = async (id) => {
   try {
-    const responce = await fetch(`https://utvchannel.tw1.su/api/v1/team/${id}`, {
+    const responce = await fetch(`${url}/api/v1/team/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -49,7 +53,7 @@ const updateSingleCard = async  (e)  =>  {
 
 
   try {
-    const responce = await fetch(`https://utvchannel.tw1.su/api/v1/team`, {
+    const responce = await fetch(`${url}/api/v1/team`, {
       method:  'PUT',
       body: updateFormData
     })

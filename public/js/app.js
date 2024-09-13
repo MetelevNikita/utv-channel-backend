@@ -1,7 +1,7 @@
 const url  =  'https://utvchannel.tw1.su'
 
 
-console.log('TEST')
+console.log('TEST 3.0')
 
 
 // submit to team page

@@ -110,14 +110,13 @@ const getAllNewsCard = async () => {
   })
 
 
-  btnUpdateNews.addEventListener('click', (e) => {
+  btnUpdateNews.addEventListener('click', () => {
 
-    e.preventDefault()
 
-    console.log('perehod')
+    console.log('perehod 3.0')
 
-      localStorage.setItem('newsId', news.id)
-      window.location.href = `/news/${news.id}`
+    localStorage.setItem('newsId', news.id)
+    window.location.href = `/news/${news.id}`
 
   })
 

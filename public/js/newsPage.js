@@ -111,7 +111,9 @@ const getAllNewsCard = async () => {
   })
 
 
-  btnUpdateNews.addEventListener('click', async () => {
+  btnUpdateNews.addEventListener('click', async (e) => {
+
+    e.preventDefault()
     try {
 
       localStorage.setItem('newsId', news.id)

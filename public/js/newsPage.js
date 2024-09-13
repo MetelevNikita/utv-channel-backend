@@ -84,10 +84,7 @@ const getAllNewsCard = async () => {
 
 
     btnUpdateNews.addEventListener('click', () => {
-
-
       console.log('perehod 3.0')
-
       localStorage.setItem('newsId', news.id)
       window.location.href = `/news/${news.id}`
 

@@ -25,7 +25,10 @@ const getAllNewsCard = async () => {
     console.log(data)
 
 
-    data.map((news) => {
+
+    const filterDateCard = data.sort((a, b) => {return new Date(a.date) - new Date(b.date)})
+
+    filterDateCard.map((news) => {
 
     const cardNews = document.createElement('div')
     cardNews.setAttribute('class', 'card_news d-flex flex-column mb-3')

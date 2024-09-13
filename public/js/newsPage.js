@@ -99,7 +99,6 @@ const getAllNewsCard = async () => {
         }
       })
       const data = await responce.json()
-      console.log(data)
       cardNews.remove()
       return data
 
@@ -111,19 +110,11 @@ const getAllNewsCard = async () => {
   })
 
 
-  btnUpdateNews.addEventListener('click', async (e) => {
-
-    console.log('click')
-
-    e.preventDefault()
-    try {
+  btnUpdateNews.addEventListener('click', (e) => {
 
       localStorage.setItem('newsId', news.id)
       window.location.href = `/news/${news.id}`
 
-    } catch (error) {
-      console.error(error)
-    }
   })
 
 
@@ -146,13 +137,8 @@ getAllNewsCard()
 
 
 const backBtn = document.getElementById('select_news_back_btn')
-console.log(backBtn)
-
 
 backBtn.addEventListener('click', () => {
-  console.log('click')
-
-
   window.location.href = '/main'
 })
 

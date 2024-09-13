@@ -113,6 +113,8 @@ const getAllNewsCard = async () => {
 
   btnUpdateNews.addEventListener('click', async (e) => {
 
+    console.log('click')
+
     e.preventDefault()
     try {
 

@@ -208,19 +208,19 @@ app.get('/news/test', authMiddleware, (req, res) => {
 
 // other
 
-// app.get('/*', (req, res) => {
-//   try  {
-//     if(req.cookies.token) {
-//       res.redirect('/main')
-//       return
-//     }
-//     res.redirect('/login')
+app.get('/*', (req, res) => {
+  try  {
+    if(req.cookies.token) {
+      res.redirect('/main')
+      return
+    }
+    res.redirect('/login')
 
-//   } catch  (error)  {
-//    res.status(400).sendFile('404.html')
-//   }
+  } catch  (error)  {
+   res.status(400).sendFile('404.html')
+  }
 
-// })
+})
 
 
 

@@ -86,9 +86,10 @@ const getAllNewsCard = async () => {
     })
 
 
-      btnUpdateNews.addEventListener('click', () => {
-        window.location.href = `/news/${news.id}`
-      })
+    btnUpdateNews.addEventListener('click', () => {
+      localStorage.setItem('newsId', news.id)
+      window.location.href = `/news/${news.id}`
+    })
 
 
 
@@ -116,9 +117,9 @@ const getAllNewsCard = async () => {
 getAllNewsCard()
 
 
-// const backBtn = document.getElementById('select_news_back_btn')
+const backBtn = document.getElementById('select_news_back_btn')
 
-// backBtn.addEventListener('click', () => {
-//   window.location.href = '/main'
-// })
+backBtn.addEventListener('click', () => {
+  window.location.href = '/main'
+})
 

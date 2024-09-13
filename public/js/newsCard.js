@@ -66,8 +66,8 @@ let commentArr = []
 const newsId = localStorage.getItem('newsId')
 
 
-const getSingleNews = async (e) => {
-  e.preventDefault()
+const getSingleNews = async () => {
+
   try {
 
     const responce = await fetch(`${url}/api/v1/news/${newsId}`, {

@@ -77,7 +77,6 @@ programUpdateForm.addEventListener('submit', async (e) => {
     })
 
     const data = await responce.json()
-    console.log(data)
     programUpdateForm.reset()
     return data
 

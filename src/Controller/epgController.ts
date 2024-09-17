@@ -48,6 +48,8 @@ const getEpg = (req: any, res: any) => {
 const postEpg = (req: any, res: any) => {
   const file = req.file;
 
+  console.log(file);
+
   if(!file) {
     res.status(404).send('File not found');
     return

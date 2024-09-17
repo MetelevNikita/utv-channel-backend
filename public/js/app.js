@@ -1,10 +1,42 @@
 const url  =  'https://utvchannel.tw1.su'
 
 
-console.log('TEST 8.0')
+// login users
+
+
+
+const loginAuth = document.getElementById('login_form')
+
+
+const getUsers = async () => {
+  try {
+    const responce = await fetch(`${url}/api/v1/login`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+
+    if (responce.ok) {
+      const data = await responce.json()
+      console.log(data)
+      return data
+    }
+
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+getUsers()
 
 
 // submit to team page
+
+
+
+
 
 const selectTeamBtn = document.getElementById('select_team_btn');
 
@@ -104,7 +136,6 @@ projectForm.addEventListener('submit', async  (e)  =>  {
 
     if (responce.status === 200) {
       projectForm.reset();
-      console.log(data)
       alert('карточка проекта успешно создана')
       return data
 
@@ -132,6 +163,18 @@ selectProjectBtn.addEventListener('click', async  (e)  =>  {
     console.log(`произошла ошибка ${error}`)
   }
 })
+
+
+// NEWS
+
+
+const date = document.getElementById('news_date')
+date.valueAsDate = new Date()
+
+
+const author = document.getElementById('news_author')
+author.value = 'Новости'
+
 
 
 // text toolbar
@@ -354,7 +397,6 @@ btnNewsFile.addEventListener('click',  (e)  =>  {
   closeButton.addEventListener('click', (e)  =>  {
 
     fileArr = fileArr.filter((item) => {
-      console.log(item.id)
       return item.id !== `news_file_${e.target.parentNode.id.slice(14)}`
     })
 
@@ -418,8 +460,6 @@ btnNewsComment.addEventListener('click', (e) => {
 
   btnNewsBox.insertAdjacentElement('beforebegin', textAreaBox)
 
-  commentArr.push(newsComment)
-
 
   closeButton.addEventListener('click', (e)  =>  {
     commentArr = commentArr.filter((item) => {
@@ -429,13 +469,9 @@ btnNewsComment.addEventListener('click', (e) => {
     return commentArr
 })
 
-
-  console.log(commentArr)
   return commentArr
 
-
 })
-
 
 
 
@@ -465,7 +501,6 @@ newsForm.addEventListener('submit', async (e) => {
 
 
     if(textArr.length >= 1) {
-      console.log('есть тексты')
       for (let i = 0; i < textArr.length; i++) {
         newNewsForm.append(`text_${i+1}`, textArr[i].value)
       }
@@ -475,7 +510,6 @@ newsForm.addEventListener('submit', async (e) => {
 
 
     if(fileArr.length >= 1) {
-      console.log('есть файлы')
       for (let i = 0; i < fileArr.length; i++) {
         newNewsForm.append(`file_${i+1}`, fileArr[i].files[0])
       }
@@ -486,7 +520,6 @@ newsForm.addEventListener('submit', async (e) => {
 
 
     if (commentFileArr.length >= 1) {
-      console.log('есть комментарии к фото')
       for (let i = 0; i < commentFileArr.length; i++) {
         console.log(commentFileArr[i].value)
         newNewsForm.append(`image_comment_${i+1}`, commentFileArr[i].value)
@@ -499,7 +532,6 @@ newsForm.addEventListener('submit', async (e) => {
 
 
     if(commentArr.length >= 1) {
-      console.log('есть комментарии')
       for (let i = 0; i < commentArr.length; i++) {
 
         const newObj = JSON.stringify({
@@ -516,17 +548,19 @@ newsForm.addEventListener('submit', async (e) => {
       console.log('нет комментариев')
     }
 
-      const responce = await fetch(`${url}/api/v1/news`, {
-        method: 'POST',
-        body: newNewsForm
-      })
+    console.log(Object.fromEntries(newNewsForm))
+    sessionStorage.setItem(`news_${newsTitle}`, JSON.stringify(Object.fromEntries(newNewsForm)))
+
+    const responce = await fetch(`${url}/api/v1/news`, {
+      method: 'POST',
+      body: newNewsForm
+    })
 
 
       const data = responce
 
       if (responce.status === 200) {
         newsForm.reset();
-        console.log(data)
         alert('карточка проекта успешно создана')
         return data
 
@@ -539,6 +573,10 @@ newsForm.addEventListener('submit', async (e) => {
 
 
 // submit to news page
+
+
+
+
 
 
 const selectNewsBtn = document.getElementById('select_news_btn')
@@ -627,6 +665,7 @@ const epgForm = document.getElementById('tv_form')
 
 
 epgForm.addEventListener('submit', async (e) => {
+
   e.preventDefault()
   try {
 
@@ -635,6 +674,7 @@ epgForm.addEventListener('submit', async (e) => {
 
     const formData = new FormData()
     formData.append('file', file);
+
 
     const responce = await fetch(`${url}/api/v1/epg`, {
       method: 'POST',

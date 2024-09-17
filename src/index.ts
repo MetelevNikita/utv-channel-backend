@@ -196,13 +196,6 @@ app.get('/project/:id', authMiddleware, (req, res) => {
 
 
 
-app.get('/news/test', authMiddleware, (req, res) => {
-  try {
-    res.status(200).sendFile(publicPath  +  '/html/TESTPAGE.html')
-  } catch (error) {
-    console.error(error)
-  }
-})
 
 
 

@@ -5,6 +5,26 @@ import jwt  from  'jsonwebtoken';
 
 const htmlPath  = path.join(__dirname,  '..',  '..',  '/public/html');
 
+
+const getUsers = async (req: any, res: any) => {
+  try {
+
+    const getUser = await pool.query('SELECT * FROM users');
+
+    if(getUser.rows.length  ===  0)  {
+      return res.status(400).json({messge: 'Не верный логин или пароль'});
+    }
+
+    res.status(200).json(getUser.rows[0]);
+
+
+  } catch (error) {
+    res.status(500).json({message: 'Ошибка'})
+  }
+}
+
+
+
 const postLogin = async (req: any, res: any) => {
 
   try {
@@ -16,8 +36,6 @@ const postLogin = async (req: any, res: any) => {
       return res.status(400).json({messge: 'Не верный логин или пароль'});
     }
 
-
-    console.log(postLogin.rows)
 
     const token = jwt.sign({id: postLogin.rows[0].id},  process.env.JWT_SECRET as string,  {expiresIn: '1h'});
     res.cookie('token', token, {httpOnly: true});
@@ -31,4 +49,4 @@ const postLogin = async (req: any, res: any) => {
 
 }
 
-export { postLogin }
+export { postLogin, getUsers }

@@ -4,7 +4,6 @@ import cookieParser from 'cookie-parser';
 
 const authMiddleware = (req: any, res: any, next: any) => {
   const token = req.cookies.token
-  console.log(token);
 
   try {
 

@@ -46,7 +46,7 @@ const postProgram = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     try {
         const { date, title, subtitle, description, link } = req.body;
         const imageFile = req.file.originalname;
-        const fullUrl = req.protocol + '://' + req.get('host') + '/image/program/' + imageFile;
+        const fullUrl = 'https://utvchannel.tw1.su' + '/image/program/' + imageFile;
         const newProgram = yield database_1.pool.query("INSERT INTO program (image, date, title, subtitle, description, link) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *", [fullUrl, date, title, subtitle, description, link]);
         if (newProgram.rows.length < 1) {
             res.status(200).json({ message: 'Программа не создана' });
@@ -80,7 +80,7 @@ const updateProgram = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     try {
         const { id, date, title, subtitle, description, link } = req.body;
         const imageFile = req.file.originalname;
-        const fullUrl = req.protocol + '://' + req.get('host') + '/image/program/' + imageFile;
+        const fullUrl = 'https://utvchannel.tw1.su' + '/image/program/' + imageFile;
         const updateProgram = yield database_1.pool.query("UPDATE program SET image = $1, date = $2, title = $3, subtitle = $4, description = $5, link = $6 WHERE id = $7 RETURNING *", [fullUrl, date, title, subtitle, description, link, id]);
         if (updateProgram.rows.length < 0) {
             res.status(200).json({ message: 'Программа не обновлена' });

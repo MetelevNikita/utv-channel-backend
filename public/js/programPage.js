@@ -62,7 +62,6 @@ const getAllProgramCard = async () => {
         })
 
         const data = await responce.json();
-        console.log(data);
         cardProgram.remove()
         window.location.reload();
         return data

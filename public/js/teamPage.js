@@ -70,7 +70,6 @@ const teamCard = (item) => {
 
 
   teamCardBtnUpdate.addEventListener('click', ()  =>  {
-    console.log('update')
     localStorage.setItem('cardId', item.id);
     window.location.href =  `/team/${item.id}`;
   })
@@ -91,7 +90,6 @@ const getAllCards = async () => {
   })
 
   const data = await responce.json();
-  console.log(data);
 
   if(data.length < 1) {
     return cardsContainer.appendChild(emptyTeamCard());
@@ -112,7 +110,6 @@ const deleteCard  =  async  (id)  =>  {
   })
 
   const data = await responce.json();
-  console.log(data);
   return data;
 
 }

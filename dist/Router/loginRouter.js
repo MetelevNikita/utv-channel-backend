@@ -6,4 +6,5 @@ const loginController_1 = require("../Controller/loginController");
 //
 const loginRouter = (0, express_1.Router)();
 loginRouter.post('/login', loginController_1.postLogin);
+loginRouter.get('/login', loginController_1.getUsers);
 exports.default = loginRouter;

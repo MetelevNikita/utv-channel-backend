@@ -46,7 +46,7 @@ const postTeam = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { name, profession } = req.body;
         const imageFile = req.file.originalname;
-        const fullUrl = req.protocol + '://' + req.get('host') + '/image/team/' + imageFile;
+        const fullUrl = 'https://utvchannel.tw1.su' + '/image/team/' + imageFile;
         const newTeam = yield database_1.pool.query(`INSERT INTO team (name, profession, image) VALUES ($1, $2, $3) RETURNING *`, [name, profession, fullUrl]);
         if (!newTeam.rows[0]) {
             res.status(400).send(`Карточка сотрудника не создана`);
@@ -72,7 +72,7 @@ const updateTeam = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             return;
         }
         const imageFile = req.file.originalname;
-        const fullUrl = req.protocol + '://' + req.get('host') + '/image/team/' + imageFile;
+        const fullUrl = 'https://utvchannel.tw1.su' + '/image/team/' + imageFile;
         const updateTeam = yield database_1.pool.query(`UPDATE team SET name = $1, profession = $2, image = $3 WHERE id = $4 RETURNING *`, [name, profession, fullUrl, id]);
         if (!updateTeam.rows[0]) {
             res.status(400).send(`Карточка сотрудника не изменена`);

@@ -26,7 +26,6 @@ const getAllProjectCards = async () => {
 
 
     const data = await responce.json()
-    console.log(data)
 
     const projectCards = (data.message === 'Проекты не найдены') ? cardsContainer.appendChild(emptyList) : data.map(project => {
       console.log(project)
@@ -88,7 +87,6 @@ const getAllProjectCards = async () => {
           })
 
           const data = await responce.json()
-          console.log(data)
           projectCard.remove()
           window.location.reload()
           return data
@@ -121,8 +119,6 @@ const getAllProjectCards = async () => {
 
 getAllProjectCards()
 
-
-console.log(btnBack)
 
 btnBack.addEventListener('click', () => {
 

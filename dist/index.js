@@ -105,6 +105,15 @@ app.get('/main/news', authMiddleware_1.default, (req, res) => {
         res.status(400).sendFile('404.html');
     }
 });
+app.get('/news/:id', authMiddleware_1.default, (req, res) => {
+    try {
+        res.status(200).sendFile(publicPath + '/html/newsCard.html');
+    }
+    catch (error) {
+        console.error(error);
+        res.status(400).sendFile('404.html');
+    }
+});
 // program
 app.get('/main/program', (req, res) => {
     try {
@@ -112,7 +121,7 @@ app.get('/main/program', (req, res) => {
     }
     catch (error) {
         console.error(error);
-        res.status(400).sendFile('404.html');
+        res.status(400).sendFile(publicPath + '/html/404.html');
     }
 });
 app.get('/program/:id', (req, res) => {

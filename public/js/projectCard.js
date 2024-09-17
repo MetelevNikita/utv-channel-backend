@@ -18,7 +18,7 @@ const getSingleCard = async () => {
 
 
     const data = await responce.json();
-    console.log(data);
+
 
     const projectTitle = document.getElementById('project_title').value = data.title;
     const projectDescription = document.getElementById('project_description').value = data.description;
@@ -65,7 +65,6 @@ projectUpdateForm.addEventListener('submit', async (e) => {
     newFormData.append('trailer', projectTrailer.value);
     newFormData.append('file', projectImage);
 
-    console.log(...newFormData);
 
     const responce = await fetch(`${url}/api/v1/project`, {
       method: 'PUT',
@@ -74,7 +73,6 @@ projectUpdateForm.addEventListener('submit', async (e) => {
 
 
     const data = await responce;
-    console.log(data);
     projectUpdateForm.reset();
     return data;
 

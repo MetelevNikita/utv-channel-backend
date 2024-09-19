@@ -15,7 +15,6 @@ const authMiddleware = (req: any, res: any, next: any) => {
 
       req.user = user
       console.log(user);
-      localStorage.setItem('user', JSON.stringify(user));
       next();
 
   } catch (error) {

@@ -1,40 +1,12 @@
-const url  =  'https://utvchannel.tw1.su'
+// const url  =  'https://utvchannel.tw1.su'
+const url = 'http://localhost:9000'
 
 
-// login users
 
 
-
-const loginAuth = document.getElementById('login_form')
-
-
-const getUsers = async () => {
-  try {
-    const responce = await fetch(`${url}/api/v1/login`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-
-    if (responce.ok) {
-      const data = await responce.json()
-      console.log(data)
-      return data
-    }
-
-  } catch (error) {
-    console.log(error)
-  }
-}
-
-
-getUsers()
 
 
 // submit to team page
-
-
 
 
 
@@ -457,6 +429,7 @@ btnNewsComment.addEventListener('click', (e) => {
 
   btnNewsBox.insertAdjacentElement('beforebegin', textAreaBox)
 
+  commentArr.push(newsComment)
 
   closeButton.addEventListener('click', (e)  =>  {
     commentArr = commentArr.filter((item) => {
@@ -538,7 +511,6 @@ newsForm.addEventListener('submit', async (e) => {
           fontBold: fontBoldSelect.value
         })
 
-        console.log(newObj)
         newNewsForm.append(`comment_${i+1}`, newObj)
       }
     } else {

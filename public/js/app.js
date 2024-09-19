@@ -149,11 +149,7 @@ const setNameAuthor = async () => {
 
   const author = document.getElementById('news_author')
 
-  const cookie = document.cookie
-  console.log(cookie)
-
-
-  const userId = document.cookie.split(' ')[3].split('=')[1]
+  const userId = document.cookie.split('=')[1]
   console.log(userId)
 
   try {

@@ -148,7 +148,7 @@ date.valueAsDate = new Date()
 const setNameAuthor = async () => {
 
   const author = document.getElementById('news_author')
-  const userId = document.cookie.split(' ')[5].split('=')[1]
+  const userId = document.cookie.split(' ')[1].split('=')[1]
   console.log(userId)
 
   try {

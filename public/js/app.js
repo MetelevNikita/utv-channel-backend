@@ -173,7 +173,6 @@ date.valueAsDate = new Date()
 
 
 const author = document.getElementById('news_author')
-author.value = 'Новости'
 
 
 
@@ -352,8 +351,6 @@ btnNewsFile.addEventListener('click',  (e)  =>  {
   const textAreaBox = document.createElement('div')
   textAreaBox.setAttribute('id', `text_area_box_${newFileNum}`);
   textAreaBox.setAttribute('class', 'text_area_box_file')
-
-
 
   const closeButton = document.createElement('div')
   closeButton.setAttribute('class', 'close-btn-file')
@@ -548,8 +545,7 @@ newsForm.addEventListener('submit', async (e) => {
       console.log('нет комментариев')
     }
 
-    console.log(Object.fromEntries(newNewsForm))
-    sessionStorage.setItem(`news_${newsTitle}`, JSON.stringify(Object.fromEntries(newNewsForm)))
+    console.log(...newNewsForm)
 
     const responce = await fetch(`${url}/api/v1/news`, {
       method: 'POST',

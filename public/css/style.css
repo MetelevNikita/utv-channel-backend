@@ -479,3 +479,28 @@ textarea::placeholder {
   margin-top: 20px;
   margin-left: 20px;
 }
+
+
+
+
+
+/* Footer info */
+
+
+.title_footer {
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #f35d1e;
+}
+
+
+
+.subtitle_footer {
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #f35d1e;
+}

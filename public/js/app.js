@@ -4,8 +4,6 @@ const url  =  'https://utvchannel.tw1.su'
 
 
 
-
-
 // submit to team page
 
 
@@ -144,7 +142,37 @@ const date = document.getElementById('news_date')
 date.valueAsDate = new Date()
 
 
-const author = document.getElementById('news_author')
+
+
+
+const setNameAuthor = async () => {
+
+  const author = document.getElementById('news_author')
+  const userId = document.cookie.split(' ')[5].split('=')[1]
+  console.log(userId)
+
+  try {
+    const responce = await fetch(`${url}/api/v1/login`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
+
+    if(responce.ok) {
+      const data = await responce.json();
+
+
+      const singleUser = data.find((item) => item.id == userId)
+      return author.value = singleUser.username
+    }
+
+  } catch (error) {
+    console.log(error)
+  }
+}
+setNameAuthor()
+
 
 
 
@@ -457,6 +485,7 @@ newsForm.addEventListener('submit', async (e) => {
     const newsVideo = document.getElementById('news_video').value
     const tags = selectedTags.join(' ')
     const views = 0
+
 
 
 

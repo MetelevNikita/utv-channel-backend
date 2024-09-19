@@ -20,10 +20,11 @@ const htmlPath = path_1.default.join(__dirname, '..', '..', '/public/html');
 const getUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const getUser = yield database_1.pool.query('SELECT * FROM users');
-        if (getUser.rows.length === 0) {
-            return res.status(400).json({ messge: 'Не верный логин или пароль' });
-        }
-        res.status(200).json(getUser.rows[0]);
+        console.log(getUser);
+        // if(getUser.rows.length  < 1)  {
+        //   return res.status(400).json({messge: 'Не верный логин или пароль'});
+        // }
+        res.status(200).json(getUser.rows);
     }
     catch (error) {
         res.status(500).json({ message: 'Ошибка' });
@@ -33,13 +34,15 @@ exports.getUsers = getUsers;
 const postLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { email, password } = req.body;
-        const postLogin = yield database_1.pool.query('SELECT FROM users WHERE email = $1 and password = $2', [email, password]);
-        if (postLogin.rows.length === 0) {
+        const postLogin = yield database_1.pool.query('SELECT * FROM users WHERE email = $1 and password = $2', [email, password]);
+        console.log(postLogin.rows);
+        if (postLogin.rows.length < 1) {
             return res.status(400).json({ messge: 'Не верный логин или пароль' });
         }
         const token = jsonwebtoken_1.default.sign({ id: postLogin.rows[0].id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        res.cookie('userId', postLogin.rows[0].id);
         res.cookie('token', token, { httpOnly: true });
-        res.redirect('/main');
+        res.status(200).send({ message: `Успешно` });
     }
     catch (error) {
         console.log(error);

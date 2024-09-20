@@ -37,7 +37,8 @@ const postLogin = async (req: any, res: any) => {
 
 
     if(postLogin.rows.length  <  1)  {
-      return res.status(400).json({messge: 'Не верный логин или пароль'});
+      res.status(400).json({messge: 'Не верный логин или пароль'});
+      return;
     }
     const token = jwt.sign({id: postLogin.rows[0].id},  process.env.JWT_SECRET as string,  {expiresIn: '1h'});
     res.cookie('userId', postLogin.rows[0].id);

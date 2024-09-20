@@ -19,10 +19,10 @@ body {
 
 
 .title_theme {
+  text-align: center;
   width: 100%;
   font-size: 34px;
   font-weight: 600;
-  text-align: center;
   text-decoration: underline;
   text-decoration-color: #f35d1e;
 }
@@ -104,7 +104,7 @@ textarea::placeholder {
 
 
 .input_form_button {
-  width: 50%;
+  width: 100%;
   height: 60px;
   margin-bottom: 20px;
   background-color: #f35d1e;
@@ -115,21 +115,20 @@ textarea::placeholder {
 
 
 .form-title {
+  width: 100%;
   font-size: 14px;
   font-weight: 600;
-  margin-right: 20px;
 }
 
 
 .form-decription {
-  margin-top: 20px;
-  width: 50%;
+  width: 100%;
   height: 60px;
   font-size: 12px;
 }
 
 .select_btn {
-  width: 50%;
+  width: 100%;
   height: 60px;
   background-color: #f35d1e;
   color: white;
@@ -288,8 +287,7 @@ textarea::placeholder {
 /* search_news */
 
 .search_btn_news {
-  margin-left: 10px;
-  width: 200px;
+  width: 90%;
   height: 60px;
   background: #f35d1e;
   border-radius: 10px;
@@ -297,7 +295,7 @@ textarea::placeholder {
 }
 
 .input_search_news {
-  width: 500px;
+  width: 90%;
   height: 60px;
   border-radius: 10px;
   border: 1px solid black;

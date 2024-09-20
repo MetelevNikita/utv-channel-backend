@@ -64,5 +64,6 @@ const postEpg = (req, res) => {
         res.status(404).send('File not found');
         return;
     }
+    res.status(200).send({ message: 'Файл успешно загружен' });
 };
 exports.postEpg = postEpg;

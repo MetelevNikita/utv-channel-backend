@@ -55,6 +55,7 @@ const postEpg = (req: any, res: any) => {
     return
   }
 
+  res.status(200).send({message: 'Файл успешно загружен'});
 
 }
 

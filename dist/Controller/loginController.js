@@ -37,7 +37,8 @@ const postLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const postLogin = yield database_1.pool.query('SELECT * FROM users WHERE email = $1 and password = $2', [email, password]);
         console.log(postLogin.rows);
         if (postLogin.rows.length < 1) {
-            return res.status(400).json({ messge: 'Не верный логин или пароль' });
+            res.status(400).json({ messge: 'Не верный логин или пароль' });
+            return;
         }
         const token = jsonwebtoken_1.default.sign({ id: postLogin.rows[0].id }, process.env.JWT_SECRET, { expiresIn: '1h' });
         res.cookie('userId', postLogin.rows[0].id);

@@ -41,9 +41,9 @@
         <h1 class="title_theme d-flex justify-content-center mt-5 mb-5">Новости</h1>
 
 
-        <div class="col-md-6 flex-row d-flex align-items-center justify-content-center mb-5" id="create_block">
-          <h3 class="form-title">Создайте карточку проекта</h3>
-          <button class="select_btn" id="select_news_btn">посмотреть карточки</button>
+        <div class="col-md-6 flex-lg-row flex-column d-flex align-items-center justify-content-center mb-5" id="create_block">
+          <h3 class="form-title mb-4">Создайте карточку проекта</h3>
+          <button class="select_btn mb-4" id="select_news_btn">посмотреть карточки</button>
         </div>
 
 
@@ -94,17 +94,25 @@
 
         <h1 class="title_theme d-flex justify-content-center mt-5 mb-5">Команда</h1>
 
-        <div class="col-md-6 flex-row d-flex align-items-center justify-content-center mb-5">
-          <h3 class="form-title">Создайте пользователя в команду</h3>
-          <button class="select_btn" id="select_team_btn">посмотреть карточки</button>
+        <div class="col-md-6 flex-lg-row flex-column d-flex align-items-center justify-content-center mb-5">
+          <h3 class="form-title mb-4">Создайте пользователя в команду</h3>
+          <button class="select_btn mb-4" id="select_team_btn">посмотреть карточки</button>
         </div>
 
         <input type="text", id="team_name" class="input_form input_team_name" name="team_name" placeholder="введите ФИО" required>
         <input type="text", id="team_profession" class="input_form input_team_profession" name="team_profession" placeholder="введите профессию" required>
-        <input type="file" id="team_file" name="file" class="input_file" title="загрузите изображение" required>
 
-        <span class="form-decription">Изображение должно быть вертикальное, и подписано ФИО сотрудника</span>
-        <input type="submit" id="login_button" class="input_form_button" value="Создать">
+
+        <div class="col-md-6 flex-lg-row flex-column d-flex align-items-center justify-content-center mt-5">
+
+          <input type="file" id="team_file" name="file" class="input_file mb-4" title="загрузите изображение" required>
+          <span class="form-decription mb-4">Изображение должно быть вертикальное, и подписано ФИО сотрудника</span>
+
+        </div>
+
+
+        <input type="submit" id="login_button" class="input_form_button mb-4" value="Создать">
+
 
       </form>
 
@@ -118,9 +126,9 @@
         <h1 class="title_theme d-flex justify-content-center mt-5 mb-5">Проекты</h1>
 
 
-        <div class="col-md-6 flex-row d-flex align-items-center justify-content-center mb-5" id="create_block">
-          <h3 class="form-title">Создайте карточку проекта</h3>
-          <button class="select_btn" id="select_project_btn">посмотреть карточки</button>
+        <div class="col-md-6 flex-lg-row flex-column d-flex align-items-center justify-content-center" id="create_block">
+          <h3 class="form-title mb-4">Создайте карточку проекта</h3>
+          <button class="select_btn mb-4" id="select_project_btn">посмотреть карточки</button>
         </div>
 
 
@@ -142,9 +150,17 @@
         <input type="text", id="project_trailer" class="input_form input_project_link_trailer" name="project_link_trailer" placeholder="ссылка на трейлер Youtube" required>
 
 
-        <input type="file" id="project_file" name="file" class="input_file" title="загрузите изображение" required>
 
-        <span class="form-decription">Изображение должно быть горизонтальное, и подписано названием передачи</span>
+        <div class="col-md-6 flex-lg-row flex-column d-flex align-items-center justify-content-center mt-4 mb-4" id="create_block">
+
+          <input type="file" id="project_file" name="file" class="input_file" title="загрузите изображение" required>
+          <span class="form-decription d-flex align-items-center">Изображение должно быть горизонтальное, и подписано названием передачи</span>
+
+        </div>
+
+
+
+
         <input type="submit" id="login_project_button" class="input_form_button" value="Создать">
 
 
@@ -159,9 +175,9 @@
         <h1 class="title_theme d-flex justify-content-center mt-5 mb-5">Программы</h1>
 
 
-        <div class="col-md-6 flex-row d-flex align-items-center justify-content-center mb-5" id="create_block">
-          <h3 class="form-title">Создайте карточку программы</h3>
-          <button class="select_btn" id="select_program_btn">посмотреть карточки</button>
+        <div class="col-md-6 flex-lg-row flex-column d-flex align-items-center justify-content-center mb-2" id="create_block">
+          <h3 class="form-title mb-4">Создайте карточку программы</h3>
+          <button class="select_btn mb-4" id="select_program_btn">посмотреть карточки</button>
         </div>
 
 
@@ -174,14 +190,18 @@
 
         <input type="text", id="program_title" class="input_form input_program_title" name="program_title" placeholder="введите название" required>
         <input type="text", id="program_subtitle" class="input_form input_program_title" name="program_subtitle" placeholder="введите название выпуска" required>
-
         <textarea name="news_text_area" id="program_description" rows="6" class="input_area input_program_description" placeholder="введите краткое описание"></textarea>
-
         <input type="text", id="program_link" class="input_form input_program_link_channel" name="program_link" placeholder="ссылка на выпуск Youtube" required>
 
-        <input type="file" id="program_file" name="file" class="input_file" title="загрузите изображение" required>
+        <div class="col-md-6 flex-lg-row flex-column d-flex align-items-center justify-content-center mb-2" id="create_block">
 
-        <span class="form-decription">Изображение должно быть горизонтальное, и подписано названием передачи</span>
+          <input type="file" id="program_file" name="file" class="input_file mb-3" title="загрузите изображение" required>
+          <span class="form-decription mb-3">Изображение должно быть горизонтальное, и подписано названием передачи</span>
+
+        </div>
+
+
+
         <input type="submit" id="login_program_button" class="input_form_button" value="Создать">
 
       </form>
@@ -190,9 +210,9 @@
 
       <!-- tv program -->
 
-      <div class="col d-flex flex-column d-flex align-items-center justify-content-center mt-5">
+      <div class="col d-flex d-flex align-items-center justify-content-center mt-5">
 
-        <h1 class="title_theme d-flex justify-content-center mt-5 mb-5">Программа передач</h1>
+        <h1 class="title_theme d-flex justify-content-center align-items-center mt-5 mb-5">Программа передач</h1>
 
       </div>
 
@@ -223,7 +243,7 @@
       <div class="col d-flex flex-column d-flex align-items-center justify-content-center mt-5">
 
         <div class="title_footer d-flex justify-content-center mt-5 mb-1">Сборка 1.0</div>
-        <div class="subtitle_footer d-flex justify-content-center mt-5 mb-5">Производство ООО Фирма БИС 2024</div>
+        <div class="subtitle_footer d-flex justify-content-center mt-2 mb-2">Производство ООО Фирма БИС 2024</div>
 
       </div>
 

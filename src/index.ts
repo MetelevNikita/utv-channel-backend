@@ -7,6 +7,7 @@ import path  from  'path';
 import helmet from 'helmet';
 import morgan from 'morgan'
 import fs from 'fs';
+import apicache from 'apicache'
 
 // module
 
@@ -25,18 +26,23 @@ import { newsFolderNews } from './util/newsFolderDay';
 
 
 const publicPath  =  path.join(__dirname, '..',  'public');
-console.log(publicPath + '/js')
 
 
 const app = express();
+const cache = apicache.middleware
+
+
+
 dotenv.config()
 const pid = process.pid
 const date = new Date();
 const day = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 
-console.log(`PID:${pid}`)
-
 newsFolderNews(day)
+
+
+
+
 
 
 
@@ -54,6 +60,7 @@ app.use(express.json())
 app.use(cookieParser());
 app.use(helmet());
 app.use(morgan('dev'));
+app.use(cache('2 days'))
 
 // use routes
 

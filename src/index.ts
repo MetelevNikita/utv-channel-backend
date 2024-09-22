@@ -7,7 +7,6 @@ import path  from  'path';
 import helmet from 'helmet';
 import morgan from 'morgan'
 import fs from 'fs';
-import apicache from 'apicache'
 
 // module
 
@@ -29,7 +28,6 @@ const publicPath  =  path.join(__dirname, '..',  'public');
 
 
 const app = express();
-const cache = apicache.middleware
 
 
 
@@ -60,7 +58,6 @@ app.use(express.json())
 app.use(cookieParser());
 app.use(helmet());
 app.use(morgan('dev'));
-app.use(cache('2 days'))
 
 // use routes
 

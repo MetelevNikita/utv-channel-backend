@@ -7,9 +7,9 @@ const authMiddleware = (req: any, res: any, next: any) => {
 
   try {
 
-    // if (!token) {
-    //   return res.redirect('/login');
-    // }
+    if (!token) {
+      return res.redirect('/login');
+    }
 
     const user = jwt.verify(token, process.env.JWT_SECRET as string)
 

@@ -1,5 +1,4 @@
 import { pool } from '../db/database';
-const store = require('store');
 const date = new Date();
 const day = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 

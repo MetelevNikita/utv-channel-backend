@@ -34,6 +34,7 @@ const pid = process.pid;
 const date = new Date();
 const day = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 (0, newsFolderDay_1.newsFolderNews)(day);
+console.log(`pid: ${pid}`);
 // use
 app.use(express_1.default.static("public"));
 app.use(express_1.default.static(publicPath + "/js"));

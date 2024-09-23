@@ -8,7 +8,6 @@ import helmet from 'helmet';
 import morgan from 'morgan'
 import fs from 'fs';
 import { rateLimit } from 'express-rate-limit'
-import apicache from 'apicache'
 
 // module
 
@@ -38,7 +37,6 @@ const limiter = rateLimit({
 
 })
 
-const cache = apicache.middleware
 
 
 
@@ -100,7 +98,7 @@ app.get('/', (req, res) => {
 })
 
 
-app.get('/main', authMiddleware, cache('5 minutes'), (req, res) => {
+app.get('/main', authMiddleware, (req, res) => {
   try  {
 
     res.status(200).sendFile(publicPath  +  '/html/main.html')
@@ -114,7 +112,7 @@ app.get('/main', authMiddleware, cache('5 minutes'), (req, res) => {
 
 // team
 
-app.get('/main/team', authMiddleware, cache('5 minutes'), (req, res) => {
+app.get('/main/team', authMiddleware, (req, res) => {
   try {
 
     res.status(200).sendFile(publicPath  +  '/html/teamPage.html')
@@ -126,7 +124,7 @@ app.get('/main/team', authMiddleware, cache('5 minutes'), (req, res) => {
 })
 
 
-app.get('/team/:id', authMiddleware, cache('5 minutes'), (req, res) => {
+app.get('/team/:id', authMiddleware, (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/teamCard.html')
 
@@ -140,7 +138,7 @@ app.get('/team/:id', authMiddleware, cache('5 minutes'), (req, res) => {
 
 // news
 
-app.get('/main/news', authMiddleware, cache('5 minutes'), (req, res) => {
+app.get('/main/news', authMiddleware, (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/newsPage.html')
   } catch (error) {
@@ -149,7 +147,7 @@ app.get('/main/news', authMiddleware, cache('5 minutes'), (req, res) => {
   }
 })
 
-app.get('/news/:id', authMiddleware, cache('5 minutes'), (req, res) => {
+app.get('/news/:id', authMiddleware, (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/newsCard.html')
   } catch (error) {
@@ -161,7 +159,7 @@ app.get('/news/:id', authMiddleware, cache('5 minutes'), (req, res) => {
 
 // program
 
-app.get('/main/program', authMiddleware, cache('5 minutes'), (req, res) => {
+app.get('/main/program', authMiddleware, (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/programPage.html')
   } catch (error) {
@@ -170,7 +168,7 @@ app.get('/main/program', authMiddleware, cache('5 minutes'), (req, res) => {
   }
 })
 
-app.get('/program/:id', authMiddleware, cache('5 minutes'), (req, res) => {
+app.get('/program/:id', authMiddleware, (req, res) => {
   try {
 
     res.status(200).sendFile(publicPath  +  '/html/programCard.html')
@@ -185,7 +183,7 @@ app.get('/program/:id', authMiddleware, cache('5 minutes'), (req, res) => {
 
 // project
 
-app.get('/main/project', authMiddleware, cache('5 minutes'), (req, res) => {
+app.get('/main/project', authMiddleware, (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/projectPage.html')
   } catch (error) {
@@ -195,7 +193,7 @@ app.get('/main/project', authMiddleware, cache('5 minutes'), (req, res) => {
 })
 
 
-app.get('/project/:id', authMiddleware, cache('5 minutes'), (req, res) => {
+app.get('/project/:id', authMiddleware, (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/projectCard.html')
   } catch (error) {

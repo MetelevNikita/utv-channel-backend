@@ -12,7 +12,6 @@ const path_1 = __importDefault(require("path"));
 const helmet_1 = __importDefault(require("helmet"));
 const morgan_1 = __importDefault(require("morgan"));
 const express_rate_limit_1 = require("express-rate-limit");
-const apicache_1 = __importDefault(require("apicache"));
 // module
 const loginRouter_1 = __importDefault(require("./Router/loginRouter"));
 const teamRouter_1 = __importDefault(require("./Router/teamRouter"));
@@ -30,7 +29,6 @@ const limiter = (0, express_rate_limit_1.rateLimit)({
     max: 100,
     message: 'Слишком много запросов, повторите через 5ть минут',
 });
-const cache = apicache_1.default.middleware;
 dotenv_1.default.config();
 const pid = process.pid;
 const date = new Date();
@@ -74,7 +72,7 @@ app.get('/', (req, res) => {
         res.status(400).sendFile('/404.html');
     }
 });
-app.get('/main', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
+app.get('/main', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/main.html');
     }
@@ -84,7 +82,7 @@ app.get('/main', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
     }
 });
 // team
-app.get('/main/team', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
+app.get('/main/team', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/teamPage.html');
     }
@@ -93,7 +91,7 @@ app.get('/main/team', authMiddleware_1.default, cache('5 minutes'), (req, res) =
         res.status(400).sendFile('404.html');
     }
 });
-app.get('/team/:id', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
+app.get('/team/:id', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/teamCard.html');
     }
@@ -103,7 +101,7 @@ app.get('/team/:id', authMiddleware_1.default, cache('5 minutes'), (req, res) =>
     }
 });
 // news
-app.get('/main/news', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
+app.get('/main/news', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/newsPage.html');
     }
@@ -112,7 +110,7 @@ app.get('/main/news', authMiddleware_1.default, cache('5 minutes'), (req, res) =
         res.status(400).sendFile('404.html');
     }
 });
-app.get('/news/:id', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
+app.get('/news/:id', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/newsCard.html');
     }
@@ -122,7 +120,7 @@ app.get('/news/:id', authMiddleware_1.default, cache('5 minutes'), (req, res) =>
     }
 });
 // program
-app.get('/main/program', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
+app.get('/main/program', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/programPage.html');
     }
@@ -131,7 +129,7 @@ app.get('/main/program', authMiddleware_1.default, cache('5 minutes'), (req, res
         res.status(400).sendFile(publicPath + '/html/404.html');
     }
 });
-app.get('/program/:id', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
+app.get('/program/:id', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/programCard.html');
     }
@@ -141,7 +139,7 @@ app.get('/program/:id', authMiddleware_1.default, cache('5 minutes'), (req, res)
     }
 });
 // project
-app.get('/main/project', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
+app.get('/main/project', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/projectPage.html');
     }
@@ -150,7 +148,7 @@ app.get('/main/project', authMiddleware_1.default, cache('5 minutes'), (req, res
         res.status(400).sendFile('404.html');
     }
 });
-app.get('/project/:id', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
+app.get('/project/:id', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/projectCard.html');
     }

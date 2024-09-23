@@ -50,7 +50,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(cookieParser());
-app.use(helmet());
+app.use(helmet({crossOriginResourcePolicy: false}));
 app.use(morgan('dev'));
 
 // use routes

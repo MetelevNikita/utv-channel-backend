@@ -30,7 +30,7 @@ const limiter = (0, express_rate_limit_1.rateLimit)({
     max: 100,
     message: 'Слишком много запросов, повторите через 5ть минут',
 });
-const cache = apicache_1.default.middleware();
+const cache = apicache_1.default.middleware;
 dotenv_1.default.config();
 const pid = process.pid;
 const date = new Date();
@@ -48,7 +48,6 @@ app.use((0, cookie_parser_1.default)());
 app.use((0, helmet_1.default)({ crossOriginResourcePolicy: ({ policy: "cross-origin" }) }));
 app.use((0, morgan_1.default)('dev'));
 app.use(limiter);
-app.use(cache('5 minutes'));
 // use routes
 app.use('/api/v1', loginRouter_1.default);
 app.use('/api/v1', teamRouter_1.default);
@@ -75,7 +74,7 @@ app.get('/', (req, res) => {
         res.status(400).sendFile('/404.html');
     }
 });
-app.get('/main', authMiddleware_1.default, (req, res) => {
+app.get('/main', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/main.html');
     }
@@ -85,7 +84,7 @@ app.get('/main', authMiddleware_1.default, (req, res) => {
     }
 });
 // team
-app.get('/main/team', authMiddleware_1.default, (req, res) => {
+app.get('/main/team', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/teamPage.html');
     }
@@ -94,7 +93,7 @@ app.get('/main/team', authMiddleware_1.default, (req, res) => {
         res.status(400).sendFile('404.html');
     }
 });
-app.get('/team/:id', authMiddleware_1.default, (req, res) => {
+app.get('/team/:id', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/teamCard.html');
     }
@@ -104,7 +103,7 @@ app.get('/team/:id', authMiddleware_1.default, (req, res) => {
     }
 });
 // news
-app.get('/main/news', authMiddleware_1.default, (req, res) => {
+app.get('/main/news', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/newsPage.html');
     }
@@ -113,7 +112,7 @@ app.get('/main/news', authMiddleware_1.default, (req, res) => {
         res.status(400).sendFile('404.html');
     }
 });
-app.get('/news/:id', authMiddleware_1.default, (req, res) => {
+app.get('/news/:id', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/newsCard.html');
     }
@@ -123,7 +122,7 @@ app.get('/news/:id', authMiddleware_1.default, (req, res) => {
     }
 });
 // program
-app.get('/main/program', (req, res) => {
+app.get('/main/program', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/programPage.html');
     }
@@ -132,7 +131,7 @@ app.get('/main/program', (req, res) => {
         res.status(400).sendFile(publicPath + '/html/404.html');
     }
 });
-app.get('/program/:id', (req, res) => {
+app.get('/program/:id', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/programCard.html');
     }
@@ -142,7 +141,7 @@ app.get('/program/:id', (req, res) => {
     }
 });
 // project
-app.get('/main/project', authMiddleware_1.default, (req, res) => {
+app.get('/main/project', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/projectPage.html');
     }
@@ -151,7 +150,7 @@ app.get('/main/project', authMiddleware_1.default, (req, res) => {
         res.status(400).sendFile('404.html');
     }
 });
-app.get('/project/:id', authMiddleware_1.default, (req, res) => {
+app.get('/project/:id', authMiddleware_1.default, cache('5 minutes'), (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/projectCard.html');
     }

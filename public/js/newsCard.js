@@ -416,7 +416,6 @@ newsUpdateForm.addEventListener('submit', async (e) => {
 
 
     if(textArr.length >= 1) {
-      console.log('есть тексты')
       for (let i = 0; i < textArr.length; i++) {
         newNewsForm.append(`text_${i+1}`, textArr[i].value)
       }
@@ -426,7 +425,6 @@ newsUpdateForm.addEventListener('submit', async (e) => {
 
 
     if(fileArr.length >= 1) {
-      console.log('есть файлы')
       for (let i = 0; i < fileArr.length; i++) {
         newNewsForm.append(`file_${i+1}`, fileArr[i].files[0])
       }
@@ -437,9 +435,7 @@ newsUpdateForm.addEventListener('submit', async (e) => {
 
 
     if (commentFileArr.length >= 1) {
-      console.log('есть комментарии к фото')
       for (let i = 0; i < commentFileArr.length; i++) {
-        console.log(commentFileArr[i].value)
         newNewsForm.append(`image_comment_${i+1}`, commentFileArr[i].value)
       }
     } else {
@@ -449,7 +445,6 @@ newsUpdateForm.addEventListener('submit', async (e) => {
 
 
     if(commentArr.length >= 1) {
-      console.log('есть комментарии')
       for (let i = 0; i < commentArr.length; i++) {
 
         const newObj = JSON.stringify({
@@ -459,7 +454,6 @@ newsUpdateForm.addEventListener('submit', async (e) => {
           fontBold: fontBoldSelect.value
         })
 
-        console.log(newObj)
         newNewsForm.append(`comment_${i+1}`, newObj)
       }
     } else {

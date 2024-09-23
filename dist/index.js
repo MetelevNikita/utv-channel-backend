@@ -41,7 +41,7 @@ app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
 app.use((0, helmet_1.default)());
 app.use((0, morgan_1.default)('dev'));
-app.use(cache('2 days'));
+app.use(cache('5 minutes'));
 // use routes
 app.use('/api/v1', loginRouter_1.default);
 app.use('/api/v1', teamRouter_1.default);

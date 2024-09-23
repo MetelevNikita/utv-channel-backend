@@ -58,7 +58,7 @@ teamForm.addEventListener('submit', async (e) => {
     return data
 
   } catch (error) {
-    console.log('при создании карточки произошла ошибка')
+    console.log('При создании карточки произошла ошибка')
   }
 })
 
@@ -151,7 +151,6 @@ const setNameAuthor = async () => {
   const author = document.getElementById('news_author')
 
   const userId = document.cookie.split('=')[1]
-  console.log(userId)
 
   try {
     const responce = await fetch(`${url}/api/v1/login`, {
@@ -522,7 +521,6 @@ newsForm.addEventListener('submit', async (e) => {
 
     if (commentFileArr.length >= 1) {
       for (let i = 0; i < commentFileArr.length; i++) {
-        console.log(commentFileArr[i].value)
         newNewsForm.append(`image_comment_${i+1}`, commentFileArr[i].value)
       }
     } else {
@@ -548,7 +546,6 @@ newsForm.addEventListener('submit', async (e) => {
       console.log('нет комментариев')
     }
 
-    console.log(...newNewsForm)
 
     const responce = await fetch(`${url}/api/v1/news`, {
       method: 'POST',

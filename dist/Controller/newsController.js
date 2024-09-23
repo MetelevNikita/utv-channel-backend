@@ -11,7 +11,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateViews = exports.deleteNews = exports.updateNews = exports.postNews = exports.getSingleNews = exports.getNews = void 0;
 const database_1 = require("../db/database");
-const store = require('store');
 const date = new Date();
 const day = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 const getNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {

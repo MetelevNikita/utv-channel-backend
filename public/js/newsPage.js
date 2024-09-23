@@ -133,60 +133,6 @@ searchBtn.addEventListener('click', () => {
 })
 
 
-// search news
-
-
-
-//   try {
-//     let = searchCards = []
-//     const searchValue = searchInput.value
-
-
-
-//     const responce = await fetch(`${url}/api/v1/news`, {
-//       method: 'GET',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       }
-//     })
-
-//     if(responce.ok) {
-//       const data = await responce.json()
-
-//       searchCards = data.filter((news) => {
-//         return news.title.toLowerCase().includes(searchValue.toLowerCase()) || news.author.toLowerCase().includes(searchValue.toLowerCase())
-//       })
-
-
-
-//       if(searchValue === '') {
-//         data.map((item) => {
-//           return newsCard(item)
-//         })
-//       }
-
-
-//       searchCards.map((item) => {
-//         return newsCard(item)
-//       })
-
-
-
-
-
-
-//     }
-
-
-//   } catch (error) {
-//     console.log(error)
-//   }
-// })
-
-
-
-
-
 
 //
 

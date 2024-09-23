@@ -54,7 +54,6 @@ app.use(express.json())
 app.use(cookieParser());
 app.use(helmet());
 app.use(morgan('dev'));
-app.use(cache('5 minutes'))
 
 // use routes
 

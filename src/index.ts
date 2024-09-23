@@ -7,7 +7,6 @@ import path  from  'path';
 import helmet from 'helmet';
 import morgan from 'morgan'
 import fs from 'fs';
-import apicache from 'apicache'
 
 // module
 
@@ -29,7 +28,6 @@ const publicPath  =  path.join(__dirname, '..',  'public');
 
 
 const app = express();
-const cache = apicache.middleware
 
 
 

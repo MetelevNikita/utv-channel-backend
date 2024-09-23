@@ -149,7 +149,6 @@ date.valueAsDate = new Date()
 const setNameAuthor = async () => {
 
   const author = document.getElementById('news_author')
-
   const userId = document.cookie.split('=')[1]
 
   try {
@@ -162,6 +161,8 @@ const setNameAuthor = async () => {
 
     if(responce.ok) {
       const data = await responce.json();
+
+      console.log(data)
 
 
       const singleUser = data.find((item) => item.id == userId)

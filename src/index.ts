@@ -39,7 +39,7 @@ const limiter = rateLimit({
 })
 
 
-const cache = apicache.middleware()
+const cache = apicache.middleware
 
 
 

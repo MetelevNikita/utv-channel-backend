@@ -8,7 +8,6 @@ import helmet from 'helmet';
 import morgan from 'morgan'
 import fs from 'fs';
 import { rateLimit } from 'express-rate-limit'
-import apicache from 'apicache'
 
 // module
 
@@ -39,8 +38,6 @@ const limiter = rateLimit({
 })
 
 
-const cache = apicache.middleware
-
 
 
 dotenv.config()
@@ -65,7 +62,6 @@ app.use(cookieParser());
 app.use(helmet({crossOriginResourcePolicy: ({ policy: "cross-origin" })}));
 app.use(morgan('dev'));
 app.use(limiter);
-app.use(cache('5 minutes'));
 
 // use routes
 

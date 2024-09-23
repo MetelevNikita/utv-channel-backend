@@ -7,9 +7,9 @@ const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const authMiddleware = (req, res, next) => {
     const token = req.cookies.token;
     try {
-        // if (!token) {
-        //   return res.redirect('/login');
-        // }
+        if (!token) {
+            return res.redirect('/login');
+        }
         const user = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET);
         req.user = user;
         console.log(user);

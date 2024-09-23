@@ -25,18 +25,22 @@ import { newsFolderNews } from './util/newsFolderDay';
 
 
 const publicPath  =  path.join(__dirname, '..',  'public');
-console.log(publicPath + '/js')
 
 
 const app = express();
+
+
+
 dotenv.config()
 const pid = process.pid
 const date = new Date();
 const day = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 
-console.log(`PID:${pid}`)
-
 newsFolderNews(day)
+
+
+
+
 
 
 

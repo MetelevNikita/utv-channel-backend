@@ -11,6 +11,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const path_1 = __importDefault(require("path"));
 const helmet_1 = __importDefault(require("helmet"));
 const morgan_1 = __importDefault(require("morgan"));
+const apicache_1 = __importDefault(require("apicache"));
 // module
 const loginRouter_1 = __importDefault(require("./Router/loginRouter"));
 const teamRouter_1 = __importDefault(require("./Router/teamRouter"));
@@ -22,13 +23,12 @@ const epgRouter_1 = __importDefault(require("./Router/epgRouter"));
 const authMiddleware_1 = __importDefault(require("./middleware/authMiddleware"));
 const newsFolderDay_1 = require("./util/newsFolderDay");
 const publicPath = path_1.default.join(__dirname, '..', 'public');
-console.log(publicPath + '/js');
 const app = (0, express_1.default)();
+const cache = apicache_1.default.middleware;
 dotenv_1.default.config();
 const pid = process.pid;
 const date = new Date();
 const day = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-console.log(`PID:${pid}`);
 (0, newsFolderDay_1.newsFolderNews)(day);
 // use
 app.use(express_1.default.static("public"));
@@ -41,6 +41,7 @@ app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
 app.use((0, helmet_1.default)());
 app.use((0, morgan_1.default)('dev'));
+app.use(cache('2 days'));
 // use routes
 app.use('/api/v1', loginRouter_1.default);
 app.use('/api/v1', teamRouter_1.default);

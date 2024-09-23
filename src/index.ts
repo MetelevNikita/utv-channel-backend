@@ -7,6 +7,8 @@ import path  from  'path';
 import helmet from 'helmet';
 import morgan from 'morgan'
 import fs from 'fs';
+import { rateLimit } from 'express-rate-limit'
+import apicache from 'apicache'
 
 // module
 
@@ -28,6 +30,16 @@ const publicPath  =  path.join(__dirname, '..',  'public');
 
 
 const app = express();
+
+const limiter = rateLimit({
+  windowMs: 5 * 60 * 1000,
+  max: 100,
+  message: 'Слишком много запросов, повторите через 5ть минут',
+
+})
+
+
+const cache = apicache.middleware()
 
 
 
@@ -52,6 +64,8 @@ app.use(express.json())
 app.use(cookieParser());
 app.use(helmet({crossOriginResourcePolicy: ({ policy: "cross-origin" })}));
 app.use(morgan('dev'));
+app.use(limiter);
+app.use(cache('5 minutes'));
 
 // use routes
 

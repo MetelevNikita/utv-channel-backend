@@ -1,7 +1,8 @@
 // URL
 
 
-const url  =  'https://utvchannel.tw1.su'
+// const url  =  'https://utvchannel.tw1.su'
+const url = 'http://localhost:9000'
 
 
 
@@ -92,6 +93,11 @@ const getSingleNews = async () => {
 
 
 getSingleNews().then((data) => {
+
+
+  console.log(data)
+
+
   const newsTitle = document.getElementById('news_title');
   const newsLead = document.getElementById('news_lead');
   const newsAuthor = document.getElementById('news_author');
@@ -138,9 +144,6 @@ getSingleNews().then((data) => {
 
 
 // add new element news
-
-
-
 
 
 
@@ -371,6 +374,9 @@ for (let i = 0; i < categoryArr.length; i++) {
 newsCategory.addEventListener('change', (e) => {
   selectedTags.push(e.target.value)
 
+
+  console.log(selectedTags)
+
   const tag = document.createElement('div')
   tag.setAttribute('id', 'news_tag')
   tag.setAttribute('class', 'news_tag md-2')
@@ -386,7 +392,6 @@ newsCategory.addEventListener('change', (e) => {
 
 
 const newsUpdateForm = document.getElementById('news_update_form')
-
 
 newsUpdateForm.addEventListener('submit', async (e) => {
   e.preventDefault()

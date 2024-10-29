@@ -6,7 +6,6 @@ import dotenv from  'dotenv'
 import path  from  'path';
 import helmet from 'helmet';
 import morgan from 'morgan'
-import fs from 'fs';
 import { rateLimit } from 'express-rate-limit'
 
 // module

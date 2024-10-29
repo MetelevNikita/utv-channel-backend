@@ -1,5 +1,5 @@
-const url  =  'https://utvchannel.tw1.su'
-// const url = 'http://localhost:9000'
+// const url  =  'https://utvchannel.tw1.su'
+const url = 'http://localhost:9000'
 
 
 
@@ -230,7 +230,7 @@ const tagBox = document.getElementById('tag_news_box')
 
 
 const categoryArr = ['Все', 'Политика', 'Экономика', 'Общество', 'Мир', 'Криминал', 'Cпорт', 'Технологии', 'Здоровье', 'Культура', 'Искуство']
-const selectedTags = []
+let selectedTags = []
 
 
 const newsCategory = document.getElementById('news_category');
@@ -246,11 +246,41 @@ for (let i = 0; i < categoryArr.length; i++) {
 newsCategory.addEventListener('change', (e) => {
   selectedTags.push(e.target.value)
 
+  const tagContainer = document.createElement('div')
+  tagContainer.setAttribute('id', 'news_tag_container')
+  tagContainer.setAttribute('class', 'news_tag_container')
+  tagContainer.setAttribute('data-title', e.target.value)
+
+
+  const deleteTag = document.createElement('div')
+  deleteTag.setAttribute('id', 'news_tag_delete')
+  deleteTag.setAttribute('class', 'news_tag_delete')
+  deleteTag.textContent = 'X'
+
+
+
+  deleteTag.addEventListener('click', (e) => {
+
+   selectedTags = selectedTags.filter((tag) => {
+      return tag !== e.target.parentNode.dataset.title
+    })
+
+    tagContainer.remove()
+  })
+
+
   const tag = document.createElement('div')
   tag.setAttribute('id', 'news_tag')
   tag.setAttribute('class', 'news_tag md-2')
   tag.textContent = e.target.value
-  tagBox.appendChild(tag)
+
+
+  tagContainer.appendChild(deleteTag)
+  tagContainer.appendChild(tag)
+
+
+
+  tagBox.appendChild(tagContainer)
 
 })
 

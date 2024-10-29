@@ -269,10 +269,6 @@ newsCategory.addEventListener('change', (e) => {
   })
 
 
-
-
-
-
   const tag = document.createElement('div')
   tag.setAttribute('id', 'news_tag')
   tag.setAttribute('class', 'news_tag md-2')

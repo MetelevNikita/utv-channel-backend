@@ -30,6 +30,7 @@ const upload = multer({storage: storage})
 
 
 agreementRouter.post('/agreetment', upload.single('file'), postAgreement)
+agreementRouter.get('/agreetment', getAgreetment)
 
 
 export default agreementRouter

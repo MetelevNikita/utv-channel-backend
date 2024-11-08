@@ -725,3 +725,40 @@ epgForm.addEventListener('submit', async (e) => {
 
 
 
+//
+
+
+
+const agreetForm = document.getElementById('agreet_form')
+
+console.log(agreetForm)
+
+agreetForm.addEventListener('submit', async (e) => {
+  e.preventDefault()
+
+  const agreet = document.getElementById('agreet_file').files[0]
+  console.log(agreet)
+
+  try {
+
+    const formData = new FormData()
+    formData.append('file', agreet)
+
+
+    console.log(...formData)
+
+    const responce = await fetch(`${url}/api/v1/agreetment`, {
+      method: 'POST',
+      body: formData
+    })
+
+    const data = await responce.json()
+    console.log(data)
+    return data
+
+
+  } catch (error) {
+    console.log(error)
+  }
+})
+

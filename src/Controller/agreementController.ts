@@ -1,4 +1,14 @@
 
+const getAgreetment = ((req: any, res: Response | any) => {
+  try {
+    res.status(200).send('agreetment loaded');
+  } catch (error) {
+    console.log(error)
+  }
+})
+
+
+
 const postAgreement = (req: any, res: Response | any) => {
   try {
 
@@ -13,4 +23,4 @@ const postAgreement = (req: any, res: Response | any) => {
 
 
 
-export { postAgreement }
+export { getAgreetment, postAgreement }

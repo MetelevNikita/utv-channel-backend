@@ -4,7 +4,7 @@ import path from "path";
 
 //
 
-import { postAgreement } from "../Controller/agreementController";
+import { getAgreetment, postAgreement } from "../Controller/agreementController";
 
 
 const agreementRouter = Router();

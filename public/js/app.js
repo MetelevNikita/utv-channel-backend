@@ -752,9 +752,13 @@ agreetForm.addEventListener('submit', async (e) => {
       body: formData
     })
 
-    const data = await responce.json()
-    console.log(data)
-    return data
+    if(responce.ok) {
+
+      const data = responce.json()
+      alert('Файл успешно загружен')
+      formData.reset()
+      return data
+    }
 
 
   } catch (error) {

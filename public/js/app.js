@@ -713,7 +713,6 @@ epgForm.addEventListener('submit', async (e) => {
 
       const data = responce.json()
       alert('Файл успешно загружен')
-      formData.reset()
       return data
     }
 
@@ -753,7 +752,6 @@ agreetForm.addEventListener('submit', async (e) => {
 
       const data = responce.json()
       alert('Файл успешно загружен')
-      formData.reset()
       return data
     }
 

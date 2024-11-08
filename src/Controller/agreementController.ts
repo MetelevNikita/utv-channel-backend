@@ -12,7 +12,16 @@ const getAgreetment = ((req: any, res: Response | any) => {
 const postAgreement = (req: any, res: Response | any) => {
   try {
 
-    console.log(req.file)
+    const file = req.file;
+
+    console.log(file)
+
+
+    if(!file) {
+      res.status(404).send('File not found');
+      return
+    }
+
     res.status(200).send('agreetment loaded');
 
   } catch (error) {

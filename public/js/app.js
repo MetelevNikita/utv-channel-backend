@@ -1,4 +1,5 @@
 const url  =  'https://utvchannel.tw1.su'
+
 // const url = 'http://localhost:9000'
 
 
@@ -743,7 +744,7 @@ agreetForm.addEventListener('submit', async (e) => {
 
     console.log(...formData)
 
-    const responce = await fetch(`${url}/api/v1/agreetment`, {
+    const responce = await fetch(`${url}/api/v1/agreet`, {
       method: 'POST',
       body: formData
     })

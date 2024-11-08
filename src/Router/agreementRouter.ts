@@ -29,8 +29,8 @@ const storage = multer.diskStorage({
 const upload = multer({storage: storage})
 
 
-agreementRouter.post('/agreetment', upload.single('file'), postAgreement)
-agreementRouter.get('/agreetment', getAgreetment)
+agreementRouter.post('/agreet', upload.single('file'), postAgreement)
+agreementRouter.get('/agreet', getAgreetment)
 
 
 export default agreementRouter

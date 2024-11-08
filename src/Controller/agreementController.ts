@@ -13,7 +13,7 @@ const postAgreement = (req: any, res: Response | any) => {
   try {
 
     console.log(req.file)
-     res.status(200).send('agreetment loaded');
+    res.status(200).send('agreetment loaded');
 
   } catch (error) {
     console.log(error);

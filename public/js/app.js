@@ -731,13 +731,10 @@ epgForm.addEventListener('submit', async (e) => {
 
 const agreetForm = document.getElementById('agreet_form')
 
-console.log(agreetForm)
-
 agreetForm.addEventListener('submit', async (e) => {
   e.preventDefault()
 
   const agreet = document.getElementById('agreet_file').files[0]
-  console.log(agreet)
 
   try {
 

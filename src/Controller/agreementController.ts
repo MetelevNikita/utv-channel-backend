@@ -9,7 +9,7 @@ const getAgreetment = ((req: any, res: Response | any) => {
 
 
 
-const postAgreement = (req: any, res: Response | any) => {
+const postAgreement = (req: any, res: any) => {
   try {
 
     const file = req.file;
@@ -22,7 +22,7 @@ const postAgreement = (req: any, res: Response | any) => {
       return
     }
 
-    res.status(200).send('agreetment loaded');
+    res.status(200).send({message: 'Файл успешно загружен'});
 
   } catch (error) {
     console.log(error);

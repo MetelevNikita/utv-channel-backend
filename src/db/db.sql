@@ -91,4 +91,5 @@ create TABLE news (
   comment_10 VARCHAR,
   tags VARCHAR(255) NOT NULL,
   views INT NOT NULL
+  news_description BOOLEAN
 );

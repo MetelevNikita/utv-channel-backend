@@ -8,7 +8,7 @@ const pg_pool_1 = __importDefault(require("pg-pool"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 exports.pool = new pg_pool_1.default({
-    user: 'admin',
+    user: 'postgres',
     host: 'localhost',
     database: 'channel',
     password: 'root',

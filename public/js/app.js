@@ -316,6 +316,14 @@ const btnNewsText = document.getElementById('btn_news_text');
 const btnNewsFile = document.getElementById('btn_news_file');
 const btnNewsComment = document.getElementById('btn_news_comment')
 const btnNewsBox = document.getElementById('btn_news_box');
+
+// checkbox
+
+
+
+
+//
+
 const submitNewsBtn = document.getElementById('login_news_button')
 
 
@@ -506,6 +514,28 @@ btnNewsComment.addEventListener('click', (e) => {
 
 
 
+
+let newsDescription = false
+const descriptionCheckbox = document.getElementById('news_description_checkbox')
+
+descriptionCheckbox.addEventListener('change', (e) => {
+
+  if(e.target.checked) {
+    newsDescription = true
+    console.log('Чек бокс активирован')
+
+  } else {
+    newsDescription = false
+    console.log('Чек бокс не активирован')
+
+  }
+
+})
+
+
+
+
+
 newsForm.addEventListener('submit', async (e) => {
   e.preventDefault()
 
@@ -522,6 +552,8 @@ newsForm.addEventListener('submit', async (e) => {
 
 
 
+
+
     const newNewsForm = new FormData();
     newNewsForm.append('title', newsTitle);
     newNewsForm.append('lead', newsLead)
@@ -530,7 +562,7 @@ newsForm.addEventListener('submit', async (e) => {
     newNewsForm.append('video', newsVideo)
     newNewsForm.append('tags', tags);
     newNewsForm.append('views', views)
-
+    newNewsForm.append('news_description', newsDescription)
 
     if(textArr.length >= 1) {
       for (let i = 0; i < textArr.length; i++) {

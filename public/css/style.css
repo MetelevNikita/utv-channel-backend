@@ -251,6 +251,20 @@ textarea::placeholder {
 }
 
 
+/* news checkbox */
+
+
+.news_description_checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+
+.news_description_text {
+  font-size: 18px;
+}
+
 
 /* tags */
 

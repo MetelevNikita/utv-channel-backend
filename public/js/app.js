@@ -163,9 +163,6 @@ const setNameAuthor = async () => {
     if(responce.ok) {
       const data = await responce.json();
 
-      console.log(data)
-
-
       const singleUser = data.find((item) => item.id == userId)
       return author.value = singleUser.username
     }
@@ -175,6 +172,106 @@ const setNameAuthor = async () => {
   }
 }
 setNameAuthor()
+
+
+// Add video or add title image
+
+const boxBtns = document.getElementById('btns_video_title_container')
+const videoBtn = document.getElementById('btn_news_video')
+const titleImageBtn = document.getElementById('btn_news_title_image')
+
+
+videoBtn.addEventListener('click', async (e) => {
+  e.preventDefault()
+  console.log(e.target)
+
+
+
+  const inputElemBoxVideo = document.createElement('div')
+  inputElemBoxVideo.setAttribute('id', 'input_video_box')
+  inputElemBoxVideo.setAttribute('class', 'inputBtnsBox')
+
+
+  const inputVideo = document.createElement('input')
+  inputVideo.setAttribute('type', 'text')
+  inputVideo.setAttribute('id', 'video_news')
+  inputVideo.setAttribute('class', 'input_form input_news_video')
+  inputVideo.setAttribute('placeholder', 'Введите видео')
+  inputVideo.setAttribute('id', 'news_video')
+  inputVideo.setAttribute('name', '')
+
+
+  const closeButton = document.createElement('div')
+  closeButton.setAttribute('class', 'close-btn-file')
+  closeButton.setAttribute('id', 'close-button')
+  closeButton.textContent = 'x'
+
+
+
+  inputElemBoxVideo.appendChild(inputVideo)
+  inputElemBoxVideo.appendChild(closeButton)
+
+
+  boxBtns.insertAdjacentElement('afterend', inputElemBoxVideo)
+  videoBtn.setAttribute('disabled', 'disabled')
+
+  closeButton.addEventListener('click', async (e) => {
+    e.target.parentElement.remove()
+    videoBtn.removeAttribute('disabled')
+
+  })
+
+})
+
+titleImageBtn.addEventListener('click', async (e) => {
+  e.preventDefault()
+
+  const inputElemBoxVideo = document.createElement('div')
+  inputElemBoxVideo.setAttribute('id', 'input_video_box')
+  inputElemBoxVideo.setAttribute('class', 'inputBtnsBox')
+
+  const closeButton = document.createElement('div')
+  closeButton.setAttribute('class', 'close-btn-file')
+  closeButton.setAttribute('id', 'close-button')
+  closeButton.textContent = 'x'
+
+
+  const newsTitleImage = document.createElement('input')
+  newsTitleImage.setAttribute('type', 'file')
+  newsTitleImage.setAttribute('id', `news_title_image`)
+  newsTitleImage.setAttribute('name', `file`)
+  newsTitleImage.setAttribute('class', 'input_file d-flex mt-2 mb-4')
+  newsTitleImage.setAttribute('text', `загрузите изображение`)
+
+  inputElemBoxVideo.appendChild(newsTitleImage)
+  inputElemBoxVideo.appendChild(closeButton)
+
+  boxBtns.insertAdjacentElement('afterend', inputElemBoxVideo)
+  titleImageBtn.setAttribute('disabled', 'disabled')
+
+
+
+  closeButton.addEventListener('click', async (e) => {
+    e.target.parentElement.remove()
+    titleImageBtn.removeAttribute('disabled')
+
+  })
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -320,14 +417,9 @@ const btnNewsBox = document.getElementById('btn_news_box');
 // checkbox
 
 
-
-
 //
 
 const submitNewsBtn = document.getElementById('login_news_button')
-
-
-
 
 
 
@@ -545,11 +637,12 @@ newsForm.addEventListener('submit', async (e) => {
     const newsLead = document.getElementById('news_lead').value;
     const newsAuthor = document.getElementById('news_author').value;
     const newsDate = document.getElementById('news_date').value;
-    const newsVideo = document.getElementById('news_video').value
+
+    const newsTitleImage = document.getElementById('news_title_image').files[0]
+    const newsVideo = document.getElementById('news_video')
+
     const tags = selectedTags.join(' ')
     const views = 0
-
-
 
 
 
@@ -559,7 +652,8 @@ newsForm.addEventListener('submit', async (e) => {
     newNewsForm.append('lead', newsLead)
     newNewsForm.append('author', newsAuthor);
     newNewsForm.append('date', newsDate);
-    newNewsForm.append('video', newsVideo)
+    newNewsForm.append('video', (newsVideo === null) ? '' : newsVideo.value);
+    newNewsForm.append('title_image', (newsTitleImage === null) ? '' : newsTitleImage);
     newNewsForm.append('tags', tags);
     newNewsForm.append('views', views)
     newNewsForm.append('news_description', newsDescription)
@@ -611,6 +705,9 @@ newsForm.addEventListener('submit', async (e) => {
     }
 
 
+    console.log(...newNewsForm)
+
+
     const responce = await fetch(`${url}/api/v1/news`, {
       method: 'POST',
       body: newNewsForm
@@ -629,7 +726,11 @@ newsForm.addEventListener('submit', async (e) => {
   } catch (error) {
     console.log('произошла ошибка' + error)
   }
+
 })
+
+
+
 
 
 // submit to news page

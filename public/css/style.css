@@ -67,7 +67,6 @@ body {
   border-radius: 10px;
   margin-bottom: 20px;
   padding-left: 10px;
-  font-style: ;
 }
 
 
@@ -404,6 +403,13 @@ textarea::placeholder {
 
 
 /* news page */
+
+
+.inputBtnsBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 
 
 

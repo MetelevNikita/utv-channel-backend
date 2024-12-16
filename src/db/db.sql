@@ -90,6 +90,7 @@ create TABLE news (
   image_comment_10 VARCHAR,
   comment_10 VARCHAR,
   tags VARCHAR(255) NOT NULL,
-  views INT NOT NULL
-  news_description BOOLEAN
+  views INT NOT NULL,
+  news_description BOOLEAN,
+  title_image VARCHAR
 );

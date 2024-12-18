@@ -17,7 +17,7 @@ const newsRouter = (0, express_1.Router)();
 newsRouter.get('/news', newsController_1.getNews);
 newsRouter.get('/news/:id', newsController_1.getSingleNews);
 newsRouter.post('/news', upload.fields([{ name: 'file_1' }, { name: 'file_2' }, { name: 'file_3' }, { name: 'file_4' }, { name: 'file_5' }, { name: 'file_6' }, { name: 'file_7' }, { name: 'file_8' }, { name: 'file_9' }, { name: 'file_10' }, { name: 'title_image' }]), newsController_1.postNews);
-newsRouter.put('/news', upload.fields([{ name: 'file_1' }, { name: 'file_2' }, { name: 'file_3' }, { name: 'file_4' }, { name: 'file_5' }, { name: 'file_6' }, { name: 'file_7' }, { name: 'file_8' }, { name: 'file_9' }, { name: 'file_10' }]), newsController_1.updateNews);
+newsRouter.put('/news', upload.fields([{ name: 'file_1' }, { name: 'file_2' }, { name: 'file_3' }, { name: 'file_4' }, { name: 'file_5' }, { name: 'file_6' }, { name: 'file_7' }, { name: 'file_8' }, { name: 'file_9' }, { name: 'file_10' }, { name: 'title_image' }]), newsController_1.updateNews);
 newsRouter.delete('/news/:id', newsController_1.deleteNews);
 // views
 newsRouter.put('/news/views', newsController_1.updateViews);

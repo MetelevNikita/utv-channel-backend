@@ -21,9 +21,10 @@ const getUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const getUser = yield database_1.pool.query('SELECT * FROM users');
         console.log(getUser);
-        // if(getUser.rows.length  < 1)  {
-        //   return res.status(400).json({messge: 'Не верный логин или пароль'});
-        // }
+        if (getUser.rows.length < 1) {
+            res.status(400).json({ messge: 'Не верный логин или пароль' });
+            return;
+        }
         res.status(200).json(getUser.rows);
     }
     catch (error) {
@@ -35,7 +36,6 @@ const postLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { email, password } = req.body;
         const postLogin = yield database_1.pool.query('SELECT * FROM users WHERE email = $1 and password = $2', [email, password]);
-        console.log(postLogin.rows);
         if (postLogin.rows.length < 1) {
             res.status(400).json({ messge: 'Не верный логин или пароль' });
             return;

@@ -12,9 +12,10 @@ const getUsers = async (req: any, res: any) => {
     const getUser = await pool.query('SELECT * FROM users');
     console.log(getUser);
 
-    // if(getUser.rows.length  < 1)  {
-    //   return res.status(400).json({messge: 'Не верный логин или пароль'});
-    // }
+    if(getUser.rows.length  < 1)  {
+      res.status(400).json({messge: 'Не верный логин или пароль'});
+      return
+    }
 
     res.status(200).json(getUser.rows);
 
@@ -33,8 +34,6 @@ const postLogin = async (req: any, res: any) => {
     const {email, password} = req.body;
 
     const postLogin = await pool.query('SELECT * FROM users WHERE email = $1 and password = $2', [email, password]);
-    console.log(postLogin.rows);
-
 
     if(postLogin.rows.length  <  1)  {
       res.status(400).json({messge: 'Не верный логин или пароль'});
@@ -43,7 +42,6 @@ const postLogin = async (req: any, res: any) => {
     const token = jwt.sign({id: postLogin.rows[0].id},  process.env.JWT_SECRET as string,  {expiresIn: '1h'});
     res.cookie('userId', postLogin.rows[0].id);
     res.cookie('token', token, {httpOnly: true});
-
     res.status(200).send({message: `Успешно`})
 
   } catch (error) {

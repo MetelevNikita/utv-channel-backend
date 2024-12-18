@@ -638,7 +638,7 @@ newsForm.addEventListener('submit', async (e) => {
     const newsAuthor = document.getElementById('news_author').value;
     const newsDate = document.getElementById('news_date').value;
 
-    const newsTitleImage = document.getElementById('news_title_image').files[0]
+    const newsTitleImage = document.getElementById('news_title_image')
     const newsVideo = document.getElementById('news_video')
 
     const tags = selectedTags.join(' ')
@@ -653,7 +653,7 @@ newsForm.addEventListener('submit', async (e) => {
     newNewsForm.append('author', newsAuthor);
     newNewsForm.append('date', newsDate);
     newNewsForm.append('video', (newsVideo === null) ? '' : newsVideo.value);
-    newNewsForm.append('title_image', (newsTitleImage === null) ? '' : newsTitleImage);
+    newNewsForm.append('title_image', (newsTitleImage.files[0] === null) ? '' : newsTitleImage.files[0]);
     newNewsForm.append('tags', tags);
     newNewsForm.append('views', views)
     newNewsForm.append('news_description', newsDescription)

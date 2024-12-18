@@ -323,6 +323,7 @@ getSingleNews().then((data) => {
 
   closeButton.addEventListener('click', async (e) => {
     e.target.parentElement.remove()
+    data.title_image = ''
     titleImageBtn.removeAttribute('disabled')
 
   })
@@ -347,8 +348,6 @@ getSingleNews().then((data) => {
   currantImageContainer.appendChild(currantImageNews)
   currantImageContainer.appendChild(currentImageDelete)
 
-  console.log(currantImageContainer)
-
 
 
   inputElemBoxVideo.appendChild(newsTitleImage)
@@ -359,13 +358,10 @@ getSingleNews().then((data) => {
   titleImageBtn.setAttribute('disabled', 'disabled')
 
 
-  console.log(data.title_image)
-
 
     currentImageDelete.addEventListener('click', (e) => {
       console.log('картинка нажата')
       data.title_image = ''
-      console.log(data.title_image)
       currantImageContainer.remove()
 
     })

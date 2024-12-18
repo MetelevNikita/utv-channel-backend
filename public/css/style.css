@@ -553,6 +553,7 @@ textarea::placeholder {
   align-items: center;
   justify-content: center;
   margin-left: 60px;
+  overflow: hidden;
 }
 
 

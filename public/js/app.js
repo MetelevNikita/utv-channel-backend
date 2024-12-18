@@ -653,7 +653,7 @@ newsForm.addEventListener('submit', async (e) => {
     newNewsForm.append('author', newsAuthor);
     newNewsForm.append('date', newsDate);
     newNewsForm.append('video', (newsVideo === null) ? '' : newsVideo.value);
-    newNewsForm.append('title_image', '');
+    newNewsForm.append('title_image', (!newsTitleImage) ? '' : newsTitleImage.files[0]);
     newNewsForm.append('tags', tags);
     newNewsForm.append('views', views)
     newNewsForm.append('news_description', newsDescription)
@@ -666,7 +666,6 @@ newsForm.addEventListener('submit', async (e) => {
       console.log('нет текстов')
     }
 
-    // (!newsTitleImage) ? '' : newsTitleImage.files[0]
 
     if(fileArr.length >= 1) {
       for (let i = 0; i < fileArr.length; i++) {

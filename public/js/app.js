@@ -1,13 +1,11 @@
 const url  =  'https://utvchannel.tw1.su'
-
 // const url = 'http://localhost:9000'
 
 
 
 
 
-// submit to team page
-
+// Выход
 
 
 const selectTeamBtn = document.getElementById('select_team_btn');
@@ -20,12 +18,12 @@ selectTeamBtn.addEventListener('click', async  (e)  =>  {
     window.location.href = 'main/team'
 
   } catch (error) {
-    console.log(`произошла ошибка ${error}`)
+    console.log(`Произошла ошибка ${error}`)
   }
 })
 
 
-// team Form
+// Команда
 
 
 const teamForm = document.getElementById('team_form');
@@ -59,12 +57,13 @@ teamForm.addEventListener('submit', async (e) => {
     return data
 
   } catch (error) {
-    console.log('При создании карточки произошла ошибка')
+    console.log(`Произошла ошибка создания сотрудника компании ${error}`)
+    alert(`Произошла ошибка создания сотрудника компании ${error}`)
   }
 })
 
 
-// project form
+// Проект
 
 
 const projectForm = document.getElementById('project_form');
@@ -108,19 +107,20 @@ projectForm.addEventListener('submit', async  (e)  =>  {
 
     if (responce.status === 200) {
       projectForm.reset();
-      alert('карточка проекта успешно создана')
+      alert('Карточка проекта успешно создана')
       return data
 
     }
 
 
   } catch (error) {
-    console.log(`произошла ошибка  ${error}`)
+    console.log(`Произошла ошибка создания карточки проекта ${error}`)
+    alert(`Произошла ошибка создания карточки проекта ${error}`)
   }
 })
 
 
-// submit to project page
+// ВЫХОД
 
 const selectProjectBtn = document.getElementById('select_project_btn')
 
@@ -132,12 +132,12 @@ selectProjectBtn.addEventListener('click', async  (e)  =>  {
     window.location.href ='main/project'
 
   } catch (error) {
-    console.log(`произошла ошибка ${error}`)
+    console.log(`Произошла ошибка ${error}`)
   }
 })
 
 
-// NEWS
+// НОВОСТНОЙ БЛОК
 
 
 const date = document.getElementById('news_date')
@@ -145,7 +145,7 @@ date.valueAsDate = new Date()
 
 
 
-
+// Добавления имени пользователя в форму из БД
 
 const setNameAuthor = async () => {
 
@@ -168,13 +168,12 @@ const setNameAuthor = async () => {
     }
 
   } catch (error) {
-    console.log(error)
+    console.log(`Произошла ошибка ${error}`)
   }
 }
 setNameAuthor()
 
-
-// Add video or add title image
+// Кнопки вызовов титуального изображения или видео
 
 const boxBtns = document.getElementById('btns_video_title_container')
 const videoBtn = document.getElementById('btn_news_video')
@@ -183,9 +182,6 @@ const titleImageBtn = document.getElementById('btn_news_title_image')
 
 videoBtn.addEventListener('click', async (e) => {
   e.preventDefault()
-  console.log(e.target)
-
-
 
   const inputElemBoxVideo = document.createElement('div')
   inputElemBoxVideo.setAttribute('id', 'input_video_box')
@@ -260,26 +256,8 @@ titleImageBtn.addEventListener('click', async (e) => {
 })
 
 
-//
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// text toolbar
+// Тоолбар комментария
 
 
 const textStyle = ['none', 'underline', 'underline dotted', 'green wavy underline']
@@ -321,13 +299,9 @@ for (let i = 0; i < fontBold.length; i++) {
 
 
 
-
-// news form
-
-
 const tagBox = document.getElementById('tag_news_box')
 
-// news categorySelector
+// Теги
 
 
 const categoryArr = ['Все', 'Политика', 'Экономика', 'Общество', 'Мир', 'Криминал', 'Cпорт', 'Технологии', 'Здоровье', 'Культура', 'Искуство']
@@ -417,14 +391,12 @@ const btnNewsFile = document.getElementById('btn_news_file');
 const btnNewsComment = document.getElementById('btn_news_comment')
 const btnNewsBox = document.getElementById('btn_news_box');
 
-// checkbox
 
-
-//
 
 const submitNewsBtn = document.getElementById('login_news_button')
 
 
+// Добавление блоков с текстом файлом или комментарием
 
 
 btnNewsText.addEventListener('click', (e)  =>  {
@@ -515,11 +487,8 @@ btnNewsFile.addEventListener('click',  (e)  =>  {
   textAreaSubBox.appendChild(newsFile)
   textAreaSubBox.appendChild(imgComment)
 
-
   textAreaBox.appendChild(textAreaSubBox)
   textAreaBox.appendChild(closeButton)
-
-
 
 
   btnNewsBox.insertAdjacentElement('beforebegin', textAreaBox)
@@ -608,6 +577,7 @@ btnNewsComment.addEventListener('click', (e) => {
 })
 
 
+// Чек бокс создания дискрипшена "Читайте на ЮТВ"
 
 
 let newsDescription = false
@@ -617,18 +587,14 @@ descriptionCheckbox.addEventListener('change', (e) => {
 
   if(e.target.checked) {
     newsDescription = true
-    console.log('Чек бокс активирован')
-
   } else {
     newsDescription = false
-    console.log('Чек бокс не активирован')
-
   }
 
 })
 
 
-
+//
 
 
 newsForm.addEventListener('submit', async (e) => {
@@ -706,26 +672,22 @@ newsForm.addEventListener('submit', async (e) => {
     }
 
 
-    console.log(...newNewsForm)
-
-
     const responce = await fetch(`${url}/api/v1/news`, {
       method: 'POST',
       body: newNewsForm
     })
 
-
-      const data = responce
+    const data = responce
 
       if (responce.status === 200) {
         newsForm.reset();
-        alert('карточка проекта успешно создана')
+        alert('Новостной материал успешно создан')
         return data
-
       }
 
   } catch (error) {
-    console.log('произошла ошибка' + error)
+    console.log(`Произошла ошибка создания новостного материала ${error}`)
+    alert(`Произошла ошибка создания новостного материала ${error}`)
   }
 
 })
@@ -733,13 +695,7 @@ newsForm.addEventListener('submit', async (e) => {
 
 
 
-
-// submit to news page
-
-
-
-
-
+// Выход
 
 const selectNewsBtn = document.getElementById('select_news_btn')
 
@@ -748,16 +704,13 @@ selectNewsBtn.addEventListener('click', () => {
   try {
     window.location.href ='main/news'
   } catch (error) {
-    console.error(error)
+    console.log(`Произошла ошибка ${error}`)
   }
 
 })
 
 
-
-
-
-// program form
+// Программа
 
 const programForm = document.getElementById('program_form')
 
@@ -795,14 +748,14 @@ programForm.addEventListener('submit', async (e) => {
     }
 
   } catch (error) {
-    alert('Что то пошло не так при запросе')
-    console.log(error)
+    console.log(`Произошла ошибка создания выпуска программы ${error}`)
+    alert(`Произошла ошибка создания выпуска программы ${error}`)
   }
 })
 
 
 
-// submit to prgram page
+// Выход
 
 const selectProgramBtn = document.getElementById('select_program_btn');
 
@@ -814,13 +767,13 @@ selectProgramBtn.addEventListener('click', async  (e)  =>  {
   try {
 
   } catch (error) {
-    console.log(`произошла ошибка ${error}`)
+    console.log(`Произошла ошибка ${error}`)
   }
 })
 
 
 
-// submit epg file
+// Программа передач
 
 
 const epgForm = document.getElementById('tv_form')
@@ -847,19 +800,19 @@ epgForm.addEventListener('submit', async (e) => {
     if(responce.ok) {
 
       const data = responce.json()
-      alert('Файл успешно загружен')
+      alert(`Программа передач успешно добавлена`)
       return data
     }
 
   } catch (error) {
-    console.log(error)
+    console.log(`Произошла ошибка создания программы передач ${error}`)
   }
 })
 
 
 
 
-//
+// Пользовательское соглашение
 
 
 
@@ -875,9 +828,6 @@ agreetForm.addEventListener('submit', async (e) => {
     const formData = new FormData()
     formData.append('file', agreet)
 
-
-    console.log(...formData)
-
     const responce = await fetch(`${url}/api/v1/agreet`, {
       method: 'POST',
       body: formData
@@ -886,13 +836,13 @@ agreetForm.addEventListener('submit', async (e) => {
     if(responce.ok) {
 
       const data = responce.json()
-      alert('Файл успешно загружен')
+      alert('Пользовательское соглашение успешно загружено')
       return data
     }
 
 
   } catch (error) {
-    console.log(error)
+    console.log(`Произошла ошибка при загрузке пользовательского соглашения ${error}`)
   }
 })
 

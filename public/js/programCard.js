@@ -36,8 +36,6 @@ const getSingleProgramCard = async () => {
 
 
 
-
-
   } catch (error) {
     console.log(`Запрос на обновление карты проекта вернулся с ошибкой. код ошибки ${error}`);
   }

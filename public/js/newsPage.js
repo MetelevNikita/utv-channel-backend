@@ -100,13 +100,11 @@ const responce = await fetch(`${url}/api/v1/news`, {
   })
 
   if(!responce.ok) {
-    console.log('ОШИБКА')
+    console.log(`Произошла ошибка получения списка новостей ${error}`)
   }
 
   const news = await responce.json()
   const sortNews = news.sort((a, b) => {return new Date(b.date) - new Date(a.date)})
-
-  console.log(sortNews)
 
   return sortNews.map((item) => {
     containerNews.appendChild(newsCard(item))
@@ -138,7 +136,7 @@ searchBtn.addEventListener('click', () => {
 
 
 
-//
+// ВЫХОД
 
 const backBtn = document.getElementById('select_news_back_btn')
 

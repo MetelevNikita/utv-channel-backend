@@ -100,7 +100,7 @@ changeFomtBtn.addEventListener('click', (e) => {
     window.location = '/main/project'
 
   } catch (error) {
-    console.log(`Произошла ошибка перехода ${error}`)
+    console.log(`Произошла ошибка ${error}`);
   }
 })
 

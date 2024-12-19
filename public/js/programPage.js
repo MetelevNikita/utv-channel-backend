@@ -92,7 +92,7 @@ const getAllProgramCard = async () => {
 
 
   } catch (error) {
-    console.error(error);
+    console.log(`Произошла ошибка ${error}`);
 
   }
 }
@@ -108,6 +108,6 @@ backBtn.addEventListener('click', () => {
   try {
     window.location.href = '/main';
   } catch (error) {
-    console.error(error);
+    console.log(`Произошла ошибка ${error}`);
   }
 })

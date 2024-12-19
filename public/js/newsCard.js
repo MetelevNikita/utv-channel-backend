@@ -3,7 +3,10 @@
 const url  =  'https://utvchannel.tw1.su'
 // const url = "http://localhost:9000";
 
-// text toolbar
+
+
+
+// Тоолбар комментария
 
 const textStyle = [
   "none",
@@ -113,7 +116,7 @@ const createVideoBtn = (text) => {
 
     })
   } catch (error) {
-    console.log(error);
+    console.log(`Произошла ошибка ${error}`);
   }
 }
 
@@ -151,10 +154,8 @@ const createTitleImageBtn = () => {
     titleImageBtn.removeAttribute('disabled')
 
   })
-
-
   } catch (error) {
-    console.log(error);
+    console.log(`Произошла ошибка ${error}`);
   }
 }
 
@@ -198,12 +199,11 @@ const getSingleNews = async () => {
       return data;
     }
   } catch (error) {
-    console.log(error);
+    console.log(`Произошла ошибка ${error}`);
   }
 };
 
 getSingleNews().then((data) => {
-  console.log(data)
   currentNewsTags = data.tags.split(" ");
   const tagBox = document.getElementById("tag_news_box");
 
@@ -300,71 +300,69 @@ getSingleNews().then((data) => {
 
 
   if (data.title_image !== '') {
-    console.log('картинка есть!!!!')
 
     const inputElemBoxVideo = document.createElement('div')
-  inputElemBoxVideo.setAttribute('id', 'input_video_box')
-  inputElemBoxVideo.setAttribute('class', 'inputBtnsBox')
+    inputElemBoxVideo.setAttribute('id', 'input_video_box')
+    inputElemBoxVideo.setAttribute('class', 'inputBtnsBox')
 
-  const closeButton = document.createElement('div')
-  closeButton.setAttribute('class', 'close-btn-file')
-  closeButton.setAttribute('id', 'close-button')
-  closeButton.textContent = 'x'
-
-
-  const newsTitleImage = document.createElement('input')
-  newsTitleImage.setAttribute('type', 'file')
-  newsTitleImage.setAttribute('id', `news_title_image`)
-  newsTitleImage.setAttribute('name', `file`)
-  newsTitleImage.setAttribute('class', 'input_file d-flex mt-2 mb-4')
-  newsTitleImage.setAttribute('text', `загрузите изображение`)
+    const closeButton = document.createElement('div')
+    closeButton.setAttribute('class', 'close-btn-file')
+    closeButton.setAttribute('id', 'close-button')
+    closeButton.textContent = 'x'
 
 
-
-  closeButton.addEventListener('click', async (e) => {
-    e.target.parentElement.remove()
-    data.title_image = ''
-    titleImageBtn.removeAttribute('disabled')
-
-  })
-
-
-  const currantImageContainer = document.createElement('div')
-  currantImageContainer.setAttribute('class', 'image_container')
-  currantImageContainer.setAttribute('id', 'image_container')
-  currantImageContainer.setAttribute('data-image', data.title_image)
-
-  const currantImageNews = document.createElement('img')
-  currantImageNews.setAttribute('class', 'image_news')
-  currantImageNews.setAttribute('id', 'image_news')
-  currantImageNews.setAttribute('src', data.title_image)
-
-
-  const currentImageDelete = document.createElement('div')
-  currentImageDelete.setAttribute('class', 'image_delete_btn')
-  currentImageDelete.setAttribute('id', 'image_delete_btn')
-  currentImageDelete.textContent = 'X'
-
-  currantImageContainer.appendChild(currantImageNews)
-  currantImageContainer.appendChild(currentImageDelete)
+    const newsTitleImage = document.createElement('input')
+    newsTitleImage.setAttribute('type', 'file')
+    newsTitleImage.setAttribute('id', `news_title_image`)
+    newsTitleImage.setAttribute('name', `file`)
+    newsTitleImage.setAttribute('class', 'input_file d-flex mt-2 mb-4')
+    newsTitleImage.setAttribute('text', `загрузите изображение`)
 
 
 
-  inputElemBoxVideo.appendChild(newsTitleImage)
-  inputElemBoxVideo.appendChild(currantImageContainer)
-  inputElemBoxVideo.appendChild(closeButton)
+      closeButton.addEventListener('click', async (e) => {
+        e.target.parentElement.remove()
+        data.title_image = ''
+        titleImageBtn.removeAttribute('disabled')
 
-  boxBtns.insertAdjacentElement('afterend', inputElemBoxVideo)
-  titleImageBtn.setAttribute('disabled', 'disabled')
+      })
+
+
+    const currantImageContainer = document.createElement('div')
+    currantImageContainer.setAttribute('class', 'image_container')
+    currantImageContainer.setAttribute('id', 'image_container')
+    currantImageContainer.setAttribute('data-image', data.title_image)
+
+    const currantImageNews = document.createElement('img')
+    currantImageNews.setAttribute('class', 'image_news')
+    currantImageNews.setAttribute('id', 'image_news')
+    currantImageNews.setAttribute('src', data.title_image)
+
+
+    const currentImageDelete = document.createElement('div')
+    currentImageDelete.setAttribute('class', 'image_delete_btn')
+    currentImageDelete.setAttribute('id', 'image_delete_btn')
+    currentImageDelete.textContent = 'X'
+
+    currantImageContainer.appendChild(currantImageNews)
+    currantImageContainer.appendChild(currentImageDelete)
 
 
 
-    currentImageDelete.addEventListener('click', (e) => {
-      console.log('картинка нажата')
-      data.title_image = ''
-      currantImageContainer.remove()
+    inputElemBoxVideo.appendChild(newsTitleImage)
+    inputElemBoxVideo.appendChild(currantImageContainer)
+    inputElemBoxVideo.appendChild(closeButton)
 
-    })
+    boxBtns.insertAdjacentElement('afterend', inputElemBoxVideo)
+    titleImageBtn.setAttribute('disabled', 'disabled')
+
+
+
+      currentImageDelete.addEventListener('click', (e) => {
+        data.title_image = ''
+        currantImageContainer.remove()
+
+      })
 
   }
 
@@ -375,19 +373,14 @@ getSingleNews().then((data) => {
   const newsAuthor = document.getElementById("news_author");
   const newsDate = document.getElementById("news_date");
 
-
   let tags = currentNewsTags;
   const views = 0;
-
-
 
   newsTitle.value = data.title;
   newsLead.value = data.lead;
   newsAuthor.value = data.author;
   newsDate.value = data.date;
   descriptionCheckbox.checked = data.news_description;
-
-
 
   const currentObj = {};
 
@@ -417,10 +410,8 @@ getSingleNews().then((data) => {
   });
 
 
-
 });
 
-// add new element news
 
 const btnNewsText = document.getElementById("btn_news_text");
 const btnNewsFile = document.getElementById("btn_news_file");
@@ -431,27 +422,21 @@ const submitNewsBtn = document.getElementById("login_news_button");
 
 
 
-// decsription checkbox
+// Чек бокс создания дискрипшена "Читайте на ЮТВ"
 
 
 descriptionCheckbox.addEventListener('change', (e) => {
 
   if(e.target.checked) {
     newsDescription = true
-    console.log('Чек бокс активирован')
-
   } else {
     newsDescription = false
-    console.log('Чек бокс не активирован')
-
   }
 
 })
 
 
 //
-
-
 
 
 const newsText = (text) => {
@@ -592,7 +577,6 @@ const newsFile = (file) => {
 
   closeButton.addEventListener("click", (e) => {
     fileArr = fileArr.filter((item) => {
-      console.log(item)
       return item.id !== `news_file_${e.target.parentNode.id.slice(14)}`;
     });
 
@@ -768,7 +752,7 @@ newsUpdateForm.addEventListener("submit", async (e) => {
       return data;
     }
   } catch (error) {
-    console.log("произошла ошибка " + error);
+    console.log(`Произошла ошибка ${error}`);
   }
 });
 
@@ -781,6 +765,6 @@ backNewsBtn.addEventListener("click", async (e) => {
   try {
     window.location.href = "/main/news";
   } catch (error) {
-    console.log(`произошла ошибка ${error}`);
+    console.log(`Произошла ошибка ${error}`);
   }
 });

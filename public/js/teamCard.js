@@ -9,8 +9,6 @@ const backFormButton = document.getElementById('select_team_btn')
 const cardId = localStorage.getItem("cardId");
 
 
-
-
 const teamName  = document.getElementById("team_name");
 const teamProfession = document.getElementById("team_profession");
 const teamFile = document.getElementById("team_file");
@@ -32,12 +30,11 @@ const getSingleCard = async (id) => {
     teamProfession.value  = data.profession
 
   } catch (error) {
-    console.log(error);
+    console.log(`Произошла ошибка ${error}`);
   }
 }
 
 const updateSingleCard = async  (e)  =>  {
-
   e.preventDefault()
 
   const updateFormData  = new FormData();
@@ -48,24 +45,25 @@ const updateSingleCard = async  (e)  =>  {
   updateFormData.append('file',  teamFile.files[0]);
 
 
-
   try {
     const responce = await fetch(`${url}/api/v1/team`, {
       method:  'PUT',
       body: updateFormData
     })
-
-
     const data = responce
     return data
 
   } catch (error) {
-    console.log(error);
+    console.log(`Произошла ошибка ${error}`);
 
   }
 }
 
 getSingleCard(cardId)
+
+
+
+// Выход
 
 
 changeFormButton.addEventListener("click",  updateSingleCard)

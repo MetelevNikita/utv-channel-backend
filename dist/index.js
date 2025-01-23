@@ -20,6 +20,7 @@ const newsRouter_1 = __importDefault(require("./Router/newsRouter"));
 const programRouter_1 = __importDefault(require("./Router/programRouter"));
 const epgRouter_1 = __importDefault(require("./Router/epgRouter"));
 const agreementRouter_1 = __importDefault(require("./Router/agreementRouter"));
+const presentationRouter_1 = __importDefault(require("./Router/presentationRouter"));
 // middleware
 const authMiddleware_1 = __importDefault(require("./middleware/authMiddleware"));
 const newsFolderDay_1 = require("./util/newsFolderDay");
@@ -56,6 +57,7 @@ app.use('/api/v1', newsRouter_1.default);
 app.use('/api/v1', programRouter_1.default);
 app.use('/api/v1', epgRouter_1.default);
 app.use('/api/v1', agreementRouter_1.default);
+app.use('/api/v1', presentationRouter_1.default);
 //
 app.get('/login', (req, res) => {
     try {

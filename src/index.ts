@@ -17,6 +17,7 @@ import newsRouter from './Router/newsRouter';
 import programRouter from './Router/programRouter';
 import epgRouter from './Router/epgRouter';
 import agreementRouter from './Router/agreementRouter';
+import presantationRouter from './Router/presentationRouter';
 
 // middleware
 
@@ -76,6 +77,7 @@ app.use('/api/v1', newsRouter)
 app.use('/api/v1', programRouter)
 app.use('/api/v1', epgRouter)
 app.use('/api/v1', agreementRouter)
+app.use('/api/v1', presantationRouter)
 
 
 

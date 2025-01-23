@@ -13,7 +13,6 @@ exports.getAgreetment = getAgreetment;
 const postAgreement = (req, res) => {
     try {
         const file = req.file;
-        console.log(file);
         if (!file) {
             res.status(404).send('File not found');
             return;

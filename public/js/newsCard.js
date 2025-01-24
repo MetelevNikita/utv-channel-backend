@@ -134,6 +134,11 @@ const createTitleImageBtn = () => {
   closeButton.textContent = 'x'
 
 
+  const imageTitleBox = document.createElement('div')
+  imageTitleBox.setAttribute('id', `image_title_box`);
+  imageTitleBox.setAttribute('class', 'text_area_sub_box_file')
+
+
   const newsTitleImage = document.createElement('input')
   newsTitleImage.setAttribute('type', 'file')
   newsTitleImage.setAttribute('id', `news_title_image`)
@@ -141,7 +146,19 @@ const createTitleImageBtn = () => {
   newsTitleImage.setAttribute('class', 'input_file d-flex mt-2 mb-4')
   newsTitleImage.setAttribute('text', `загрузите изображение`)
 
-  inputElemBoxVideo.appendChild(newsTitleImage)
+
+  const imgTitleComment = document.createElement('input')
+  imgTitleComment.setAttribute('type', 'text')
+  imgTitleComment.setAttribute('id', `img_title_comment`)
+  imgTitleComment.setAttribute('class', 'input_form input_news_comment_file')
+
+
+  imageTitleBox.appendChild(newsTitleImage)
+  imageTitleBox.appendChild(imgTitleComment)
+
+
+
+  inputElemBoxVideo.appendChild(imageTitleBox)
   inputElemBoxVideo.appendChild(closeButton)
 
   boxBtns.insertAdjacentElement('afterend', inputElemBoxVideo)
@@ -160,6 +177,7 @@ const createTitleImageBtn = () => {
 }
 
 
+//
 
 
 videoBtn.addEventListener('click', async (e) => {
@@ -311,12 +329,30 @@ getSingleNews().then((data) => {
     closeButton.textContent = 'x'
 
 
+    const imageTitleBox = document.createElement('div')
+    imageTitleBox.setAttribute('id', `image_title_box`);
+    imageTitleBox.setAttribute('class', 'text_area_sub_box_file')
+
+
+
     const newsTitleImage = document.createElement('input')
     newsTitleImage.setAttribute('type', 'file')
     newsTitleImage.setAttribute('id', `news_title_image`)
     newsTitleImage.setAttribute('name', `file`)
     newsTitleImage.setAttribute('class', 'input_file d-flex mt-2 mb-4')
     newsTitleImage.setAttribute('text', `загрузите изображение`)
+
+
+    const imgTitleComment = document.createElement('input')
+    imgTitleComment.setAttribute('type', 'text')
+    imgTitleComment.setAttribute('id', `img_title_comment`)
+    imgTitleComment.setAttribute('class', 'input_form input_news_comment_file')
+    imgTitleComment.value = data.title_comment
+
+
+    imageTitleBox.appendChild(newsTitleImage)
+    imageTitleBox.appendChild(imgTitleComment)
+
 
 
 
@@ -349,7 +385,7 @@ getSingleNews().then((data) => {
 
 
 
-    inputElemBoxVideo.appendChild(newsTitleImage)
+    inputElemBoxVideo.appendChild(imageTitleBox)
     inputElemBoxVideo.appendChild(currantImageContainer)
     inputElemBoxVideo.appendChild(closeButton)
 
@@ -675,6 +711,7 @@ newsUpdateForm.addEventListener("submit", async (e) => {
 
 
     const newsTitleImage = document.getElementById('news_title_image')
+    const newsTitleComment = document.getElementById('img_title_comment')
     const newsVideo = document.getElementById('news_video')
 
 
@@ -690,6 +727,7 @@ newsUpdateForm.addEventListener("submit", async (e) => {
 
     newNewsForm.append('video', (newsVideo === null) ? '' : newsVideo.value);
     newNewsForm.append('title_image', (!newsTitleImage) ? '' : newsTitleImage.files[0]);
+    newNewsForm.append('title_comment', newsTitleComment.value);
 
     newNewsForm.append("tags", tags);
     newNewsForm.append("views", views);
@@ -738,6 +776,8 @@ newsUpdateForm.addEventListener("submit", async (e) => {
     } else {
       console.log("нет комментариев");
     }
+
+    console.log(...newNewsForm)
 
     const responce = await fetch(`${url}/api/v1/news`, {
       method: "PUT",

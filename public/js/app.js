@@ -232,6 +232,11 @@ titleImageBtn.addEventListener('click', async (e) => {
   closeButton.textContent = 'x'
 
 
+  const imageTitleBox = document.createElement('div')
+  imageTitleBox.setAttribute('id', `image_title_box`);
+  imageTitleBox.setAttribute('class', 'text_area_sub_box_file')
+
+
   const newsTitleImage = document.createElement('input')
   newsTitleImage.setAttribute('type', 'file')
   newsTitleImage.setAttribute('id', `news_title_image`)
@@ -239,7 +244,18 @@ titleImageBtn.addEventListener('click', async (e) => {
   newsTitleImage.setAttribute('class', 'input_file d-flex mt-2 mb-4')
   newsTitleImage.setAttribute('text', `загрузите изображение`)
 
-  inputElemBoxVideo.appendChild(newsTitleImage)
+
+  const imgTitleComment = document.createElement('input')
+  imgTitleComment.setAttribute('type', 'text')
+  imgTitleComment.setAttribute('id', `img_title_comment`)
+  imgTitleComment.setAttribute('class', 'input_form input_news_comment_file')
+
+
+  imageTitleBox.appendChild(newsTitleImage)
+  imageTitleBox.appendChild(imgTitleComment)
+
+
+  inputElemBoxVideo.appendChild(imageTitleBox)
   inputElemBoxVideo.appendChild(closeButton)
 
   boxBtns.insertAdjacentElement('afterend', inputElemBoxVideo)
@@ -491,6 +507,7 @@ btnNewsFile.addEventListener('click',  (e)  =>  {
   textAreaBox.appendChild(closeButton)
 
 
+
   btnNewsBox.insertAdjacentElement('beforebegin', textAreaBox)
 
   fileArr.push(newsFile)
@@ -597,6 +614,7 @@ descriptionCheckbox.addEventListener('change', (e) => {
 //
 
 
+
 newsForm.addEventListener('submit', async (e) => {
   e.preventDefault()
 
@@ -608,6 +626,7 @@ newsForm.addEventListener('submit', async (e) => {
     const newsDate = document.getElementById('news_date').value;
 
     const newsTitleImage = document.getElementById('news_title_image')
+    const newsTitleComment = document.getElementById('img_title_comment')
     const newsVideo = document.getElementById('news_video')
 
     const tags = selectedTags.join(' ')
@@ -623,6 +642,7 @@ newsForm.addEventListener('submit', async (e) => {
     newNewsForm.append('date', newsDate);
     newNewsForm.append('video', (newsVideo === null) ? '' : newsVideo.value);
     newNewsForm.append('title_image', (!newsTitleImage) ? '' : newsTitleImage.files[0]);
+    newNewsForm.append('title_comment', newsTitleComment.value)
     newNewsForm.append('tags', tags);
     newNewsForm.append('views', views)
     newNewsForm.append('news_description', newsDescription)
@@ -670,6 +690,8 @@ newsForm.addEventListener('submit', async (e) => {
     } else {
       console.log('нет комментариев')
     }
+
+    console.log(...newNewsForm)
 
 
     const responce = await fetch(`${url}/api/v1/news`, {

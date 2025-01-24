@@ -74,6 +74,7 @@ projectUpdateForm.addEventListener('submit', async (e) => {
 
     const data = await responce;
     projectUpdateForm.reset();
+    aler('Проект успешно обновлен');
     return data;
 
 

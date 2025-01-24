@@ -20,7 +20,6 @@ const htmlPath = path_1.default.join(__dirname, '..', '..', '/public/html');
 const getUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const getUser = yield database_1.pool.query('SELECT * FROM users');
-        console.log(getUser);
         if (getUser.rows.length < 1) {
             res.status(400).json({ messge: 'Не верный логин или пароль' });
             return;

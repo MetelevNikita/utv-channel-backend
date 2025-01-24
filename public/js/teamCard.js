@@ -51,6 +51,8 @@ const updateSingleCard = async  (e)  =>  {
       body: updateFormData
     })
     const data = responce
+    updateFormData.reset()
+    alert('Пользователь успешно обновлен')
     return data
 
   } catch (error) {

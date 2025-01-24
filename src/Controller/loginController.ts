@@ -10,8 +10,6 @@ const getUsers = async (req: any, res: any) => {
   try {
 
     const getUser = await pool.query('SELECT * FROM users');
-    console.log(getUser);
-
     if(getUser.rows.length  < 1)  {
       res.status(400).json({messge: 'Не верный логин или пароль'});
       return

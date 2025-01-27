@@ -729,7 +729,7 @@ newsUpdateForm.addEventListener("submit", async (e) => {
 
     newNewsForm.append('video', (newsVideo === null) ? '' : newsVideo.value);
     newNewsForm.append('title_image', (!newsTitleImage) ? '' : newsTitleImage.files[0]);
-    newNewsForm.append('title_comment', newsTitleComment.value);
+    newNewsForm.append('title_comment', (!newsTitleComment) ? '' : newsTitleComment.value);
 
     newNewsForm.append("tags", tags);
     newNewsForm.append("views", views);

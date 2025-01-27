@@ -347,7 +347,7 @@ getSingleNews().then((data) => {
     imgTitleComment.setAttribute('type', 'text')
     imgTitleComment.setAttribute('id', `img_title_comment`)
     imgTitleComment.setAttribute('class', 'input_form input_news_comment_file')
-    imgTitleComment.value = data.title_comment
+    imgTitleComment.value = (!data.title_comment) ? '' : data.title_comment
 
 
     imageTitleBox.appendChild(newsTitleImage)
@@ -359,6 +359,7 @@ getSingleNews().then((data) => {
       closeButton.addEventListener('click', async (e) => {
         e.target.parentElement.remove()
         data.title_image = ''
+        data.title_comment = ''
         titleImageBtn.removeAttribute('disabled')
 
       })
@@ -396,6 +397,7 @@ getSingleNews().then((data) => {
 
       currentImageDelete.addEventListener('click', (e) => {
         data.title_image = ''
+        data.title_comment = ''
         currantImageContainer.remove()
 
       })

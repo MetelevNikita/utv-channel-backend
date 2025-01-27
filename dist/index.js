@@ -21,6 +21,8 @@ const programRouter_1 = __importDefault(require("./Router/programRouter"));
 const epgRouter_1 = __importDefault(require("./Router/epgRouter"));
 const agreementRouter_1 = __importDefault(require("./Router/agreementRouter"));
 const presentationRouter_1 = __importDefault(require("./Router/presentationRouter"));
+// logs
+const logging_1 = require("./util/logging");
 // middleware
 const authMiddleware_1 = __importDefault(require("./middleware/authMiddleware"));
 const newsFolderDay_1 = require("./util/newsFolderDay");
@@ -178,9 +180,11 @@ app.get('/*', (req, res) => {
 const PORT = process.env.PORT || 9000;
 const startServer = () => {
     try {
+        logging_1.logger.info(`Сервер запущен на порту ${PORT} PID:${pid}`);
         app.listen(PORT, () => console.log(`Сервер запущен на порту ${PORT}\nPID:${pid}`));
     }
     catch (error) {
+        logging_1.logger.error(`Сервер запущен с ошибкой. Код ошибки: ${error}`);
         console.error(`Сервер запущен с ошибкой.\тКод ошибки: ${error}`);
     }
 };

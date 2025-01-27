@@ -19,6 +19,11 @@ import epgRouter from './Router/epgRouter';
 import agreementRouter from './Router/agreementRouter';
 import presantationRouter from './Router/presentationRouter';
 
+// logs
+
+
+import { logger } from './util/logging'
+
 // middleware
 
 import authMiddleware from './middleware/authMiddleware';
@@ -238,8 +243,10 @@ const PORT = process.env.PORT || 9000;
 
 const startServer = () => {
   try {
+    logger.info(`Сервер запущен на порту ${PORT} PID:${pid}`)
     app.listen(PORT, ()  =>  console.log(`Сервер запущен на порту ${PORT}\nPID:${pid}`));
   } catch (error) {
+    logger.error(`Сервер запущен с ошибкой. Код ошибки: ${error}`)
     console.error(`Сервер запущен с ошибкой.\тКод ошибки: ${error}`);
   }
 }

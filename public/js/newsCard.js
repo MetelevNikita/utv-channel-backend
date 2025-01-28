@@ -791,6 +791,7 @@ newsUpdateForm.addEventListener("submit", async (e) => {
     if (responce.status === 200) {
       newsUpdateForm.reset();
       alert("карточка проекта успешно изменена");
+      window.location.href = '/main/news'
       return data;
     }
   } catch (error) {

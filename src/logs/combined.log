@@ -1,2 +1,18 @@
 {"level":"info","message":"Создание папки 2025-1-27 в папке D:\\REACT-TYPESCRIPT\\utv-channel-app\\backend\\public\\image\\news\\2025-1-27","service":"user-service","timestamp":"2025-01-27T05:19:29.131Z"}
 {"level":"info","message":"Сервер запущен на порту 9000 PID:3304","service":"user-service","timestamp":"2025-01-27T05:19:29.137Z"}
+{"level":"info","message":"Создание папки 2025-1-28 в папке D:\\REACT-TYPESCRIPT\\utv-channel-app\\backend\\public\\image\\news\\2025-1-28","service":"user-service","timestamp":"2025-01-28T05:28:17.018Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:10324","service":"user-service","timestamp":"2025-01-28T05:28:17.026Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1738042113,\"exp\":1738045713}","service":"user-service","timestamp":"2025-01-28T05:28:33.557Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1738042113,\"exp\":1738045713}","service":"user-service","timestamp":"2025-01-28T05:28:35.070Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1738042113,\"exp\":1738045713}","service":"user-service","timestamp":"2025-01-28T05:29:49.189Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1738042113,\"exp\":1738045713}","service":"user-service","timestamp":"2025-01-28T05:29:57.475Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1738042113,\"exp\":1738045713}","service":"user-service","timestamp":"2025-01-28T05:30:29.686Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1738042113,\"exp\":1738045713}","service":"user-service","timestamp":"2025-01-28T05:30:39.115Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1738042113,\"exp\":1738045713}","service":"user-service","timestamp":"2025-01-28T05:31:09.449Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1738042113,\"exp\":1738045713}","service":"user-service","timestamp":"2025-01-28T05:41:41.311Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1738042113,\"exp\":1738045713}","service":"user-service","timestamp":"2025-01-28T05:42:06.076Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1738042113,\"exp\":1738045713}","service":"user-service","timestamp":"2025-01-28T05:42:07.205Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1738042113,\"exp\":1738045713}","service":"user-service","timestamp":"2025-01-28T05:42:34.193Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1738042113,\"exp\":1738045713}","service":"user-service","timestamp":"2025-01-28T05:42:37.755Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1738042113,\"exp\":1738045713}","service":"user-service","timestamp":"2025-01-28T05:42:41.726Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1738042113,\"exp\":1738045713}","service":"user-service","timestamp":"2025-01-28T05:42:44.915Z"}

@@ -74,7 +74,8 @@ projectUpdateForm.addEventListener('submit', async (e) => {
 
     const data = await responce;
     projectUpdateForm.reset();
-    aler('Проект успешно обновлен');
+    alert('Проект успешно обновлен');
+    window.location.href = '/main/project'
     return data;
 
 

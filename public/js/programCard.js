@@ -77,6 +77,7 @@ programUpdateForm.addEventListener('submit', async (e) => {
     const data = await responce.json()
     programUpdateForm.reset()
     alert('Проект успешно обновлен')
+    window.location.href = '/main/program'
     return data
 
   } catch (error) {

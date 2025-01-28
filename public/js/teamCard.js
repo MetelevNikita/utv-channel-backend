@@ -53,6 +53,7 @@ const updateSingleCard = async  (e)  =>  {
     const data = responce
     updateFormData.reset()
     alert('Пользователь успешно обновлен')
+    window.location.href = '/main/team'
     return data
 
   } catch (error) {

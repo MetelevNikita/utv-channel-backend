@@ -70,14 +70,14 @@ const postNews = async (req: any, res: any) => {
     const host = req.headers.host
 
     let findImage
-    let endFolder: string
+    let endFolder
 
     if (!req.files.file_1) {
       findImage = req.files.title_image
-      endFolder = path.parse(findImage[0].destination).base.split('\\').slice(-1)[0]
+      endFolder = path.parse(findImage[0].destination).base.split('\\').slice(-1)
     } else if(!req.files.title_image) {
       findImage = req.files.file_1
-      endFolder = path.parse(findImage[0].destination).base.split('\\').slice(-1)[0]
+      endFolder = path.parse(findImage[0].destination).base.split('\\').slice(-1)
     } else {
       findImage = ''
       endFolder = ''
@@ -113,8 +113,7 @@ const postNews = async (req: any, res: any) => {
     }, {})
 
 
-     const url = protocol + '://' + host + '/image/news/' + endFolder + '/'
-
+     const url = protocol + '://' + host + '/image/news/' + (!endFolder) ? '' : endFolder[0] + '/'
 
 
     //
@@ -147,6 +146,8 @@ const updateNews = async (req:any, res:any) => {
 
     if (!req.files) {
       console.log('Нет файлов для загрузки.')
+
+
     }
 
     const idNews = uuid()
@@ -162,7 +163,7 @@ const updateNews = async (req:any, res:any) => {
       endFolder = path.parse(findImage[0].destination).base.split('\\').slice(-1)[0]
     } else if(!req.files.title_image) {
       findImage = req.files.file_1
-      endFolder = path.parse(findImage[0].destination).base.split('\\').slice(-1)[0]
+      endFolder =  path.parse(findImage[0].destination).base.split('\\').slice(-1)[0]
     } else {
       findImage = ''
       endFolder = ''
@@ -198,7 +199,7 @@ const updateNews = async (req:any, res:any) => {
     }, {})
 
 
-     const url = protocol + '://' + host + '/image/news/' + endFolder + '/'
+     const url = protocol + '://' + host + '/image/news/' + (endFolder === '') ? '' : endFolder + '/'
 
 
     //

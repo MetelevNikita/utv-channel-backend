@@ -1,4 +1,5 @@
-const url  =  'https://utvchannel.tw1.su'
+// const url  =  'https://utvchannel.tw1.su'
+const url = 'http://localhost:9000'
 
 //
 
@@ -72,9 +73,8 @@ projectUpdateForm.addEventListener('submit', async (e) => {
     })
 
 
-    const data = await responce;
-    projectUpdateForm.reset();
-    alert('Проект успешно обновлен');
+    const data = responce;
+    alert('Карточка проекта успешно обновлена');
     window.location.href = '/main/project'
     return data;
 

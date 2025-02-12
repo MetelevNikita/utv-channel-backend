@@ -1,7 +1,7 @@
 // URL
 
-const url  =  'https://utvchannel.tw1.su'
-// const url = "http://localhost:9000";
+// const url  =  'https://utvchannel.tw1.su'
+const url = "http://localhost:9000";
 
 
 
@@ -790,10 +790,10 @@ newsUpdateForm.addEventListener("submit", async (e) => {
 
     if (responce.status === 200) {
       newsUpdateForm.reset();
-      alert("карточка проекта успешно изменена");
-      window.location.href = '/main/news'
-      return data;
     }
+
+    alert("карточка проекта успешно изменена");
+    window.location.href = 'main/news'
   } catch (error) {
     console.log(`Произошла ошибка ${error}`);
   }
@@ -806,7 +806,7 @@ const backNewsBtn = document.getElementById("select_news_back_btn");
 backNewsBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   try {
-    window.location.href = "/main/news";
+    window.location.href = "main/news";
   } catch (error) {
     console.log(`Произошла ошибка ${error}`);
   }

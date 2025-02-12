@@ -1,4 +1,5 @@
-const url = 'https://utvchannel.tw1.su'
+// const url = 'https://utvchannel.tw1.su'
+const url = 'http://localhost:9000'
 
 //
 
@@ -51,10 +52,10 @@ const updateSingleCard = async  (e)  =>  {
       body: updateFormData
     })
     const data = responce
-    updateFormData.reset()
-    alert('Пользователь успешно обновлен')
+    alert('Карточка пользователя успешно обновлена')
     window.location.href = '/main/team'
-    return data
+    return responce
+
 
   } catch (error) {
     console.log(`Произошла ошибка ${error}`);

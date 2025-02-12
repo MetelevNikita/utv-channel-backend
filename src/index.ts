@@ -27,7 +27,6 @@ import { logger } from './util/logging'
 // middleware
 
 import authMiddleware from './middleware/authMiddleware';
-import { newsFolderNews } from './util/newsFolderDay';
 
 
 
@@ -45,19 +44,8 @@ const limiter = rateLimit({
 
 
 
-
-
-
-
-
 dotenv.config()
 const pid = process.pid
-const date = new Date();
-const day = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-
-newsFolderNews(day)
-
-console.log(`pid: ${pid}`)
 
 // use
 

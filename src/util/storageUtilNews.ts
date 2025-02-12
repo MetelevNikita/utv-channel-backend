@@ -4,13 +4,19 @@ import fs from "fs"
 
 //
 
-const currentPath = path.join(__dirname, '..', '..',  `/public/image/news/`)
 
-export const storageUtilNews = (folder: string) => {
+
+export const storageUtilNews = (id: string) => {
 
   const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null,  (currentPath + folder))
+
+      const currentPath = path.join(__dirname, `../../public/image/news/`, `news_${id}`)
+
+      if(!fs.existsSync(currentPath)) {
+        fs.mkdirSync(currentPath)
+      }
+      cb(null,  (currentPath))
     },
     filename:  (req, file, cb)  =>  {
       file.originalname = Buffer.from(file.originalname, 'latin1').toString('utf8')

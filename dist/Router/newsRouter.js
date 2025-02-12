@@ -5,13 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const multer_1 = __importDefault(require("multer"));
+const uuid_1 = require("uuid");
 // module
 const newsController_1 = require("../Controller/newsController");
 const storageUtilNews_1 = require("../util/storageUtilNews");
+const id = (0, uuid_1.v4)();
 //
-const date = new Date();
-const day = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-const upload = (0, multer_1.default)({ storage: (0, storageUtilNews_1.storageUtilNews)(day) });
+const upload = (0, multer_1.default)({ storage: (0, storageUtilNews_1.storageUtilNews)(id) });
 //
 const newsRouter = (0, express_1.Router)();
 newsRouter.get('/news', newsController_1.getNews);

@@ -25,7 +25,6 @@ const presentationRouter_1 = __importDefault(require("./Router/presentationRoute
 const logging_1 = require("./util/logging");
 // middleware
 const authMiddleware_1 = __importDefault(require("./middleware/authMiddleware"));
-const newsFolderDay_1 = require("./util/newsFolderDay");
 const publicPath = path_1.default.join(__dirname, '..', 'public');
 const app = (0, express_1.default)();
 const limiter = (0, express_rate_limit_1.rateLimit)({
@@ -35,10 +34,6 @@ const limiter = (0, express_rate_limit_1.rateLimit)({
 });
 dotenv_1.default.config();
 const pid = process.pid;
-const date = new Date();
-const day = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-(0, newsFolderDay_1.newsFolderNews)(day);
-console.log(`pid: ${pid}`);
 // use
 app.use(express_1.default.static("public"));
 app.use(express_1.default.static(publicPath + "/js"));

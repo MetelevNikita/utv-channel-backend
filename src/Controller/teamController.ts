@@ -1,6 +1,10 @@
 import { pool } from '../db/database'
+import { v4 as uuid } from 'uuid'
+import sharp from 'sharp'
+import path from 'path';
+import fs from 'fs';
 
-
+const id = uuid();
 
 const getTeam = async (req: Request | any, res: Response | any) => {
   try {
@@ -44,15 +48,27 @@ const getSingleTeam = async (req: Request | any, res: Response | any) => {
 
 
 
+
 const postTeam  = async  (req: any, res: any)  =>  {
   try {
 
     const { name, profession } = req.body;
-    const imageFile = req.file.originalname;
-    const fullUrl = 'https://utvchannel.tw1.su' + '/image/team/' + imageFile;
+    const id = uuid();
+    const protocol = req.headers['x-forwarded-proto'] || 'http';
+    const host = req.headers.host
 
 
-    const newTeam = await pool.query(`INSERT INTO team (name, profession, image) VALUES ($1, $2, $3) RETURNING *`, [name, profession, fullUrl]);
+    const inputPath = path.join(__dirname, '../../public/image/team/', req.file.originalname)
+    const outputPath = path.join(__dirname, '../../public/image/team/', `image_${id}.jpeg`)
+
+    const url = `${protocol}://${host}/image/team/image_${id}.jpeg`;
+
+
+    await sharp(inputPath).jpeg({ quality: 90 }).resize(300, 400).toFile(outputPath);
+    fs.unlinkSync(inputPath)
+
+
+    const newTeam = await pool.query(`INSERT INTO team (name, profession, image) VALUES ($1, $2, $3) RETURNING *`, [name, profession, url]);
 
     if(!newTeam.rows[0]) {
       res.status(400).send(`Карточка сотрудника не создана`);
@@ -75,10 +91,6 @@ const updateTeam   = async  (req: Request  | any, res: Response  | any)  =>  {
 
   try  {
 
-
-  console.log(req.body);
-  console.log(req.files)
-
    const  { id, name, profession  }  = req.body;
 
 
@@ -90,12 +102,20 @@ const updateTeam   = async  (req: Request  | any, res: Response  | any)  =>  {
 
    }
 
+   const idTeam = uuid();
+   const protocol = req.headers['x-forwarded-proto'] || 'http';
+   const host = req.headers.host
 
-   const imageFile = req.file.originalname;
-   const fullUrl = 'https://utvchannel.tw1.su' + '/image/team/' + imageFile;
 
+   const inputPath = path.join(__dirname, '../../public/image/team/', req.file.originalname)
+   const outputPath = path.join(__dirname, '../../public/image/team/', `image_${idTeam}.jpeg`)
 
-   const updateTeam  = await pool.query(`UPDATE team SET name = $1, profession = $2, image = $3 WHERE id = $4 RETURNING *`,[name, profession, fullUrl, id]);
+   const url = `${protocol}://${host}/image/team/image_${idTeam}.jpeg`;
+
+   await sharp(inputPath).jpeg({ quality: 90 }).resize(300, 400).toFile(outputPath);
+   fs.unlinkSync(inputPath)
+
+   const updateTeam  = await pool.query(`UPDATE team SET name = $1, profession = $2, image = $3 WHERE id = $4 RETURNING *`,[name, profession, url, id]);
 
    if(!updateTeam.rows[0])  {
     res.status(400).send(`Карточка сотрудника не изменена`);

@@ -1,0 +1,13 @@
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-10T09:22:31.732Z"}
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-10T10:57:14.060Z"}
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-10T13:51:39.918Z"}
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-11T06:09:21.832Z"}
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-11T07:11:04.345Z"}
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-11T08:13:40.738Z"}
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-11T09:32:12.266Z"}
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-11T10:33:30.336Z"}
+{"level":"error","message":"Ошибка при создании папки","service":"user-service","timestamp":"2025-02-11T11:48:01.762Z"}
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-11T13:34:38.310Z"}
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-12T05:05:56.871Z"}
+{"level":"error","message":"Не получен токен доступа","service":"user-service","timestamp":"2025-02-12T05:13:38.622Z"}
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-12T06:13:51.081Z"}

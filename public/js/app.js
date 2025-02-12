@@ -1,5 +1,5 @@
-const url  =  'https://utvchannel.tw1.su'
-// const url = 'http://localhost:9000'
+// const url  =  'https://utvchannel.tw1.su'
+const url = 'http://localhost:9000'
 
 
 
@@ -54,6 +54,7 @@ teamForm.addEventListener('submit', async (e) => {
     const data = responce
     teamForm.reset();
     alert('карточка сотрудника успешно создана')
+    window.location.reload()
     return data
 
   } catch (error) {
@@ -108,6 +109,7 @@ projectForm.addEventListener('submit', async  (e)  =>  {
     if (responce.status === 200) {
       projectForm.reset();
       alert('Карточка проекта успешно создана')
+      window.location.reload()
       return data
 
     }
@@ -704,6 +706,7 @@ newsForm.addEventListener('submit', async (e) => {
       if (responce.status === 200) {
         newsForm.reset();
         alert('Новостной материал успешно создан')
+        window.location.reload()
         return data
       }
 
@@ -766,6 +769,7 @@ programForm.addEventListener('submit', async (e) => {
     if (responce.status === 200) {
       programForm.reset();
       alert('программа успешно создана')
+      window.location.reload()
       return responce
     }
 
@@ -823,6 +827,7 @@ epgForm.addEventListener('submit', async (e) => {
 
       const data = responce.json()
       alert(`Программа передач успешно добавлена`)
+      window.location.reload()
       return data
     }
 
@@ -859,6 +864,7 @@ agreetForm.addEventListener('submit', async (e) => {
 
       const data = responce.json()
       alert('Пользовательское соглашение успешно загружено')
+      window.location.reload()
       return data
     }
 

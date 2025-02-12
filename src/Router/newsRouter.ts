@@ -1,22 +1,19 @@
 import { Router } from "express";
 import multer from "multer";
+import { v4 as uuidv4 } from 'uuid';
 
 // module
 
 import { getNews, getSingleNews, postNews, updateNews, deleteNews, updateViews } from '../Controller/newsController'
 import { storageUtilNews } from "../util/storageUtilNews"
+import { storageUtil } from "../util/storageUtil";
 
 
-
-
+const id = uuidv4();
 
 //
 
-
-const date = new Date();
-const day = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-const upload = multer({storage: storageUtilNews(day)});
-
+const upload = multer({storage: storageUtilNews(id)});
 
 //
 

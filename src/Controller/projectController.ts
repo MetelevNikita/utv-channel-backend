@@ -1,5 +1,9 @@
 
 import { pool } from "../db/database";
+import path from 'path';
+import fs from 'fs';
+import sharp from 'sharp';
+import { v4 as uuid } from 'uuid'
 
 
 const getProjects = async(req: any, res: any) => {
@@ -54,12 +58,26 @@ const postProject  = async (req: any, res: any)  =>  {
 
 
     console.log(req.body);
+    const id = uuid()
 
     const { title, description, duration, year, author, channel, trailer } = req.body;
     const imageFile = req.file.originalname;
-    const fullUrl = 'https://utvchannel.tw1.su' + '/image/project/' + imageFile;
 
-    const postProject = await pool.query('INSERT INTO project (title, description, duration, year, author, channel, trailer, image) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *', [title, description, duration, year, author, channel, trailer, fullUrl]);
+
+    const protocol = req.headers['x-forwarded-proto'] || 'http'
+    const host = req.headers.host;
+
+    const url = protocol + '://' + host + '/image/project/' + `project_${id}.jpeg`;
+
+
+    const inputPath = path.join(__dirname, '../../public/image/project', req.file.originalname)
+    const outputPath = path.join(__dirname, '../../public/image/project', `project_${id}.jpeg`)
+
+    await sharp(inputPath).jpeg({quality: 90}).resize(540, 304).toFile(outputPath)
+    fs.unlinkSync(inputPath)
+
+
+    const postProject = await pool.query('INSERT INTO project (title, description, duration, year, author, channel, trailer, image) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *', [title, description, duration, year, author, channel, trailer, url]);
     if (postProject.rows.length  <  1)  {
       res.status(404).json({message:  "project not create"});
       return
@@ -109,18 +127,26 @@ const updateProject = async(req: any, res: any)   =>   {
       return
     }
 
-    const imageFile = req.file.originalname;
-    const fullUrl = 'https://utvchannel.tw1.su' + '/image/project/' + imageFile;
+    const idProject = uuid()
+    const protocol = req.headers['x-forwarded-proto'] || 'http'
+    const host = req.headers.host;
+    const url = protocol + '://' + host + '/image/project/' + `project_${idProject}.jpeg`;
 
-    const updateProject  = await pool.query('UPDATE project SET title = $1, description = $2, duration = $3, year  =  $4, author  =  $5, channel = $6, trailer = $7, image = $8 WHERE id = $9', [title, description, duration, year, author, channel, trailer, fullUrl, id])
 
-    console.log(updateProject.rows);
+    const inputPath = path.join(__dirname, '../../public/image/project', req.file.originalname)
+    const outputPath = path.join(__dirname, '../../public/image/project', `project_${idProject}.jpeg`)
+
+    await sharp(inputPath).png({quality: 90}).resize(540, 304).toFile(outputPath)
+    fs.unlinkSync(inputPath)
+
+
+    const updateProject  = await pool.query('UPDATE project SET title = $1, description = $2, duration = $3, year  =  $4, author  =  $5, channel = $6, trailer = $7, image = $8 WHERE id = $9', [title, description, duration, year, author, channel, trailer, url, id])
+
 
     if (!updateProject)   {
       res.status(404).json({message: "Карточка проекта не изменена"});
       return
     }
-
 
     console.log(updateProject.rows[0]);
     res.status(200).json(updateProject.rows[0]);

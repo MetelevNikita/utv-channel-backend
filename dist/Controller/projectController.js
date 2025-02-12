@@ -8,9 +8,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateProject = exports.deleteProject = exports.postProject = exports.getOneProject = exports.getProjects = void 0;
 const database_1 = require("../db/database");
+const path_1 = __importDefault(require("path"));
+const fs_1 = __importDefault(require("fs"));
+const sharp_1 = __importDefault(require("sharp"));
+const uuid_1 = require("uuid");
 const getProjects = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const allprojects = yield database_1.pool.query(`SELECT * FROM project`);
@@ -46,10 +53,17 @@ exports.getOneProject = getOneProject;
 const postProject = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         console.log(req.body);
+        const id = (0, uuid_1.v4)();
         const { title, description, duration, year, author, channel, trailer } = req.body;
         const imageFile = req.file.originalname;
-        const fullUrl = 'https://utvchannel.tw1.su' + '/image/project/' + imageFile;
-        const postProject = yield database_1.pool.query('INSERT INTO project (title, description, duration, year, author, channel, trailer, image) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *', [title, description, duration, year, author, channel, trailer, fullUrl]);
+        const protocol = req.headers['x-forwarded-proto'] || 'http';
+        const host = req.headers.host;
+        const url = protocol + '://' + host + '/image/project/' + `project_${id}.jpeg`;
+        const inputPath = path_1.default.join(__dirname, '../../public/image/project', req.file.originalname);
+        const outputPath = path_1.default.join(__dirname, '../../public/image/project', `project_${id}.jpeg`);
+        yield (0, sharp_1.default)(inputPath).jpeg({ quality: 90 }).resize(540, 304).toFile(outputPath);
+        fs_1.default.unlinkSync(inputPath);
+        const postProject = yield database_1.pool.query('INSERT INTO project (title, description, duration, year, author, channel, trailer, image) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *', [title, description, duration, year, author, channel, trailer, url]);
         if (postProject.rows.length < 1) {
             res.status(404).json({ message: "project not create" });
             return;
@@ -88,10 +102,15 @@ const updateProject = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             res.status(404).json({ message: "No image file" });
             return;
         }
-        const imageFile = req.file.originalname;
-        const fullUrl = 'https://utvchannel.tw1.su' + '/image/project/' + imageFile;
-        const updateProject = yield database_1.pool.query('UPDATE project SET title = $1, description = $2, duration = $3, year  =  $4, author  =  $5, channel = $6, trailer = $7, image = $8 WHERE id = $9', [title, description, duration, year, author, channel, trailer, fullUrl, id]);
-        console.log(updateProject.rows);
+        const idProject = (0, uuid_1.v4)();
+        const protocol = req.headers['x-forwarded-proto'] || 'http';
+        const host = req.headers.host;
+        const url = protocol + '://' + host + '/image/project/' + `project_${idProject}.jpeg`;
+        const inputPath = path_1.default.join(__dirname, '../../public/image/project', req.file.originalname);
+        const outputPath = path_1.default.join(__dirname, '../../public/image/project', `project_${idProject}.jpeg`);
+        yield (0, sharp_1.default)(inputPath).png({ quality: 90 }).resize(540, 304).toFile(outputPath);
+        fs_1.default.unlinkSync(inputPath);
+        const updateProject = yield database_1.pool.query('UPDATE project SET title = $1, description = $2, duration = $3, year  =  $4, author  =  $5, channel = $6, trailer = $7, image = $8 WHERE id = $9', [title, description, duration, year, author, channel, trailer, url, id]);
         if (!updateProject) {
             res.status(404).json({ message: "Карточка проекта не изменена" });
             return;

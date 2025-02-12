@@ -1,4 +1,5 @@
-const url = 'https://utvchannel.tw1.su'
+// const url = 'https://utvchannel.tw1.su'
+const url = 'http://localhost:9000'
 
 //
 
@@ -79,7 +80,7 @@ const getAllProjectCards = async () => {
       projectDelBtn.addEventListener('click', async () => {
         try {
 
-          const responce = await fetch(`https://utvchannel.tw1.su/api/v1/project/${project.id}`, {
+          const responce = await fetch(`${url}/api/v1/project/${project.id}`, {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',
@@ -88,6 +89,7 @@ const getAllProjectCards = async () => {
 
           const data = await responce.json()
           projectCard.remove()
+          alert(`Карточка с проектом ${project.title} удалена`)
           window.location.reload()
           return data
 

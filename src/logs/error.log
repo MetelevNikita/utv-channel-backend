@@ -11,3 +11,16 @@
 {"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-12T05:05:56.871Z"}
 {"level":"error","message":"Не получен токен доступа","service":"user-service","timestamp":"2025-02-12T05:13:38.622Z"}
 {"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-12T06:13:51.081Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T09:15:22.911Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T09:44:27.523Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T10:18:28.440Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T10:19:44.604Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T10:21:01.122Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T10:35:38.579Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T10:37:26.313Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T10:45:11.356Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка req.files.title_image is not a function","service":"user-service","timestamp":"2025-02-12T10:48:04.165Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка req.files.title_image is not a function","service":"user-service","timestamp":"2025-02-12T11:09:48.097Z"}
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-12T11:25:16.683Z"}
+{"level":"error","message":"При добавлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T11:34:49.477Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T11:54:48.379Z"}

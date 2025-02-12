@@ -1493,3 +1493,327 @@
 {"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739340843,\"exp\":1739344443}","service":"user-service","timestamp":"2025-02-12T06:47:21.366Z"}
 {"level":"info","message":"Новость создана - номер новости в папке f25dd509-ab6f-4bd3-bf17-5c368e791bfc","service":"user-service","timestamp":"2025-02-12T06:48:20.650Z"}
 {"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739340843,\"exp\":1739344443}","service":"user-service","timestamp":"2025-02-12T06:48:22.860Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19720","service":"user-service","timestamp":"2025-02-12T08:51:28.642Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350301,\"exp\":1739353901}","service":"user-service","timestamp":"2025-02-12T08:51:41.021Z"}
+{"level":"info","message":"Новость создана - номер новости в папке ca774924-2cd8-4734-b4a7-d40a6412a745","service":"user-service","timestamp":"2025-02-12T08:51:55.446Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350301,\"exp\":1739353901}","service":"user-service","timestamp":"2025-02-12T08:51:56.668Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350301,\"exp\":1739353901}","service":"user-service","timestamp":"2025-02-12T08:51:58.912Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:20032","service":"user-service","timestamp":"2025-02-12T08:53:21.524Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:6676","service":"user-service","timestamp":"2025-02-12T08:53:26.264Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:2956","service":"user-service","timestamp":"2025-02-12T08:53:34.129Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350301,\"exp\":1739353901}","service":"user-service","timestamp":"2025-02-12T08:54:02.742Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 62","service":"user-service","timestamp":"2025-02-12T08:54:05.354Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 63","service":"user-service","timestamp":"2025-02-12T08:54:06.347Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 64","service":"user-service","timestamp":"2025-02-12T08:54:06.974Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350301,\"exp\":1739353901}","service":"user-service","timestamp":"2025-02-12T08:54:09.141Z"}
+{"level":"info","message":"Новость создана - номер новости в папке 885d71d9-d6b7-4d2b-84e8-0938df227875","service":"user-service","timestamp":"2025-02-12T08:54:20.665Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350301,\"exp\":1739353901}","service":"user-service","timestamp":"2025-02-12T08:54:22.364Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350301,\"exp\":1739353901}","service":"user-service","timestamp":"2025-02-12T08:54:24.325Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350301,\"exp\":1739353901}","service":"user-service","timestamp":"2025-02-12T08:54:25.656Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350301,\"exp\":1739353901}","service":"user-service","timestamp":"2025-02-12T08:54:25.742Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:7872","service":"user-service","timestamp":"2025-02-12T08:55:45.541Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:4144","service":"user-service","timestamp":"2025-02-12T08:55:57.704Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350301,\"exp\":1739353901}","service":"user-service","timestamp":"2025-02-12T08:56:24.751Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350301,\"exp\":1739353901}","service":"user-service","timestamp":"2025-02-12T08:56:24.888Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T08:56:32.316Z"}
+{"level":"info","message":"Новость создана - номер новости в папке a61fa4a5-f355-4a3c-8560-9c449600ab94","service":"user-service","timestamp":"2025-02-12T08:56:42.863Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T08:56:46.878Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T08:56:49.701Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T08:56:51.105Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T08:56:51.178Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:10812","service":"user-service","timestamp":"2025-02-12T08:57:36.793Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:5000","service":"user-service","timestamp":"2025-02-12T08:57:58.094Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T08:57:58.196Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T08:57:58.380Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T08:58:01.822Z"}
+{"level":"info","message":"Новость создана - номер новости в папке e7bd5d19-2797-480f-b8fc-d033a120661d","service":"user-service","timestamp":"2025-02-12T08:58:12.692Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T08:58:50.432Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T08:58:52.264Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T08:58:53.380Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T08:58:53.449Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T08:59:25.196Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T08:59:29.752Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:18672","service":"user-service","timestamp":"2025-02-12T09:07:51.624Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:17752","service":"user-service","timestamp":"2025-02-12T09:08:22.826Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:09:57.212Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:10:03.246Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 63b07f6a-88ab-4fa0-99c3-2eeaa0a4ecc8","service":"user-service","timestamp":"2025-02-12T09:10:30.877Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:10:32.294Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:10:33.874Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:10:35.925Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:10:36.019Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:20224","service":"user-service","timestamp":"2025-02-12T09:11:44.903Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:14852","service":"user-service","timestamp":"2025-02-12T09:11:46.998Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке c88b40a5-b906-4910-b3d9-7ba922de52c5","service":"user-service","timestamp":"2025-02-12T09:11:53.360Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:12:19.272Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:12:21.476Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:12748","service":"user-service","timestamp":"2025-02-12T09:12:56.057Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:16444","service":"user-service","timestamp":"2025-02-12T09:13:03.893Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:13:09.322Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:13:10.754Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:13:10.849Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:13:25.778Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:13:28.187Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:13:30.666Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:13:30.747Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 8ff83ec1-290b-474f-bb75-e46368d9c36d","service":"user-service","timestamp":"2025-02-12T09:13:38.701Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:13:44.877Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:13:46.854Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:13:48.813Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:13:48.917Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:18716","service":"user-service","timestamp":"2025-02-12T09:14:10.278Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:14:21.122Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:14:21.290Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 20224445-40df-4a0a-b188-0915e6e73b2b","service":"user-service","timestamp":"2025-02-12T09:14:26.610Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:14:27.784Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:15:00.723Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:15:02.570Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T09:15:22.911Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:15:24.607Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:15:28.207Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:15:30.286Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:7732","service":"user-service","timestamp":"2025-02-12T09:27:30.017Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:10096","service":"user-service","timestamp":"2025-02-12T09:27:48.618Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19880","service":"user-service","timestamp":"2025-02-12T09:27:57.461Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19200","service":"user-service","timestamp":"2025-02-12T09:28:00.872Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:17388","service":"user-service","timestamp":"2025-02-12T09:28:02.936Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19556","service":"user-service","timestamp":"2025-02-12T09:36:06.570Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:7772","service":"user-service","timestamp":"2025-02-12T09:36:48.171Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19376","service":"user-service","timestamp":"2025-02-12T09:36:58.388Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:8208","service":"user-service","timestamp":"2025-02-12T09:37:01.521Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:17884","service":"user-service","timestamp":"2025-02-12T09:42:06.115Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:5208","service":"user-service","timestamp":"2025-02-12T09:42:08.428Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:44:13.952Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T09:44:27.523Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:44:42.784Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:44:44.341Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:44:45.709Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:44:52.828Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739350592,\"exp\":1739354192}","service":"user-service","timestamp":"2025-02-12T09:44:59.113Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:1108","service":"user-service","timestamp":"2025-02-12T09:46:12.796Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:20164","service":"user-service","timestamp":"2025-02-12T10:10:56.905Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:8108","service":"user-service","timestamp":"2025-02-12T10:10:59.711Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:14600","service":"user-service","timestamp":"2025-02-12T10:11:36.146Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19324","service":"user-service","timestamp":"2025-02-12T10:11:38.636Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:16604","service":"user-service","timestamp":"2025-02-12T10:11:40.742Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:7232","service":"user-service","timestamp":"2025-02-12T10:11:43.040Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:11864","service":"user-service","timestamp":"2025-02-12T10:11:45.420Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:11460","service":"user-service","timestamp":"2025-02-12T10:18:00.447Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:18:14.541Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:18:16.327Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:18:18.784Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T10:18:28.440Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:18:36.358Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:19:09.611Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:19:11.267Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:2368","service":"user-service","timestamp":"2025-02-12T10:19:35.748Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:19:35.857Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T10:19:44.604Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:20:16.319Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:20:17.620Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:20:19.331Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:9112","service":"user-service","timestamp":"2025-02-12T10:20:51.689Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:20:53.961Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T10:21:01.122Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:21:47.283Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:9428","service":"user-service","timestamp":"2025-02-12T10:26:58.709Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:17768","service":"user-service","timestamp":"2025-02-12T10:27:18.770Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:35:29.805Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:35:31.404Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T10:35:38.579Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:36:13.182Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:36:14.233Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:11128","service":"user-service","timestamp":"2025-02-12T10:37:07.938Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:37:09.890Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:37:12.051Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T10:37:26.313Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:38:15.314Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:40:18.827Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:40:20.661Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:40:25.638Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:40:27.313Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:41:45.761Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 59c05c80-9409-418d-b0f3-471caaed741c","service":"user-service","timestamp":"2025-02-12T10:41:54.829Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:42:01.240Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:42:02.393Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:42:04.132Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19200","service":"user-service","timestamp":"2025-02-12T10:43:12.818Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:13996","service":"user-service","timestamp":"2025-02-12T10:43:15.851Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:9884","service":"user-service","timestamp":"2025-02-12T10:43:22.577Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:8412","service":"user-service","timestamp":"2025-02-12T10:43:54.799Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:18320","service":"user-service","timestamp":"2025-02-12T10:44:00.199Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:16624","service":"user-service","timestamp":"2025-02-12T10:44:02.764Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:8108","service":"user-service","timestamp":"2025-02-12T10:44:13.106Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:5380","service":"user-service","timestamp":"2025-02-12T10:44:30.501Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:1592","service":"user-service","timestamp":"2025-02-12T10:44:33.256Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:12736","service":"user-service","timestamp":"2025-02-12T10:44:45.250Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19032","service":"user-service","timestamp":"2025-02-12T10:44:51.319Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:44:55.313Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:44:59.563Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:45:01.645Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T10:45:11.356Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:14632","service":"user-service","timestamp":"2025-02-12T10:45:46.510Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:10752","service":"user-service","timestamp":"2025-02-12T10:45:50.585Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:20320","service":"user-service","timestamp":"2025-02-12T10:46:05.813Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:12360","service":"user-service","timestamp":"2025-02-12T10:46:16.817Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:18564","service":"user-service","timestamp":"2025-02-12T10:46:38.833Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:20180","service":"user-service","timestamp":"2025-02-12T10:46:41.301Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:13940","service":"user-service","timestamp":"2025-02-12T10:47:04.707Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19352","service":"user-service","timestamp":"2025-02-12T10:47:12.550Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:12916","service":"user-service","timestamp":"2025-02-12T10:47:15.989Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:47:19.580Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:47:20.929Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:47:22.474Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка req.files.title_image is not a function","service":"user-service","timestamp":"2025-02-12T10:48:04.165Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T10:49:04.653Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:10864","service":"user-service","timestamp":"2025-02-12T11:02:50.590Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:13040","service":"user-service","timestamp":"2025-02-12T11:05:21.844Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:09:24.486Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:09:25.454Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:09:27.414Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка req.files.title_image is not a function","service":"user-service","timestamp":"2025-02-12T11:09:48.097Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:9016","service":"user-service","timestamp":"2025-02-12T11:10:54.492Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19876","service":"user-service","timestamp":"2025-02-12T11:10:56.793Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:13364","service":"user-service","timestamp":"2025-02-12T11:11:12.129Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:11:14.008Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:11:15.001Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:11:16.864Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:11:18.492Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 933621b1-5498-4af5-aeb1-99b39dfe4fb3","service":"user-service","timestamp":"2025-02-12T11:11:33.753Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:11:37.722Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:11:38.601Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:11:40.034Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:11:40.128Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:12:19.002Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:12:19.122Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:12:20.911Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:12:22.706Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 65","service":"user-service","timestamp":"2025-02-12T11:12:24.407Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 66","service":"user-service","timestamp":"2025-02-12T11:12:24.886Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 67","service":"user-service","timestamp":"2025-02-12T11:12:25.584Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:12:26.819Z"}
+{"level":"info","message":"Новость создана - номер новости в папке 6030eada-8911-4239-be65-b5ebe2879650","service":"user-service","timestamp":"2025-02-12T11:12:39.771Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:12:43.667Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:12:46.313Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:12:47.348Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 47965800-56cc-4a33-b208-0bfb71da7521","service":"user-service","timestamp":"2025-02-12T11:13:38.642Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:13:46.210Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:13:47.744Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:13:49.073Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:13:49.159Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:13:59.483Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:14:04.940Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:5560","service":"user-service","timestamp":"2025-02-12T11:15:18.464Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:15:22.836Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:15:23.773Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:15:23.846Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке de265567-b995-44b8-9c18-49fc0c7dcdac","service":"user-service","timestamp":"2025-02-12T11:15:30.059Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:15:31.909Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:15:32.918Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:15:34.077Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 64ebeb2c-30ac-4d88-9c49-6d7cf2715360","service":"user-service","timestamp":"2025-02-12T11:15:42.099Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:15:43.666Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:15:46.531Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:15:47.652Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739355494,\"exp\":1739359094}","service":"user-service","timestamp":"2025-02-12T11:15:47.725Z"}
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-12T11:25:16.683Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359523,\"exp\":1739363123}","service":"user-service","timestamp":"2025-02-12T11:25:23.612Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359523,\"exp\":1739363123}","service":"user-service","timestamp":"2025-02-12T11:26:12.663Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359523,\"exp\":1739363123}","service":"user-service","timestamp":"2025-02-12T11:26:19.661Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359523,\"exp\":1739363123}","service":"user-service","timestamp":"2025-02-12T11:27:22.005Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:27:43.402Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:9032","service":"user-service","timestamp":"2025-02-12T11:28:12.754Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:14488","service":"user-service","timestamp":"2025-02-12T11:28:18.956Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:15356","service":"user-service","timestamp":"2025-02-12T11:28:27.916Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:18784","service":"user-service","timestamp":"2025-02-12T11:28:31.538Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:18888","service":"user-service","timestamp":"2025-02-12T11:28:41.417Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:28:41.695Z"}
+{"level":"info","message":"Новость создана - номер новости в папке 8fe747ab-00a4-4c14-a42e-86e761bc30d3","service":"user-service","timestamp":"2025-02-12T11:28:59.245Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:29:03.791Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:29:06.703Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:29:46.437Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 69","service":"user-service","timestamp":"2025-02-12T11:29:48.810Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 68","service":"user-service","timestamp":"2025-02-12T11:29:49.238Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:29:50.275Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19356","service":"user-service","timestamp":"2025-02-12T11:30:49.474Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:30:49.893Z"}
+{"level":"info","message":"Новость создана - номер новости в папке fce27723-159a-4bd2-bd9b-8155d6e7acd0","service":"user-service","timestamp":"2025-02-12T11:31:52.702Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:31:54.504Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:31:57.050Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:18720","service":"user-service","timestamp":"2025-02-12T11:32:23.336Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 70","service":"user-service","timestamp":"2025-02-12T11:32:23.458Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:32:25.051Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:18360","service":"user-service","timestamp":"2025-02-12T11:32:34.602Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:32:35.111Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:32:36.115Z"}
+{"level":"info","message":"Новость создана - номер новости в папке bd8ee08b-9387-4fe4-98ca-647c3d50f624","service":"user-service","timestamp":"2025-02-12T11:32:58.014Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:33:00.265Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:33:02.769Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19832","service":"user-service","timestamp":"2025-02-12T11:33:24.563Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:10856","service":"user-service","timestamp":"2025-02-12T11:33:26.617Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:17012","service":"user-service","timestamp":"2025-02-12T11:33:30.909Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:33:30.984Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 71","service":"user-service","timestamp":"2025-02-12T11:33:31.758Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:33:32.675Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:33:34.179Z"}
+{"level":"info","message":"Новость создана - номер новости в папке 8dff0a9f-46e3-43b6-8725-0ef79db38e05","service":"user-service","timestamp":"2025-02-12T11:33:49.871Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:33:53.732Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:33:57.479Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:34:26.353Z"}
+{"level":"error","message":"При добавлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T11:34:49.477Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19708","service":"user-service","timestamp":"2025-02-12T11:35:11.331Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:5144","service":"user-service","timestamp":"2025-02-12T11:35:13.811Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:15464","service":"user-service","timestamp":"2025-02-12T11:37:14.593Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:16516","service":"user-service","timestamp":"2025-02-12T11:41:33.042Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:9888","service":"user-service","timestamp":"2025-02-12T11:41:39.447Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:18964","service":"user-service","timestamp":"2025-02-12T11:41:41.703Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:1904","service":"user-service","timestamp":"2025-02-12T11:43:27.227Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:10568","service":"user-service","timestamp":"2025-02-12T11:43:54.549Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:6868","service":"user-service","timestamp":"2025-02-12T11:44:09.009Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:44:23.852Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:11932","service":"user-service","timestamp":"2025-02-12T11:44:26.128Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:5168","service":"user-service","timestamp":"2025-02-12T11:44:31.534Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:44:33.024Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:44:34.735Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 72","service":"user-service","timestamp":"2025-02-12T11:44:36.775Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:44:38.688Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:44:40.093Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:44:41.420Z"}
+{"level":"info","message":"Новость создана - номер новости в папке d4f41142-f17c-4c24-93f7-62a2b46b3a8f","service":"user-service","timestamp":"2025-02-12T11:45:10.438Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:45:14.701Z"}
+{"level":"info","message":"Новость создана - номер новости в папке 4015087a-74d3-4021-9251-d62a25bf8e9f","service":"user-service","timestamp":"2025-02-12T11:45:53.469Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:45:56.903Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:45:59.310Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:46:01.547Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19304","service":"user-service","timestamp":"2025-02-12T11:47:30.734Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:972","service":"user-service","timestamp":"2025-02-12T11:47:33.983Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19556","service":"user-service","timestamp":"2025-02-12T11:47:52.852Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:5600","service":"user-service","timestamp":"2025-02-12T11:48:04.778Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:656","service":"user-service","timestamp":"2025-02-12T11:48:16.850Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:8884","service":"user-service","timestamp":"2025-02-12T11:49:36.503Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:19200","service":"user-service","timestamp":"2025-02-12T11:49:42.689Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:6556","service":"user-service","timestamp":"2025-02-12T11:49:46.280Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:50:00.326Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке b3055094-d620-4efa-9687-1d95251b75be","service":"user-service","timestamp":"2025-02-12T11:50:45.317Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:50:48.358Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:50:49.983Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:50:52.306Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:54:33.020Z"}
+{"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T11:54:48.379Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:54:49.808Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:54:50.863Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:54:52.508Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 0a7e7c6c-7f8d-4684-bf3e-c5d8ba4533a5","service":"user-service","timestamp":"2025-02-12T11:55:12.546Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:55:25.347Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:55:27.476Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:55:29.229Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:6908","service":"user-service","timestamp":"2025-02-12T11:56:04.394Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:9716","service":"user-service","timestamp":"2025-02-12T11:56:08.664Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:57:18.703Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:12344","service":"user-service","timestamp":"2025-02-12T11:58:08.094Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:58:08.446Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 73","service":"user-service","timestamp":"2025-02-12T11:58:09.815Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 74","service":"user-service","timestamp":"2025-02-12T11:58:10.227Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:58:12.563Z"}
+{"level":"info","message":"Новость создана - номер новости в папке 1550168f-a07c-4f16-9b78-a3c9c923602e","service":"user-service","timestamp":"2025-02-12T11:59:10.381Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:59:12.324Z"}

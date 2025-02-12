@@ -155,14 +155,20 @@ const updateNews = async (req:any, res:any) => {
     const host = req.headers.host
 
     let findImage
+    let endFolder
 
     if (!req.files.file_1) {
       findImage = req.files.title_image
-    } else {
+      endFolder = path.parse(findImage[0].destination).base.split('\\').slice(-1)[0]
+    } else if(!req.files.title_image) {
       findImage = req.files.file_1
+      endFolder = path.parse(findImage[0].destination).base.split('\\').slice(-1)[0]
+    } else {
+      findImage = ''
+      endFolder = ''
     }
 
-    const endFolder = path.parse(findImage[0].destination).base.split('\\').slice(-1)[0]
+
 
 
     Object.values(req.files).forEach(async (item: any, index: any) => {

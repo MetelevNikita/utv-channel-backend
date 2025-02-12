@@ -75,6 +75,7 @@ const postNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         }
         else {
             findImage = '';
+            endFolder = '';
         }
         Object.values(req.files).forEach((item, index) => __awaiter(void 0, void 0, void 0, function* () {
             const inputPath = path_1.default.join(__dirname, '../../public/image/news/' + endFolder + '/' + item[0].originalname);

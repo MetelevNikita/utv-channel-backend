@@ -74,10 +74,10 @@ const postNews = async (req: any, res: any) => {
     if (JSON.stringify(req.files) !== '{}') {
 
       if (!req.files.title_image) {
-        findImage = req.files.title_image
+        findImage = req.files.file_1
         endFolder = path.parse(findImage[0].destination).base.split('\\').slice(-1)[0]
       } else {
-        findImage = req.files.file_1
+        findImage = req.files.title_image
         endFolder = path.parse(findImage[0].destination).base.split('\\').slice(-1)[0]
       }
 

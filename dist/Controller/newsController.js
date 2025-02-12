@@ -64,13 +64,18 @@ const postNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const protocol = req.headers['x-forwarded-proto'] || 'http';
         const host = req.headers.host;
         let findImage;
+        let endFolder;
         if (!req.files.file_1) {
             findImage = req.files.title_image;
+            endFolder = path_1.default.parse(findImage[0].destination).base.split('\\').slice(-1)[0];
+        }
+        else if (!req.files.title_image) {
+            findImage = req.files.file_1;
+            endFolder = path_1.default.parse(findImage[0].destination).base.split('\\').slice(-1)[0];
         }
         else {
-            findImage = req.files.file_1;
+            findImage = '';
         }
-        const endFolder = path_1.default.parse(findImage[0].destination).base.split('\\').slice(-1)[0];
         Object.values(req.files).forEach((item, index) => __awaiter(void 0, void 0, void 0, function* () {
             const inputPath = path_1.default.join(__dirname, '../../public/image/news/' + endFolder + '/' + item[0].originalname);
             const outputPath = path_1.default.join(__dirname, '../../public/image/news/' + endFolder + '/' + `news_image_${idNews}_${index}.jpeg`);

@@ -1,6 +1,6 @@
 
-// const url  =  'https://utvchannel.tw1.su'
-const url = 'http://localhost:9000'
+const url  =  'https://utvchannel.tw1.su'
+// const url = 'http://localhost:9000'
 
 
 const changeFomtBtn = document.getElementById('select_project_back_btn')

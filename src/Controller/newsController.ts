@@ -144,11 +144,6 @@ const postNews = async (req: any, res: any) => {
 const updateNews = async (req:any, res:any) => {
   try {
 
-    if (!req.files) {
-      console.log('Нет файлов для загрузки.')
-
-
-    }
 
     const idNews = uuid()
 
@@ -158,16 +153,26 @@ const updateNews = async (req:any, res:any) => {
     let findImage
     let endFolder
 
-    if (!req.files.file_1) {
-      findImage = req.files.title_image
-      endFolder = path.parse(findImage[0].destination).base.split('\\').slice(-1)[0]
-    } else if(!req.files.title_image) {
-      findImage = req.files.file_1
-      endFolder =  path.parse(findImage[0].destination).base.split('\\').slice(-1)[0]
+    if(!req.files) {
+
+      console.log('Нет файлов для обновления')
+
+      if (!req.files.file_1) {
+        findImage = req.files.title_image
+        endFolder = path.parse(findImage[0].destination).base.split('\\').slice(-1)[0]
+      } else if(!req.files.title_image) {
+        findImage = req.files.file_1
+        endFolder =  path.parse(findImage[0].destination).base.split('\\').slice(-1)[0]
+      } else {
+        findImage = ''
+        endFolder = ''
+      }
+
     } else {
       findImage = ''
       endFolder = ''
     }
+
 
 
 

@@ -115,21 +115,25 @@ const postNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 exports.postNews = postNews;
 const updateNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        if (!req.files) {
-            console.log('Нет файлов для загрузки.');
-        }
         const idNews = (0, uuid_1.v4)();
         const protocol = req.headers['x-forwarded-proto'] || 'http';
         const host = req.headers.host;
         let findImage;
         let endFolder;
-        if (!req.files.file_1) {
-            findImage = req.files.title_image;
-            endFolder = path_1.default.parse(findImage[0].destination).base.split('\\').slice(-1)[0];
-        }
-        else if (!req.files.title_image) {
-            findImage = req.files.file_1;
-            endFolder = path_1.default.parse(findImage[0].destination).base.split('\\').slice(-1)[0];
+        if (!req.files) {
+            console.log('Нет файлов для обновления');
+            if (!req.files.file_1) {
+                findImage = req.files.title_image;
+                endFolder = path_1.default.parse(findImage[0].destination).base.split('\\').slice(-1)[0];
+            }
+            else if (!req.files.title_image) {
+                findImage = req.files.file_1;
+                endFolder = path_1.default.parse(findImage[0].destination).base.split('\\').slice(-1)[0];
+            }
+            else {
+                findImage = '';
+                endFolder = '';
+            }
         }
         else {
             findImage = '';

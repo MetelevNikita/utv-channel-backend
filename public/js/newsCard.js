@@ -1,7 +1,7 @@
 // URL
 
-const url  =  'https://utvchannel.tw1.su'
-// const url = "http://localhost:9000";
+// const url  =  'https://utvchannel.tw1.su'
+const url = "http://localhost:9000";
 
 
 
@@ -706,18 +706,21 @@ const newsUpdateForm = document.getElementById("news_update_form");
 newsUpdateForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  const newsTitle = document.getElementById("news_title").value;
+  const newsLead = document.getElementById("news_lead").value;
+  const newsAuthor = document.getElementById("news_author").value;
+  const newsDate = document.getElementById("news_date").value;
+
+
+  const newsTitleImage = document.getElementById('news_title_image')
+  const newsTitleComment = document.getElementById('img_title_comment')
+  const newsVideo = document.getElementById('news_video')
+
+
+  console.log(newsTitleImage)
+
+
   try {
-    const newsTitle = document.getElementById("news_title").value;
-    const newsLead = document.getElementById("news_lead").value;
-    const newsAuthor = document.getElementById("news_author").value;
-    const newsDate = document.getElementById("news_date").value;
-
-
-    const newsTitleImage = document.getElementById('news_title_image')
-    const newsTitleComment = document.getElementById('img_title_comment')
-    const newsVideo = document.getElementById('news_video')
-
-
 
 
     const tags = currentNewsTags.join(" ");
@@ -730,8 +733,10 @@ newsUpdateForm.addEventListener("submit", async (e) => {
     newNewsForm.append("author", newsAuthor);
     newNewsForm.append("date", newsDate);
 
+
+
     newNewsForm.append('video', (newsVideo === null) ? '' : newsVideo.value);
-    (!newsTitleImage.files) ? newNewsForm.append('title_image', '') : newNewsForm.append('title_image', (!newsTitleImage.files[0]) ? previousTitleImage : newsTitleImage.files[0]);
+    (!newsTitleImage) ? newNewsForm.append('title_image', '') : newNewsForm.append('title_image', (!newsTitleImage.files[0]) ? previousTitleImage : newsTitleImage.files[0]);
     newNewsForm.append('title_comment', (!newsTitleComment) ? '' : newsTitleComment.value);
 
     newNewsForm.append("tags", tags);

@@ -731,7 +731,7 @@ newsUpdateForm.addEventListener("submit", async (e) => {
     newNewsForm.append("date", newsDate);
 
     newNewsForm.append('video', (newsVideo === null) ? '' : newsVideo.value);
-    newNewsForm.append('title_image', (!newsTitleImage.files[0]) ? previousTitleImage : newsTitleImage.files[0]);
+    (!newsTitleImage.files) ? newNewsForm.append('title_image', '') : newNewsForm.append('title_image', (!newsTitleImage.files[0]) ? previousTitleImage : newsTitleImage.files[0]);
     newNewsForm.append('title_comment', (!newsTitleComment) ? '' : newsTitleComment.value);
 
     newNewsForm.append("tags", tags);

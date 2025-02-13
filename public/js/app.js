@@ -838,7 +838,6 @@ epgForm.addEventListener('submit', async (e) => {
 
 
 
-
 // Пользовательское соглашение
 
 

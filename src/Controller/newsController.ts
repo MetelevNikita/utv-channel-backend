@@ -218,7 +218,6 @@ const updateNews = async (req:any, res:any) => {
 
 
 
-
 const deleteNews = async (req: any, res: any) => {
   try {
 

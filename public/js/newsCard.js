@@ -1,7 +1,7 @@
 // URL
 
-const url  =  'https://utvchannel.tw1.su'
-// const url = "http://localhost:9000";
+// const url  =  'https://utvchannel.tw1.su'
+const url = "http://localhost:9000";
 
 
 
@@ -56,6 +56,7 @@ let commentFile = 1;
 let commentFileArr = [];
 let commentNum = 1;
 let commentArr = [];
+let previousTitleImage = '';
 
 // get single news
 
@@ -419,6 +420,7 @@ getSingleNews().then((data) => {
   newsAuthor.value = data.author;
   newsDate.value = data.date;
   descriptionCheckbox.checked = data.news_description;
+  previousTitleImage = data.title_image;
 
   const currentObj = {};
 
@@ -629,7 +631,6 @@ const newsFile = (file) => {
 };
 
 
-
 btnNewsFile.addEventListener("click", (e) => {
   e.preventDefault();
   newsFile();
@@ -717,6 +718,8 @@ newsUpdateForm.addEventListener("submit", async (e) => {
     const newsVideo = document.getElementById('news_video')
 
 
+
+
     const tags = currentNewsTags.join(" ");
     const views = 0;
 
@@ -728,7 +731,7 @@ newsUpdateForm.addEventListener("submit", async (e) => {
     newNewsForm.append("date", newsDate);
 
     newNewsForm.append('video', (newsVideo === null) ? '' : newsVideo.value);
-    newNewsForm.append('title_image', (!newsTitleImage) ? '' : newsTitleImage.files[0]);
+    newNewsForm.append('title_image', (!newsTitleImage.files[0]) ? previousTitleImage : newsTitleImage.files[0]);
     newNewsForm.append('title_comment', (!newsTitleComment) ? '' : newsTitleComment.value);
 
     newNewsForm.append("tags", tags);
@@ -779,7 +782,6 @@ newsUpdateForm.addEventListener("submit", async (e) => {
       console.log("нет комментариев");
     }
 
-    console.log(...newNewsForm)
 
     const responce = await fetch(`${url}/api/v1/news`, {
       method: "PUT",

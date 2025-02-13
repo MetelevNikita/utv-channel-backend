@@ -1,6 +1,6 @@
 
-const url  =  'https://utvchannel.tw1.su'
-// const url = 'http://localhost:9000'
+// const url  =  'https://utvchannel.tw1.su'
+const url = 'http://localhost:9000'
 
 
 
@@ -106,7 +106,6 @@ const responce = await fetch(`${url}/api/v1/news`, {
 
   const news = await responce.json()
   const sortNews = news.sort((a, b) => {return new Date(b.date) - new Date(a.date)})
-  console.log(sortNews)
 
   return sortNews.map((item) => {
     containerNews.appendChild(newsCard(item))

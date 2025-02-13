@@ -24,3 +24,4 @@
 {"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-12T11:25:16.683Z"}
 {"level":"error","message":"При добавлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T11:34:49.477Z"}
 {"level":"error","message":"При обновлении новости произошла ошибка Cannot read properties of undefined (reading '0')","service":"user-service","timestamp":"2025-02-12T11:54:48.379Z"}
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-13T05:28:46.330Z"}

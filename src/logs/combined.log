@@ -1817,3 +1817,91 @@
 {"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:58:12.563Z"}
 {"level":"info","message":"Новость создана - номер новости в папке 1550168f-a07c-4f16-9b78-a3c9c923602e","service":"user-service","timestamp":"2025-02-12T11:59:10.381Z"}
 {"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739359663,\"exp\":1739363263}","service":"user-service","timestamp":"2025-02-12T11:59:12.324Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:6852","service":"user-service","timestamp":"2025-02-13T04:26:43.338Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:1452","service":"user-service","timestamp":"2025-02-13T04:26:53.022Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:26:58.703Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:27:00.159Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:27:02.485Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:27:16.678Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:27:23.516Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 75","service":"user-service","timestamp":"2025-02-13T04:27:24.297Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:27:40.200Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:28:12.763Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:28:14.487Z"}
+{"level":"info","message":"Новость создана - номер новости в папке 183981b5-563f-4aa2-acae-1ceb10dfad63","service":"user-service","timestamp":"2025-02-13T04:28:35.259Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:31:34.991Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:31:43.175Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:31:44.956Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:31:53.617Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:32:41.303Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:47:58.875Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:48:23.942Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:49:00.331Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T04:49:10.453Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 1d6f1c23-5adf-41db-9b2f-a03aa12adfa4","service":"user-service","timestamp":"2025-02-13T05:18:01.056Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:18:02.837Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:18:07.267Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:18:08.567Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:18:08.661Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:18:22.200Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:18:31.052Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:18:33.269Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:18:35.301Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:18:35.396Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:18:42.368Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:18:42.456Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке a9c39acc-899c-447b-8353-fb3a237a8114","service":"user-service","timestamp":"2025-02-13T05:18:50.761Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:18:51.625Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:18:55.237Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:18:57.051Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:19:09.999Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 27e898fb-ad3a-4c4f-af84-11f7030414ec","service":"user-service","timestamp":"2025-02-13T05:19:22.181Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:19:37.097Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:19:40.533Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:19:41.824Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 0a55313c-a7b8-4dc3-b78b-8bba5ec0e01e","service":"user-service","timestamp":"2025-02-13T05:24:25.006Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:24:55.497Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:24:57.043Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:24:58.435Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:24:58.546Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке b1bc3162-b551-4263-9645-b848c0500789","service":"user-service","timestamp":"2025-02-13T05:25:07.393Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:25:13.956Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:25:15.263Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:25:16.570Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 6549fb71-f219-47f3-a639-7a0c71e97249","service":"user-service","timestamp":"2025-02-13T05:25:26.074Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739420818,\"exp\":1739424418}","service":"user-service","timestamp":"2025-02-13T05:26:14.786Z"}
+{"level":"error","message":"Ошибка авторизации пользователя jwt expired","service":"user-service","timestamp":"2025-02-13T05:28:46.330Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:28:54.848Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:28:57.341Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:28:58.568Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:28:58.666Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 3753fc69-a7fb-45b9-a5b4-d38da55b1b55","service":"user-service","timestamp":"2025-02-13T05:29:58.343Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:30:01.487Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:30:02.973Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:30:04.436Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 451d3ec5-06ce-4cb3-bf02-5cc8a24356eb","service":"user-service","timestamp":"2025-02-13T05:30:16.918Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:39:11.691Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:41:39.737Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:41:41.475Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:41:41.577Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:41:48.639Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:41:50.242Z"}
+{"level":"info","message":"Новость удалена - номер новости в папке 76","service":"user-service","timestamp":"2025-02-13T05:41:51.511Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:41:52.675Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:41:54.227Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739424534,\"exp\":1739428134}","service":"user-service","timestamp":"2025-02-13T05:48:05.473Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739425702,\"exp\":1739429302}","service":"user-service","timestamp":"2025-02-13T05:48:22.147Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:17116","service":"user-service","timestamp":"2025-02-13T05:48:52.202Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739425702,\"exp\":1739429302}","service":"user-service","timestamp":"2025-02-13T05:48:54.134Z"}
+{"level":"info","message":"Новость создана - номер новости в папке 334e137d-c94a-4d63-a461-5dd86d8ea5d1","service":"user-service","timestamp":"2025-02-13T05:49:15.684Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739425702,\"exp\":1739429302}","service":"user-service","timestamp":"2025-02-13T05:49:19.327Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739425702,\"exp\":1739429302}","service":"user-service","timestamp":"2025-02-13T05:49:23.130Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739425702,\"exp\":1739429302}","service":"user-service","timestamp":"2025-02-13T05:49:25.409Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739425702,\"exp\":1739429302}","service":"user-service","timestamp":"2025-02-13T05:49:32.678Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739425702,\"exp\":1739429302}","service":"user-service","timestamp":"2025-02-13T05:49:33.881Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739425702,\"exp\":1739429302}","service":"user-service","timestamp":"2025-02-13T05:49:39.787Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739425702,\"exp\":1739429302}","service":"user-service","timestamp":"2025-02-13T05:49:48.823Z"}
+{"level":"info","message":"Новость обновлена - номер новости в папке 2b656455-50a3-4868-aa28-a5a4f56ec8db","service":"user-service","timestamp":"2025-02-13T05:49:58.972Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739425702,\"exp\":1739429302}","service":"user-service","timestamp":"2025-02-13T05:50:05.679Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739425702,\"exp\":1739429302}","service":"user-service","timestamp":"2025-02-13T05:50:08.782Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739425702,\"exp\":1739429302}","service":"user-service","timestamp":"2025-02-13T05:50:10.145Z"}

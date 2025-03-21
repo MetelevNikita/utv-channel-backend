@@ -29,7 +29,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.postEpg = exports.getEpg = void 0;
 const path_1 = __importDefault(require("path"));
 const XLSX = __importStar(require("xlsx"));
-const moment_1 = __importDefault(require("moment"));
 const getEpg = (req, res) => {
     try {
         const file = XLSX.readFile(path_1.default.join(__dirname, '../../public/epg/tv_epg.xls'));
@@ -40,10 +39,14 @@ const getEpg = (req, res) => {
         const sheetNames = file.SheetNames[0];
         const data = XLSX.utils.sheet_to_json(file.Sheets[sheetNames]);
         const newEpg = data.map((item) => {
+            const unixTime = Number(Object.values(item)[1]);
+            const hours = Math.floor(unixTime * 24);
+            const minutes = Math.floor((unixTime * 24 - hours) * 60);
+            const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
             const newObjEpg = {
                 id: 1,
                 date: [new Date((Number(Object.values(item)[0]) - 25569) * 86400000).toDateString().split(' ')[0], new Date((Number(Object.values(item)[0]) - 25569) * 86400000).toLocaleDateString()],
-                time: (0, moment_1.default)((Number(Object.values(item)[1]) - 25569) * 86400000).format('HH:mm'),
+                time: formattedTime,
                 marker: Object.values(item)[2],
                 title: Object.values(item)[3],
                 subtitle: Object.values(item)[4]

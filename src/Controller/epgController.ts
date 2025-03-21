@@ -1,9 +1,5 @@
 import path from 'path';
 import * as XLSX from 'xlsx';
-import moment from 'moment';
-
-
-
 
 
 
@@ -23,10 +19,19 @@ const getEpg = (req: any, res: any) => {
 
 
     const newEpg = data.map((item: any) => {
+
+
+      const unixTime = Number(Object.values(item)[1]);
+      const hours = Math.floor(unixTime * 24);
+      const minutes = Math.floor((unixTime * 24 - hours) * 60);
+      const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`
+
+
+
       const newObjEpg = {
         id: 1,
         date: [new Date((Number(Object.values(item)[0]) - 25569) * 86400000).toDateString().split(' ')[0], new Date((Number(Object.values(item)[0]) - 25569) * 86400000).toLocaleDateString()],
-        time:  moment((Number(Object.values(item)[1]) - 25569) * 86400000).format('HH:mm'),
+        time: formattedTime,
         marker: Object.values(item)[2],
         title: Object.values(item)[3],
         subtitle: Object.values(item)[4]

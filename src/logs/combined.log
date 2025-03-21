@@ -1982,3 +1982,23 @@
 {"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739441369,\"exp\":1739444969}","service":"user-service","timestamp":"2025-02-13T10:32:18.237Z"}
 {"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739441369,\"exp\":1739444969}","service":"user-service","timestamp":"2025-02-13T10:32:21.287Z"}
 {"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1739441369,\"exp\":1739444969}","service":"user-service","timestamp":"2025-02-13T10:32:22.480Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:2356","service":"user-service","timestamp":"2025-02-26T05:34:43.162Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:13616","service":"user-service","timestamp":"2025-03-21T09:34:31.694Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:1964","service":"user-service","timestamp":"2025-03-21T09:39:07.633Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1742549954,\"exp\":1742553554}","service":"user-service","timestamp":"2025-03-21T09:39:14.993Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1742549954,\"exp\":1742553554}","service":"user-service","timestamp":"2025-03-21T09:55:20.458Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1742549954,\"exp\":1742553554}","service":"user-service","timestamp":"2025-03-21T09:56:58.871Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1742549954,\"exp\":1742553554}","service":"user-service","timestamp":"2025-03-21T09:57:10.457Z"}
+{"level":"info","message":"Пользователь авторизован {\"id\":1,\"iat\":1742549954,\"exp\":1742553554}","service":"user-service","timestamp":"2025-03-21T09:57:40.039Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:2088","service":"user-service","timestamp":"2025-03-21T10:06:59.361Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:4160","service":"user-service","timestamp":"2025-03-21T10:08:01.359Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:18448","service":"user-service","timestamp":"2025-03-21T10:08:04.994Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:3052","service":"user-service","timestamp":"2025-03-21T10:08:25.531Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:1072","service":"user-service","timestamp":"2025-03-21T10:08:35.341Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:6960","service":"user-service","timestamp":"2025-03-21T10:08:38.241Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:11384","service":"user-service","timestamp":"2025-03-21T10:18:41.880Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:1476","service":"user-service","timestamp":"2025-03-21T10:18:44.372Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:8160","service":"user-service","timestamp":"2025-03-21T10:29:59.245Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:12036","service":"user-service","timestamp":"2025-03-21T10:30:22.632Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:12492","service":"user-service","timestamp":"2025-03-21T10:34:34.081Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:11948","service":"user-service","timestamp":"2025-03-21T10:35:23.475Z"}

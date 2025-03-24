@@ -2002,3 +2002,5 @@
 {"level":"info","message":"Сервер запущен на порту 9000 PID:12036","service":"user-service","timestamp":"2025-03-21T10:30:22.632Z"}
 {"level":"info","message":"Сервер запущен на порту 9000 PID:12492","service":"user-service","timestamp":"2025-03-21T10:34:34.081Z"}
 {"level":"info","message":"Сервер запущен на порту 9000 PID:11948","service":"user-service","timestamp":"2025-03-21T10:35:23.475Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:16888","service":"user-service","timestamp":"2025-03-24T09:17:50.921Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:8272","service":"user-service","timestamp":"2025-03-24T09:18:13.611Z"}

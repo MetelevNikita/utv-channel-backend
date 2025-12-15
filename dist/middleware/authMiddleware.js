@@ -11,7 +11,7 @@ const authMiddleware = (req, res, next) => {
     try {
         if (!token) {
             logging_1.logger.error('Не получен токен доступа');
-            return res.redirect('/login');
+            return res.redirect('admin/login');
         }
         const user = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET);
         req.user = user;
@@ -21,7 +21,7 @@ const authMiddleware = (req, res, next) => {
     catch (error) {
         logging_1.logger.error(`Ошибка авторизации пользователя ${error.message}`);
         res.clearCookie('token');
-        return res.redirect('/login');
+        return res.redirect('admin/login');
     }
 };
 exports.default = authMiddleware;

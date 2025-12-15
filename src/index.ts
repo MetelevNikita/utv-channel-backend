@@ -74,10 +74,7 @@ app.use('/api/v1', presantationRouter)
 
 
 
-//
-
-
-app.get('/login', (req, res) => {
+app.get('/admin/login', (req, res) => {
   try {
     res.status(200).sendFile(publicPath   +   '/html/login.html')
   } catch (error) {
@@ -87,9 +84,9 @@ app.get('/login', (req, res) => {
 })
 
 
-app.get('/', (req, res) => {
+app.get('/admin', (req, res) => {
   try {
-    res.redirect('/login')
+    res.redirect('/admin/login')
   } catch (error) {
     console.error(error)
     res.status(400).sendFile('/404.html')
@@ -97,7 +94,7 @@ app.get('/', (req, res) => {
 })
 
 
-app.get('/main', authMiddleware, (req, res) => {
+app.get('/admin/main', authMiddleware, (req, res) => {
   try  {
 
     res.status(200).sendFile(publicPath  +  '/html/main.html')
@@ -111,7 +108,7 @@ app.get('/main', authMiddleware, (req, res) => {
 
 // team
 
-app.get('/main/team', authMiddleware, (req, res) => {
+app.get('/admin/main/team', authMiddleware, (req, res) => {
   try {
 
     res.status(200).sendFile(publicPath  +  '/html/teamPage.html')
@@ -123,7 +120,7 @@ app.get('/main/team', authMiddleware, (req, res) => {
 })
 
 
-app.get('/team/:id', authMiddleware, (req, res) => {
+app.get('/admin/team/:id', authMiddleware, (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/teamCard.html')
 
@@ -137,7 +134,7 @@ app.get('/team/:id', authMiddleware, (req, res) => {
 
 // news
 
-app.get('/main/news', authMiddleware, (req, res) => {
+app.get('/admin/main/news', authMiddleware, (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/newsPage.html')
   } catch (error) {
@@ -146,7 +143,7 @@ app.get('/main/news', authMiddleware, (req, res) => {
   }
 })
 
-app.get('/news/:id', authMiddleware, (req, res) => {
+app.get('/admin/news/:id', authMiddleware, (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/newsCard.html')
   } catch (error) {
@@ -158,7 +155,7 @@ app.get('/news/:id', authMiddleware, (req, res) => {
 
 // program
 
-app.get('/main/program', authMiddleware, (req, res) => {
+app.get('/admin/main/program', authMiddleware, (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/programPage.html')
   } catch (error) {
@@ -167,7 +164,7 @@ app.get('/main/program', authMiddleware, (req, res) => {
   }
 })
 
-app.get('/program/:id', authMiddleware, (req, res) => {
+app.get('/admin/program/:id', authMiddleware, (req, res) => {
   try {
 
     res.status(200).sendFile(publicPath  +  '/html/programCard.html')
@@ -182,7 +179,7 @@ app.get('/program/:id', authMiddleware, (req, res) => {
 
 // project
 
-app.get('/main/project', authMiddleware, (req, res) => {
+app.get('/admin/main/project', authMiddleware, (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/projectPage.html')
   } catch (error) {
@@ -192,7 +189,7 @@ app.get('/main/project', authMiddleware, (req, res) => {
 })
 
 
-app.get('/project/:id', authMiddleware, (req, res) => {
+app.get('/admin/project/:id', authMiddleware, (req, res) => {
   try {
     res.status(200).sendFile(publicPath  +  '/html/projectCard.html')
   } catch (error) {
@@ -209,13 +206,13 @@ app.get('/project/:id', authMiddleware, (req, res) => {
 
 // other
 
-app.get('/*', (req, res) => {
+app.get('/admin/*', (req, res) => {
   try  {
     if(req.cookies.token) {
-      res.redirect('/main')
+      res.redirect('/admin/main')
       return
     }
-    res.redirect('/login')
+    res.redirect('/admin/login')
 
   } catch  (error)  {
    res.status(400).sendFile('404.html')

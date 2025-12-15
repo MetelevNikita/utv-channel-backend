@@ -13,7 +13,7 @@ const authMiddleware = (req: any, res: any, next: any) => {
 
     if (!token) {
       logger.error('Не получен токен доступа')
-      return res.redirect('/login');
+      return res.redirect('admin/login');
     }
 
     const user: any = jwt.verify(token, process.env.JWT_SECRET as string)
@@ -25,7 +25,7 @@ const authMiddleware = (req: any, res: any, next: any) => {
   } catch (error: any) {
     logger.error(`Ошибка авторизации пользователя ${error.message}`)
     res.clearCookie('token');
-    return res.redirect('/login');
+    return res.redirect('admin/login');
   }
 
 

@@ -2004,3 +2004,17 @@
 {"level":"info","message":"Сервер запущен на порту 9000 PID:11948","service":"user-service","timestamp":"2025-03-21T10:35:23.475Z"}
 {"level":"info","message":"Сервер запущен на порту 9000 PID:16888","service":"user-service","timestamp":"2025-03-24T09:17:50.921Z"}
 {"level":"info","message":"Сервер запущен на порту 9000 PID:8272","service":"user-service","timestamp":"2025-03-24T09:18:13.611Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:2965","service":"user-service","timestamp":"2025-12-15T07:52:44.071Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:3027","service":"user-service","timestamp":"2025-12-15T07:53:15.305Z"}
+{"level":"error","message":"Не получен токен доступа","service":"user-service","timestamp":"2025-12-15T07:54:00.336Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:3098","service":"user-service","timestamp":"2025-12-15T07:54:25.537Z"}
+{"level":"error","message":"Не получен токен доступа","service":"user-service","timestamp":"2025-12-15T07:54:35.100Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:4821","service":"user-service","timestamp":"2025-12-15T08:31:29.089Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:4900","service":"user-service","timestamp":"2025-12-15T08:32:52.927Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:4976","service":"user-service","timestamp":"2025-12-15T08:35:02.659Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:5087","service":"user-service","timestamp":"2025-12-15T08:36:05.223Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:5217","service":"user-service","timestamp":"2025-12-15T08:38:29.323Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:5280","service":"user-service","timestamp":"2025-12-15T08:39:11.255Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:5340","service":"user-service","timestamp":"2025-12-15T08:39:15.265Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:5395","service":"user-service","timestamp":"2025-12-15T08:39:19.192Z"}
+{"level":"info","message":"Сервер запущен на порту 9000 PID:5450","service":"user-service","timestamp":"2025-12-15T08:39:23.603Z"}

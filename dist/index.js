@@ -54,8 +54,19 @@ app.use('/api/v1', programRouter_1.default);
 app.use('/api/v1', epgRouter_1.default);
 app.use('/api/v1', agreementRouter_1.default);
 app.use('/api/v1', presentationRouter_1.default);
-//
-app.get('/login', (req, res) => {
+// START FRONTEND PAGE
+const buildPathReact = path_1.default.join(process.cwd(), '../', 'frontend', 'build');
+console.log(buildPathReact);
+app.get('/', (req, res) => {
+    try {
+        res.status(200).json({ message: 'hello' });
+    }
+    catch (error) {
+        console.error(error);
+        res.status(400).sendFile('404.html');
+    }
+});
+app.get('/admin/login', (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/login.html');
     }
@@ -64,16 +75,16 @@ app.get('/login', (req, res) => {
         res.status(400).sendFile('404.html');
     }
 });
-app.get('/', (req, res) => {
+app.get('/admin', (req, res) => {
     try {
-        res.redirect('/login');
+        res.redirect('/admin/login');
     }
     catch (error) {
         console.error(error);
         res.status(400).sendFile('/404.html');
     }
 });
-app.get('/main', authMiddleware_1.default, (req, res) => {
+app.get('/admin/main', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/main.html');
     }
@@ -83,7 +94,7 @@ app.get('/main', authMiddleware_1.default, (req, res) => {
     }
 });
 // team
-app.get('/main/team', authMiddleware_1.default, (req, res) => {
+app.get('/admin/main/team', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/teamPage.html');
     }
@@ -92,7 +103,7 @@ app.get('/main/team', authMiddleware_1.default, (req, res) => {
         res.status(400).sendFile('404.html');
     }
 });
-app.get('/team/:id', authMiddleware_1.default, (req, res) => {
+app.get('/admin/team/:id', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/teamCard.html');
     }
@@ -102,7 +113,7 @@ app.get('/team/:id', authMiddleware_1.default, (req, res) => {
     }
 });
 // news
-app.get('/main/news', authMiddleware_1.default, (req, res) => {
+app.get('/admin/main/news', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/newsPage.html');
     }
@@ -111,7 +122,7 @@ app.get('/main/news', authMiddleware_1.default, (req, res) => {
         res.status(400).sendFile('404.html');
     }
 });
-app.get('/news/:id', authMiddleware_1.default, (req, res) => {
+app.get('/admin/news/:id', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/newsCard.html');
     }
@@ -121,7 +132,7 @@ app.get('/news/:id', authMiddleware_1.default, (req, res) => {
     }
 });
 // program
-app.get('/main/program', authMiddleware_1.default, (req, res) => {
+app.get('/admin/main/program', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/programPage.html');
     }
@@ -130,7 +141,7 @@ app.get('/main/program', authMiddleware_1.default, (req, res) => {
         res.status(400).sendFile(publicPath + '/html/404.html');
     }
 });
-app.get('/program/:id', authMiddleware_1.default, (req, res) => {
+app.get('/admin/program/:id', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/programCard.html');
     }
@@ -140,7 +151,7 @@ app.get('/program/:id', authMiddleware_1.default, (req, res) => {
     }
 });
 // project
-app.get('/main/project', authMiddleware_1.default, (req, res) => {
+app.get('/admin/main/project', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/projectPage.html');
     }
@@ -149,7 +160,7 @@ app.get('/main/project', authMiddleware_1.default, (req, res) => {
         res.status(400).sendFile('404.html');
     }
 });
-app.get('/project/:id', authMiddleware_1.default, (req, res) => {
+app.get('/admin/project/:id', authMiddleware_1.default, (req, res) => {
     try {
         res.status(200).sendFile(publicPath + '/html/projectCard.html');
     }
@@ -159,13 +170,13 @@ app.get('/project/:id', authMiddleware_1.default, (req, res) => {
     }
 });
 // other
-app.get('/*', (req, res) => {
+app.get('/admin/*', (req, res) => {
     try {
         if (req.cookies.token) {
-            res.redirect('/main');
+            res.redirect('/admin/main');
             return;
         }
-        res.redirect('/login');
+        res.redirect('/admin/login');
     }
     catch (error) {
         res.status(400).sendFile('404.html');
